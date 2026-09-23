@@ -7,6 +7,9 @@
     <link rel="icon" type="image/png" href="./img/logo_web_vuong.png">
     <link rel="shortcut icon" href="./img/logo_web_vuong.png" type="image/png">
     <link rel="apple-touch-icon" href="./img/logo_web_vuong.png">
+    <!-- Critical first-paint assets: prioritize brand + hero before the loader can dismiss. -->
+    <link rel="preload" as="image" href="./img/logo_web_vuong.png" fetchpriority="high">
+    <link rel="preload" as="image" href="./img/logo_web.png" fetchpriority="high">
     <link rel="preload" as="image" href="./img/bia_mangatoithuong.png" media="(min-width: 769px)" fetchpriority="high">
     <script>
         // Apply the saved theme before first paint to prevent dark/light flashing.
@@ -2143,7 +2146,7 @@
             <div class="boot-core" aria-hidden="true">
                 <div class="boot-ring"></div>
                 <div class="boot-logo-frame">
-                    <img src="./img/logo_web_vuong.png" alt="" width="54" height="54" decoding="async">
+                    <img id="boot-brand-logo" src="./img/logo_web_vuong.png" alt="" width="54" height="54" loading="eager" decoding="sync" fetchpriority="high">
                 </div>
             </div>
             <div class="boot-kicker">System Initialization · Manga Allstar Vietnam</div>
@@ -2165,7 +2168,7 @@
             <div class="flex justify-between items-center h-full">
                 <!-- Logo -->
                 <a href="#main-scroll" class="flex-shrink-0 flex items-center group">
-                    <img src="./img/logo_web.png" onerror="this.src='https://placehold.co/200x80/000/FFBA00?text=MANGA+TOI+THUONG'" alt="Logo" class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_0_10px_rgba(255,186,0,0.5)]">
+                    <img id="header-brand-logo" src="./img/logo_web.png" onerror="this.src='https://placehold.co/200x80/000/FFBA00?text=MANGA+TOI+THUONG'" alt="Logo" loading="eager" decoding="sync" fetchpriority="high" class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_0_10px_rgba(255,186,0,0.5)]">
                 </a>
 
                 <!-- Desktop Navigation -->
@@ -3396,21 +3399,25 @@
             const status = document.getElementById('boot-status');
             const value = document.getElementById('boot-progress-value');
             const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+            const isMobile = window.matchMedia?.('(max-width: 768px)').matches;
             const startedAt = performance.now();
             let shownProgress = 4;
             let finished = false;
 
             const loadingMessages = [
-                [10, 'Đang khởi tạo giao diện...'],
-                [28, 'Đang nạp tài nguyên hình ảnh...'],
-                [48, 'Đang đồng bộ dữ liệu tiến độ...'],
-                [68, 'Đang chuẩn bị hiệu ứng chiến đấu...'],
-                [86, 'Đang tối ưu hiển thị...'],
-                [96, 'Sẵn sàng vào Manga Tối Thượng...']
+                [8,  'Đang ưu tiên nạp logo thương hiệu...'],
+                [20, 'Đang khởi tạo giao diện...'],
+                [38, 'Đang giải mã tài nguyên hình ảnh...'],
+                [56, 'Đang chuẩn bị hình ảnh trang chủ...'],
+                [72, 'Đang đồng bộ dữ liệu giao diện...'],
+                [88, 'Đang hoàn thiện hiển thị...'],
+                [97, 'Sẵn sàng vào Manga Tối Thượng...']
             ];
 
             function updateBootProgress(next) {
-                shownProgress = Math.max(shownProgress, Math.min(100, next));
+                // Never show 100% until every required gate has actually resolved.
+                const cap = finished ? 100 : 97;
+                shownProgress = Math.max(shownProgress, Math.min(cap, next));
                 shell?.style.setProperty('--boot-progress', shownProgress.toFixed(2));
                 shell?.style.setProperty('--boot-scale', (shownProgress / 100).toFixed(4));
                 if (value) value.textContent = `${Math.round(shownProgress)}%`;
@@ -3418,63 +3425,90 @@
                 if (message && status) status.textContent = message;
             }
 
-            function waitForImage(img) {
-                if (img.complete) return Promise.resolve();
+            function waitForWindowLoad() {
+                if (document.readyState === 'complete') return Promise.resolve();
+                return new Promise(resolve => window.addEventListener('load', resolve, { once: true }));
+            }
+
+            async function waitForImageReady(img) {
+                if (!img) return;
+                if (!img.complete) {
+                    await new Promise(resolve => {
+                        img.addEventListener('load', resolve, { once: true });
+                        img.addEventListener('error', resolve, { once: true });
+                    });
+                }
+                // `complete` only means transfer finished; decode() ensures pixels are actually ready to paint.
+                if (img.naturalWidth > 0 && typeof img.decode === 'function') {
+                    try { await img.decode(); } catch (_) {}
+                }
+            }
+
+            function waitForVideoReady(video) {
+                if (!video) return Promise.resolve();
+                // readyState 3 = HAVE_FUTURE_DATA: enough decoded data to display smoothly, not just metadata.
+                if (video.readyState >= 3) return Promise.resolve();
                 return new Promise(resolve => {
-                    img.addEventListener('load', resolve, { once: true });
-                    img.addEventListener('error', resolve, { once: true });
+                    const done = () => resolve();
+                    video.addEventListener('canplay', done, { once: true });
+                    video.addEventListener('error', done, { once: true });
                 });
             }
 
-            function waitForVideo(video) {
-                if (video.readyState >= 2) return Promise.resolve();
-                return new Promise(resolve => {
-                    video.addEventListener('loadeddata', resolve, { once: true });
-                    video.addEventListener('error', resolve, { once: true });
-                });
-            }
+            // Explicit first-screen gates. Do not infer readiness from img.complete alone.
+            const loaderLogo = document.getElementById('boot-brand-logo');
+            const headerLogo = document.getElementById('header-brand-logo') || document.querySelector('header img[src*="logo_web"]');
+            const desktopHero = document.getElementById('desktop-hero-cover') || document.querySelector('img[src*="bia_mangatoithuong"]');
+            const mobileHeroVideo = document.getElementById('mobile-hero-video');
 
-            const criticalImages = [...document.images].filter(img => img.loading !== 'lazy' && !img.closest('#game-boot-loader'));
-            const criticalVideos = [...document.querySelectorAll('video[preload="auto"]')].filter(video => video.offsetParent !== null);
-            const tasks = [
-                ...criticalImages.map(waitForImage),
-                ...criticalVideos.map(waitForVideo)
+            const namedTasks = [
+                ['LOGO', waitForImageReady(loaderLogo)],
+                ['HEADER', waitForImageReady(headerLogo)],
+                ['FONT', document.fonts?.ready ? document.fonts.ready.catch(() => {}) : Promise.resolve()],
+                ['WINDOW', waitForWindowLoad()],
+                [isMobile ? 'VIDEO' : 'HERO', isMobile ? waitForVideoReady(mobileHeroVideo) : waitForImageReady(desktopHero)]
             ];
-            if (document.fonts?.ready) tasks.push(document.fonts.ready.catch(() => {}));
 
             let settled = 0;
-            const taskCount = Math.max(1, tasks.length);
-            tasks.forEach(task => Promise.resolve(task).finally(() => {
+            const taskCount = namedTasks.length;
+            namedTasks.forEach(([, task]) => Promise.resolve(task).finally(() => {
                 settled += 1;
-                updateBootProgress(12 + (settled / taskCount) * 76);
+                updateBootProgress(8 + (settled / taskCount) * 86);
             }));
 
+            // Cosmetic progress may advance, but stops below completion until all real gates resolve.
             const softProgress = setInterval(() => {
-                if (shownProgress < 88) updateBootProgress(shownProgress + Math.max(.6, (88 - shownProgress) * .035));
-            }, 110);
+                if (shownProgress < 94) {
+                    updateBootProgress(shownProgress + Math.max(.35, (94 - shownProgress) * .025));
+                }
+            }, 120);
 
-            function closeLoader() {
+            function closeLoader(reason = 'ready') {
                 if (finished) return;
                 finished = true;
                 clearInterval(softProgress);
                 updateBootProgress(100);
-                if (status) status.textContent = 'Hoàn tất · Chào mừng trở lại!';
-                const minVisible = reduceMotion ? 120 : 620;
-                const delay = Math.max(120, minVisible - (performance.now() - startedAt));
-                setTimeout(() => {
-                    loader?.classList.add('is-complete');
-                    document.body.classList.remove('site-loading');
-                    setTimeout(() => loader?.remove(), 560);
-                }, delay);
+                if (status) status.textContent = reason === 'timeout'
+                    ? 'Tài nguyên chính đã sẵn sàng · Đang vào game...'
+                    : 'Hoàn tất · Chào mừng trở lại!';
+
+                // Give browser one paint frame AFTER decode/canplay so the page under the overlay is already drawable.
+                requestAnimationFrame(() => requestAnimationFrame(() => {
+                    const minVisible = reduceMotion ? 140 : 760;
+                    const delay = Math.max(160, minVisible - (performance.now() - startedAt));
+                    setTimeout(() => {
+                        loader?.classList.add('is-complete');
+                        document.body.classList.remove('site-loading');
+                        setTimeout(() => loader?.remove(), 560);
+                    }, delay);
+                }));
             }
 
-            // Wait for critical visual data, but never let one slow CDN/media file trap the visitor.
-            Promise.race([
-                Promise.allSettled(tasks),
-                new Promise(resolve => setTimeout(resolve, 6500))
-            ]).then(closeLoader);
-            window.addEventListener('load', () => updateBootProgress(Math.max(shownProgress, 92)), { once: true });
-            setTimeout(closeLoader, 8000); // absolute safety cap
+            Promise.allSettled(namedTasks.map(([, task]) => task)).then(() => closeLoader('ready'));
+
+            // Absolute recovery only: never trap visitors forever if a media request hangs.
+            // It is intentionally much longer than before and does NOT simulate 100% early.
+            setTimeout(() => closeLoader('timeout'), 15000);
 
             // Gaming entrance animations: transform/opacity only, powered by IntersectionObserver.
             const revealSelectors = [
@@ -3545,5 +3579,6 @@
             });
         })();
     </script>
+
 </body>
 </html>
