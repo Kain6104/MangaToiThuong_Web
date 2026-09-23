@@ -1,0 +1,2996 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga Tối Thượng - Siêu Phẩm Game Manga 2026</title>
+    <link rel="icon" type="image/png" href="./img/logo_web_vuong.png">
+    <link rel="shortcut icon" href="./img/logo_web_vuong.png" type="image/png">
+    <link rel="apple-touch-icon" href="./img/logo_web_vuong.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        display: ['"Oswald"', 'sans-serif'],
+                    },
+                    colors: {
+                        gaming: {
+                            gold: '#FFBA00',
+                            goldHover: '#ff9900',
+                            red: '#ff2a2a',
+                            dark: '#0a0a0c',
+                            cardDark: '#141416',
+                            light: '#f8fafc',
+                            cardLight: '#ffffff'
+                        }
+                    },
+                    animation: {
+                        'neon-pulse': 'neon 1.5s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                    },
+                    keyframes: {
+                        neon: {
+                            '0%, 100%': {
+                                textShadow: '0 0 5px #fff, 0 0 10px #fff, 0 0 20px #FFBA00, 0 0 40px #FFBA00, 0 0 80px #FFBA00',
+                                color: '#fff'
+                            },
+                            '50%': {
+                                textShadow: '0 0 2px #fff, 0 0 5px #fff, 0 0 10px #FFBA00, 0 0 20px #FFBA00, 0 0 40px #FFBA00',
+                                color: '#ffe6a0'
+                            }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base Scroll Configuration */
+        html, body {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        .snap-section {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Fixed Header Glassmorphism for better contrast */
+        .header-glass {
+            background: rgba(10, 10, 12, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Keep the original glass header; match its colors to light mode. */
+        .header-glass {
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        html:not(.dark) .header-glass {
+            background: rgba(255, 255, 255, 0.85);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+        }
+        html:not(.dark) .header-glass nav .nav-link,
+        html:not(.dark) .header-glass #theme-toggle-mobile,
+        html:not(.dark) .header-glass #mobile-btn {
+            color: #172033;
+        }
+        html:not(.dark) .header-glass nav .nav-link:hover {
+            color: #bc7800;
+        }
+        html:not(.dark) .header-glass #theme-toggle {
+            background: #e9edf3;
+            color: #334155;
+        }
+        html:not(.dark) .header-glass .dropdown-menu,
+        html:not(.dark) .header-glass #mobile-menu {
+            background: rgba(255, 255, 255, 0.97);
+            border-color: rgba(15, 23, 42, 0.12);
+        }
+        html:not(.dark) .header-glass .dropdown-menu a,
+        html:not(.dark) .header-glass #mobile-menu a,
+        html:not(.dark) .header-glass #mobile-menu .accordion-trigger {
+            color: #172033;
+        }
+        html:not(.dark) .header-glass #mobile-menu .mobile-submenu {
+            background: rgba(15, 23, 42, 0.05);
+        }
+        html:not(.dark) .header-glass .dropdown-menu a:hover,
+        html:not(.dark) .header-glass #mobile-menu a:hover {
+            color: #bc7800;
+            background: rgba(15, 23, 42, 0.06);
+        }
+
+        /* Game-style system notice; the rest of the page retains its original styling. */
+        #coming-soon-toast {
+            position: fixed;
+            z-index: 100;
+            top: calc(96px + env(safe-area-inset-top));
+            right: 18px;
+            width: min(350px, calc(100vw - 24px));
+            overflow: hidden;
+            padding: 12px 38px 14px 14px;
+            border: 1px solid rgba(255, 186, 0, 0.52);
+            background: radial-gradient(circle at 100% 0%, rgba(255, 186, 0, 0.15), transparent 45%),
+                        linear-gradient(145deg, rgba(32, 36, 45, 0.98), rgba(9, 11, 17, 0.98));
+            color: #f5f6fa;
+            clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+            box-shadow: 0 18px 42px rgba(0, 0, 0, 0.4);
+            transform: translateX(calc(100% + 48px)) scale(0.96);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: transform 0.34s cubic-bezier(0.2, 0.85, 0.2, 1), opacity 0.26s ease, visibility 0.34s;
+        }
+        #coming-soon-toast.is-visible {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        #coming-soon-toast::before {
+            content: '';
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 3px;
+            background: linear-gradient(#ffdf71, #ffba00 45%, transparent);
+            box-shadow: 0 0 18px rgba(255, 186, 0, 0.7);
+        }
+        #coming-soon-toast .toast-accent {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            height: 6px;
+            margin: 0 0 9px;
+        }
+        #coming-soon-toast .toast-accent-bar {
+            display: block;
+            width: 112px;
+            height: 6px;
+            background: #ffba00;
+            clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 100%, 0 100%);
+            box-shadow: 0 0 12px rgba(255, 186, 0, 0.75);
+        }
+        #coming-soon-toast .toast-accent-slash {
+            display: block;
+            width: 4px;
+            height: 6px;
+            transform: skewX(-43deg);
+            background: #ffba00;
+        }
+        #coming-soon-toast .toast-icon {
+            display: grid;
+            flex: none;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            border: 1px solid rgba(255, 186, 0, 0.65);
+            background: rgba(255, 186, 0, 0.12);
+            color: #ffba00;
+            clip-path: polygon(16% 0, 100% 0, 100% 84%, 84% 100%, 0 100%, 0 16%);
+            box-shadow: inset 0 0 18px rgba(255, 186, 0, 0.14);
+        }
+        #coming-soon-toast .toast-title {
+            color: #ffcf50;
+            font: 700 16px 'Oswald', sans-serif;
+            letter-spacing: 0.08em;
+            line-height: 1.1;
+            text-shadow: 0 0 14px rgba(255, 186, 0, 0.32);
+        }
+        #coming-soon-message {
+            margin: 3px 0 0;
+            color: #d9dce5;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        #coming-soon-toast .toast-close {
+            position: absolute;
+            top: 13px;
+            right: 13px;
+            display: grid;
+            place-items: center;
+            width: 25px;
+            height: 25px;
+            border: 1px solid rgba(255, 186, 0, 0.32);
+            border-radius: 4px;
+            background: rgba(255, 186, 0, 0.08);
+            color: #f3d27b;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        #coming-soon-toast .toast-close:hover,
+        #coming-soon-toast .toast-close:focus-visible {
+            background: #ffba00;
+            color: #17120a;
+        }
+        #coming-soon-toast .toast-close:focus-visible {
+            outline: 2px solid #ffba00;
+            outline-offset: 2px;
+        }
+        #coming-soon-toast .toast-timer {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ffba00, #ffe18c);
+            transform-origin: left;
+        }
+        #coming-soon-toast.is-visible .toast-timer {
+            animation: toast-timer 4.2s linear forwards;
+        }
+        @keyframes toast-timer {
+            to { transform: scaleX(0); }
+        }
+        html:not(.dark) #coming-soon-toast {
+            background: radial-gradient(circle at 100% 0%, rgba(255, 186, 0, 0.16), transparent 48%),
+                        linear-gradient(145deg, rgba(255, 255, 255, 0.99), rgba(242, 245, 250, 0.99));
+            color: #172033;
+            border-color: rgba(187, 127, 0, 0.55);
+            box-shadow: 0 18px 42px rgba(15, 23, 42, 0.22);
+        }
+        html:not(.dark) #coming-soon-toast .toast-title { color: #a56b00; }
+        html:not(.dark) #coming-soon-message { color: #334155; }
+        html:not(.dark) #coming-soon-toast .toast-close { color: #835800; }
+        @media (max-width: 640px) {
+            #coming-soon-toast {
+                top: calc(90px + env(safe-area-inset-top));
+                right: 10px;
+                width: min(340px, calc(100vw - 20px));
+                padding: 12px 38px 13px 12px;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            #coming-soon-toast { transition: none; }
+            #coming-soon-toast.is-visible .toast-timer { animation: none; }
+        }
+
+        /* Desktop Dropdown Effects */
+        .nav-item {
+            position: relative;
+        }
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #FFBA00;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            box-shadow: 0 0 8px #FFBA00;
+        }
+        .nav-item:hover .nav-link::after, .nav-item.active .nav-link::after {
+            width: 100%;
+        }
+        
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px) scale(0.95);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: top;
+        }
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Mobile Accordion */
+        .mobile-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+        }
+        .mobile-submenu.open {
+            max-height: 250px;
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .mobile-submenu.open ~ .accordion-trigger .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Futuristic Button */
+        .btn-futuristic {
+            position: relative;
+            padding: 10px 28px;
+            background: transparent;
+            color: #FFBA00;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            border: 1px solid #FFBA00;
+            transform: skewX(-15deg);
+            overflow: hidden;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .btn-futuristic span {
+            display: inline-block;
+            transform: skewX(15deg);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .btn-futuristic::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #FFBA00;
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+        .btn-futuristic:hover::before {
+            transform: scaleY(1);
+        }
+        .btn-futuristic:hover {
+            color: #000;
+            box-shadow: 0 0 20px rgba(255, 186, 0, 0.8);
+        }
+
+        /* Back to Top Circle */
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.1s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+
+        /* Image Hover Effects */
+        .hover-zoom {
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .card-container:hover .hover-zoom {
+            transform: scale(1.1);
+        }
+
+        /* Divider */
+        .skew-divider {
+            position: absolute;
+            top: -30px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: inherit;
+            transform: skewY(-2deg);
+            z-index: 10;
+            border-top: 2px solid #FFBA00;
+        }
+
+
+        /* ================================
+           GAME DEVELOPMENT PROGRESS MODAL
+           ================================ */
+        body.progress-modal-open {
+            overflow: hidden;
+        }
+
+        #game-progress-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 220;
+            display: grid;
+            place-items: center;
+            padding: 18px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity .28s ease, visibility .28s ease;
+        }
+
+        #game-progress-modal.is-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .progress-modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 15%, rgba(59, 130, 246, .13), transparent 32%),
+                radial-gradient(circle at 82% 12%, rgba(255, 186, 0, .12), transparent 28%),
+                rgba(2, 4, 10, .88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .progress-modal-shell {
+            --hud-gold: #ffba00;
+            --hud-blue: #3b82f6;
+            position: relative;
+            width: min(1180px, 100%);
+            height: min(820px, calc(100vh - 36px));
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            color: #eef2ff;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,.035), transparent 35%),
+                linear-gradient(180deg, #111522 0%, #0a0d15 100%);
+            border: 1px solid rgba(255, 186, 0, .38);
+            clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 28px 100%, 0 calc(100% - 28px));
+            box-shadow: 0 34px 100px rgba(0,0,0,.68), 0 0 0 1px rgba(59,130,246,.08) inset;
+            transform: translateY(20px) scale(.975);
+            transition: transform .34s cubic-bezier(.2,.85,.2,1);
+        }
+
+        #game-progress-modal.is-open .progress-modal-shell {
+            transform: translateY(0) scale(1);
+        }
+
+        .progress-modal-shell::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: .22;
+            background-image:
+                linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+            background-size: 32px 32px;
+            mask-image: linear-gradient(to bottom, black, transparent 68%);
+        }
+
+        .progress-modal-topline {
+            height: 4px;
+            flex: none;
+            background: linear-gradient(90deg, #ffba00 0 18%, #ff7a00 35%, #3b82f6 68%, transparent 100%);
+            box-shadow: 0 0 24px rgba(255,186,0,.38);
+        }
+
+        .progress-modal-header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 22px 26px 18px;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+            background: linear-gradient(90deg, rgba(255,186,0,.055), transparent 38%, rgba(59,130,246,.045));
+        }
+
+        .progress-modal-kicker {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffcf50;
+            font: 700 11px/1 'Inter', sans-serif;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+        }
+
+        .progress-modal-kicker::before {
+            content: '';
+            width: 32px;
+            height: 3px;
+            background: #ffba00;
+            box-shadow: 0 0 12px rgba(255,186,0,.75);
+        }
+
+        .progress-modal-title {
+            margin-top: 8px;
+            font: 700 clamp(24px, 3vw, 38px)/1.05 'Oswald', sans-serif;
+            letter-spacing: .035em;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .progress-modal-subtitle {
+            margin-top: 8px;
+            max-width: 720px;
+            color: #9ca7ba;
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .progress-modal-close {
+            flex: none;
+            display: grid;
+            place-items: center;
+            width: 42px;
+            height: 42px;
+            border: 1px solid rgba(255,186,0,.35);
+            background: rgba(255,186,0,.07);
+            color: #f6d77d;
+            cursor: pointer;
+            clip-path: polygon(0 0, 100% 0, 100% 76%, 76% 100%, 0 100%);
+            transition: .2s ease;
+        }
+
+        .progress-modal-close:hover,
+        .progress-modal-close:focus-visible {
+            color: #111;
+            background: #ffba00;
+            box-shadow: 0 0 22px rgba(255,186,0,.38);
+            outline: none;
+        }
+
+        .progress-modal-body {
+            position: relative;
+            z-index: 1;
+            min-height: 0;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 310px minmax(0, 1fr);
+        }
+
+        .progress-overview-panel {
+            min-height: 0;
+            overflow-y: auto;
+            padding: 22px;
+            border-right: 1px solid rgba(255,255,255,.08);
+            background: rgba(6,9,15,.42);
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,186,0,.45) transparent;
+        }
+
+        .overall-progress-hud {
+            display: grid;
+            place-items: center;
+            padding: 18px 10px 22px;
+            border: 1px solid rgba(255,186,0,.16);
+            background: linear-gradient(145deg, rgba(255,186,0,.06), rgba(59,130,246,.035));
+            clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+        }
+
+        .progress-ring-hud {
+            --progress: 0;
+            position: relative;
+            width: 154px;
+            aspect-ratio: 1;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: conic-gradient(#ffba00 calc(var(--progress) * 1%), rgba(255,255,255,.08) 0);
+            filter: drop-shadow(0 0 14px rgba(255,186,0,.18));
+        }
+
+        .progress-ring-hud::before {
+            content: '';
+            position: absolute;
+            inset: 9px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 45% 35%, #1a2030, #090c13 68%);
+            border: 1px solid rgba(255,255,255,.08);
+            box-shadow: inset 0 0 28px rgba(0,0,0,.45);
+        }
+
+        .progress-ring-value {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .progress-ring-value strong {
+            display: block;
+            font: 700 34px/1 'Oswald', sans-serif;
+            color: #fff;
+            letter-spacing: .02em;
+        }
+
+        .progress-ring-value span {
+            display: block;
+            margin-top: 5px;
+            color: #ffca3a;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        .overall-caption {
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .overall-caption strong {
+            display: block;
+            color: #fff;
+            font: 700 17px 'Oswald', sans-serif;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+        }
+
+        .overall-caption span {
+            display: block;
+            margin-top: 5px;
+            color: #778398;
+            font-size: 11px;
+        }
+
+        .progress-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 9px;
+            margin-top: 14px;
+        }
+
+        .progress-stat {
+            padding: 11px 12px;
+            border: 1px solid rgba(255,255,255,.075);
+            background: rgba(255,255,255,.026);
+        }
+
+        .progress-stat strong {
+            display: block;
+            font: 700 21px/1 'Oswald', sans-serif;
+            color: #fff;
+        }
+
+        .progress-stat span {
+            display: block;
+            margin-top: 5px;
+            color: #7f8a9d;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .progress-status-legend {
+            display: grid;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .progress-legend-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 9px 10px;
+            border-bottom: 1px solid rgba(255,255,255,.055);
+            color: #aab3c3;
+            font-size: 11px;
+        }
+
+        .progress-legend-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px currentColor;
+        }
+
+        .progress-content-panel {
+            min-width: 0;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .progress-toolbar {
+            flex: none;
+            padding: 16px 20px 12px;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+            background: rgba(8,11,18,.72);
+        }
+
+        .progress-search {
+            position: relative;
+        }
+
+        .progress-search svg {
+            position: absolute;
+            left: 13px;
+            top: 50%;
+            width: 16px;
+            transform: translateY(-50%);
+            color: #6f7a8d;
+            pointer-events: none;
+        }
+
+        #progress-search-input {
+            width: 100%;
+            height: 42px;
+            padding: 0 14px 0 40px;
+            border: 1px solid rgba(255,255,255,.09);
+            background: rgba(255,255,255,.035);
+            color: #fff;
+            outline: none;
+            font-size: 12px;
+            transition: border .2s ease, box-shadow .2s ease;
+        }
+
+        #progress-search-input::placeholder { color: #657083; }
+        #progress-search-input:focus {
+            border-color: rgba(255,186,0,.48);
+            box-shadow: 0 0 0 3px rgba(255,186,0,.07);
+        }
+
+        .progress-filter-tabs {
+            display: flex;
+            gap: 7px;
+            margin-top: 10px;
+            overflow-x: auto;
+            padding-bottom: 2px;
+            scrollbar-width: none;
+        }
+
+        .progress-filter-tabs::-webkit-scrollbar { display: none; }
+
+        .progress-filter-btn {
+            flex: none;
+            padding: 7px 11px;
+            border: 1px solid rgba(255,255,255,.09);
+            background: rgba(255,255,255,.025);
+            color: #8f99aa;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: .18s ease;
+        }
+
+        .progress-filter-btn:hover,
+        .progress-filter-btn.is-active {
+            color: #16120a;
+            border-color: #ffba00;
+            background: #ffba00;
+            box-shadow: 0 0 16px rgba(255,186,0,.18);
+        }
+
+        #progress-module-list {
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+            padding: 14px 20px 22px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,186,0,.42) transparent;
+        }
+
+        .progress-module-card {
+            margin-bottom: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.075);
+            background: linear-gradient(145deg, rgba(255,255,255,.038), rgba(255,255,255,.014));
+            transition: border-color .2s ease, transform .2s ease, background .2s ease;
+        }
+
+        .progress-module-card:hover {
+            border-color: rgba(255,186,0,.23);
+            background: linear-gradient(145deg, rgba(255,186,0,.045), rgba(255,255,255,.018));
+        }
+
+        .progress-module-card.is-expanded {
+            border-color: rgba(255,186,0,.32);
+        }
+
+        .progress-module-trigger {
+            width: 100%;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 12px;
+            align-items: center;
+            padding: 14px 15px;
+            text-align: left;
+            color: inherit;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .progress-module-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        .module-index {
+            flex: none;
+            display: grid;
+            place-items: center;
+            width: 28px;
+            height: 28px;
+            color: #ffca3a;
+            border: 1px solid rgba(255,186,0,.25);
+            background: rgba(255,186,0,.055);
+            font: 700 10px 'Oswald', sans-serif;
+        }
+
+        .progress-module-name strong {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #edf1f8;
+            font: 600 13px 'Inter', sans-serif;
+        }
+
+        .progress-module-meta {
+            margin-top: 5px;
+            color: #687489;
+            font-size: 10px;
+        }
+
+        .progress-module-score {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .progress-module-score strong {
+            min-width: 54px;
+            text-align: right;
+            color: #fff;
+            font: 700 17px 'Oswald', sans-serif;
+        }
+
+        .module-chevron {
+            width: 17px;
+            color: #738096;
+            transition: transform .2s ease, color .2s ease;
+        }
+
+        .progress-module-card.is-expanded .module-chevron {
+            transform: rotate(180deg);
+            color: #ffba00;
+        }
+
+        .module-progress-track {
+            height: 3px;
+            margin: 0 15px 13px 53px;
+            overflow: hidden;
+            background: rgba(255,255,255,.065);
+        }
+
+        .module-progress-fill {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, #ffba00, #ff7a00 60%, #3b82f6);
+            box-shadow: 0 0 12px rgba(255,186,0,.28);
+            transition: width .6s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .progress-feature-list {
+            display: none;
+            padding: 0 14px 14px 53px;
+        }
+
+        .progress-module-card.is-expanded .progress-feature-list {
+            display: grid;
+            gap: 7px;
+        }
+
+        .progress-feature-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto auto;
+            gap: 10px;
+            align-items: center;
+            min-height: 38px;
+            padding: 8px 9px 8px 11px;
+            border-left: 2px solid rgba(255,255,255,.08);
+            background: rgba(255,255,255,.022);
+        }
+
+        .progress-feature-name {
+            color: #bec6d4;
+            font-size: 11px;
+            line-height: 1.35;
+        }
+
+        .progress-feature-percent {
+            color: #dbe1eb;
+            font: 700 11px 'Oswald', sans-serif;
+        }
+
+        .progress-status-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 78px;
+            padding: 5px 7px;
+            border: 1px solid currentColor;
+            font-size: 8px;
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: .055em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            opacity: .95;
+        }
+
+        .status-DONE { color: #4ade80; background: rgba(74,222,128,.07); }
+        .status-PARTIAL { color: #60a5fa; background: rgba(96,165,250,.07); }
+        .status-RESEARCH_ONLY { color: #c084fc; background: rgba(192,132,252,.07); }
+        .status-NOT_STARTED { color: #94a3b8; background: rgba(148,163,184,.055); }
+        .status-BLOCKED { color: #fb7185; background: rgba(251,113,133,.07); }
+
+        .progress-empty-state {
+            padding: 60px 20px;
+            text-align: center;
+            color: #6f7b90;
+            font-size: 12px;
+        }
+
+        .progress-modal-footer {
+            position: relative;
+            z-index: 2;
+            flex: none;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 10px 20px;
+            border-top: 1px solid rgba(255,255,255,.07);
+            background: #080b11;
+            color: #657084;
+            font-size: 9px;
+            letter-spacing: .035em;
+        }
+
+        .progress-modal-footer strong { color: #aab4c5; }
+
+        @media (max-width: 860px) {
+            #game-progress-modal { padding: 0; }
+            .progress-modal-shell {
+                width: 100%;
+                height: 100dvh;
+                max-height: none;
+                clip-path: none;
+                border: 0;
+            }
+            .progress-modal-header { padding: 17px 15px 14px; }
+            .progress-modal-subtitle { display: none; }
+            .progress-modal-body {
+                display: block;
+                overflow-y: auto;
+            }
+            .progress-overview-panel {
+                overflow: visible;
+                border-right: 0;
+                border-bottom: 1px solid rgba(255,255,255,.08);
+                padding: 15px;
+            }
+            .overall-progress-hud {
+                grid-template-columns: auto 1fr;
+                justify-items: start;
+                gap: 18px;
+                padding: 14px;
+            }
+            .progress-ring-hud { width: 112px; }
+            .progress-ring-value strong { font-size: 27px; }
+            .overall-caption { margin-top: 0; text-align: left; }
+            .progress-stat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .progress-status-legend { display: none; }
+            .progress-content-panel { overflow: visible; }
+            #progress-module-list { overflow: visible; padding: 12px 12px 20px; }
+            .progress-toolbar { position: sticky; top: 0; z-index: 5; padding: 11px 12px 9px; }
+            .progress-feature-list { padding-left: 14px; }
+            .module-progress-track { margin-left: 15px; }
+            .progress-modal-footer { display: none; }
+        }
+
+        @media (max-width: 520px) {
+            .progress-modal-title { font-size: 23px; }
+            .progress-modal-kicker { font-size: 9px; }
+            .progress-modal-close { width: 38px; height: 38px; }
+            .progress-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .progress-module-trigger { padding: 12px 11px; }
+            .module-index { width: 25px; height: 25px; }
+            .progress-module-score strong { min-width: 45px; font-size: 15px; }
+            .progress-feature-row {
+                grid-template-columns: minmax(0, 1fr) auto;
+            }
+            .progress-status-badge {
+                grid-column: 1 / -1;
+                justify-self: start;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            #game-progress-modal,
+            .progress-modal-shell,
+            .module-progress-fill,
+            .module-chevron { transition: none !important; }
+        }
+
+    
+
+        /* =====================================
+           PROGRESS MODAL — LIGHT THEME PARITY
+           Follows the same html.dark preference as the website.
+           ===================================== */
+        html:not(.dark) .progress-modal-backdrop {
+            background:
+                radial-gradient(circle at 18% 10%, rgba(59,130,246,.13), transparent 34%),
+                radial-gradient(circle at 84% 12%, rgba(255,186,0,.18), transparent 30%),
+                rgba(226,232,240,.78);
+        }
+
+        html:not(.dark) .progress-modal-shell {
+            color: #172033;
+            background:
+                linear-gradient(135deg, rgba(255,186,0,.08), transparent 34%),
+                linear-gradient(180deg, rgba(255,255,255,.995) 0%, rgba(242,245,250,.995) 100%);
+            border-color: rgba(180,121,0,.42);
+            box-shadow: 0 34px 100px rgba(15,23,42,.24), 0 0 0 1px rgba(59,130,246,.06) inset;
+        }
+
+        html:not(.dark) .progress-modal-shell::before {
+            opacity: .28;
+            background-image:
+                linear-gradient(rgba(15,23,42,.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(15,23,42,.045) 1px, transparent 1px);
+        }
+
+        html:not(.dark) .progress-modal-header {
+            border-bottom-color: rgba(15,23,42,.09);
+            background: linear-gradient(90deg, rgba(255,186,0,.12), transparent 40%, rgba(59,130,246,.07));
+        }
+
+        html:not(.dark) .progress-modal-kicker { color: #a86d00; }
+        html:not(.dark) .progress-modal-title { color: #111827; }
+        html:not(.dark) .progress-modal-subtitle { color: #5f6b7d; }
+
+        html:not(.dark) .progress-modal-close {
+            color: #8f6000;
+            border-color: rgba(178,120,0,.34);
+            background: rgba(255,186,0,.1);
+        }
+
+        html:not(.dark) .progress-modal-close:hover,
+        html:not(.dark) .progress-modal-close:focus-visible {
+            color: #17120a;
+            background: #ffba00;
+        }
+
+        html:not(.dark) .progress-overview-panel {
+            border-right-color: rgba(15,23,42,.085);
+            background: rgba(241,245,249,.72);
+        }
+
+        html:not(.dark) .overall-progress-hud {
+            border-color: rgba(178,120,0,.18);
+            background: linear-gradient(145deg, rgba(255,186,0,.11), rgba(59,130,246,.06));
+        }
+
+        html:not(.dark) .progress-ring-hud {
+            background: conic-gradient(#e6a700 calc(var(--progress) * 1%), rgba(15,23,42,.10) 0);
+            filter: drop-shadow(0 0 12px rgba(255,186,0,.16));
+        }
+
+        html:not(.dark) .progress-ring-hud::before {
+            background: radial-gradient(circle at 45% 35%, #ffffff, #edf1f6 70%);
+            border-color: rgba(15,23,42,.08);
+            box-shadow: inset 0 0 24px rgba(15,23,42,.07);
+        }
+
+        html:not(.dark) .progress-ring-value strong,
+        html:not(.dark) .overall-caption strong,
+        html:not(.dark) .progress-stat strong,
+        html:not(.dark) .progress-module-score strong { color: #111827; }
+
+        html:not(.dark) .progress-ring-value span { color: #9b6800; }
+        html:not(.dark) .overall-caption span,
+        html:not(.dark) .progress-stat span,
+        html:not(.dark) .progress-module-meta,
+        html:not(.dark) .module-chevron,
+        html:not(.dark) .progress-empty-state { color: #64748b; }
+
+        html:not(.dark) .progress-stat {
+            border-color: rgba(15,23,42,.08);
+            background: rgba(255,255,255,.72);
+        }
+
+        html:not(.dark) .progress-legend-row {
+            border-bottom-color: rgba(15,23,42,.07);
+            color: #4b5563;
+        }
+
+        html:not(.dark) .progress-toolbar {
+            border-bottom-color: rgba(15,23,42,.08);
+            background: rgba(248,250,252,.92);
+        }
+
+        html:not(.dark) #progress-search-input {
+            border-color: rgba(15,23,42,.11);
+            background: rgba(255,255,255,.92);
+            color: #172033;
+        }
+
+        html:not(.dark) #progress-search-input::placeholder { color: #8a94a5; }
+        html:not(.dark) .progress-search svg { color: #758196; }
+
+        html:not(.dark) .progress-filter-btn {
+            border-color: rgba(15,23,42,.1);
+            background: rgba(255,255,255,.78);
+            color: #667085;
+        }
+
+        html:not(.dark) .progress-filter-btn:hover,
+        html:not(.dark) .progress-filter-btn.is-active {
+            color: #17120a;
+            background: #ffba00;
+            border-color: #d99d00;
+        }
+
+        html:not(.dark) .progress-module-card {
+            border-color: rgba(15,23,42,.085);
+            background: linear-gradient(145deg, rgba(255,255,255,.96), rgba(245,247,251,.88));
+            box-shadow: 0 8px 22px rgba(15,23,42,.035);
+        }
+
+        html:not(.dark) .progress-module-card:hover,
+        html:not(.dark) .progress-module-card.is-expanded {
+            border-color: rgba(190,128,0,.28);
+            background: linear-gradient(145deg, rgba(255,249,232,.94), rgba(248,250,252,.98));
+        }
+
+        html:not(.dark) .module-index {
+            color: #9a6700;
+            border-color: rgba(184,123,0,.27);
+            background: rgba(255,186,0,.10);
+        }
+
+        html:not(.dark) .progress-module-name strong { color: #172033; }
+        html:not(.dark) .module-progress-track { background: rgba(15,23,42,.09); }
+
+        html:not(.dark) .progress-feature-row {
+            border-left-color: rgba(15,23,42,.10);
+            background: rgba(15,23,42,.025);
+        }
+
+        html:not(.dark) .progress-feature-name { color: #465266; }
+        html:not(.dark) .progress-feature-percent { color: #273449; }
+
+        html:not(.dark) .status-DONE { color: #15803d; background: rgba(22,163,74,.07); }
+        html:not(.dark) .status-PARTIAL { color: #2563eb; background: rgba(37,99,235,.07); }
+        html:not(.dark) .status-RESEARCH_ONLY { color: #9333ea; background: rgba(147,51,234,.07); }
+        html:not(.dark) .status-NOT_STARTED { color: #64748b; background: rgba(100,116,139,.07); }
+        html:not(.dark) .status-BLOCKED { color: #e11d48; background: rgba(225,29,72,.07); }
+
+        html:not(.dark) .progress-modal-footer {
+            border-top-color: rgba(15,23,42,.08);
+            background: #edf1f6;
+            color: #6b7280;
+        }
+
+        html:not(.dark) .progress-modal-footer strong { color: #374151; }
+
+        /* =====================================
+           PREMIUM GAMING FOOTER
+           ===================================== */
+        .game-footer {
+            position: relative;
+            overflow: hidden;
+            min-height: auto;
+            padding: 0;
+            isolation: isolate;
+            color: #d6dbe5;
+            background:
+                radial-gradient(circle at 12% -20%, rgba(255,186,0,.15), transparent 34%),
+                radial-gradient(circle at 90% 0%, rgba(59,130,246,.13), transparent 28%),
+                linear-gradient(180deg, #090b11 0%, #050609 100%);
+            border-top: 1px solid rgba(255,186,0,.28);
+        }
+
+        .game-footer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            opacity: .30;
+            background-image:
+                linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+            background-size: 36px 36px;
+            mask-image: linear-gradient(to bottom, black 0%, transparent 72%);
+        }
+
+        .game-footer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ffba00 12%, #ff7a00 38%, #3b82f6 72%, transparent 96%);
+            box-shadow: 0 0 26px rgba(255,186,0,.35);
+        }
+
+        .footer-orbit {
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            right: -170px;
+            bottom: -230px;
+            border: 1px solid rgba(255,186,0,.10);
+            border-radius: 50%;
+            box-shadow: 0 0 0 38px rgba(255,186,0,.018), 0 0 0 78px rgba(59,130,246,.018);
+            pointer-events: none;
+        }
+
+        .footer-inner {
+            position: relative;
+            width: min(1280px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 56px 0 28px;
+        }
+
+        .footer-command {
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr);
+            gap: 28px;
+            align-items: stretch;
+            padding-bottom: 34px;
+        }
+
+        .footer-brand-block,
+        .footer-progress-panel {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.08);
+            background: linear-gradient(145deg, rgba(255,255,255,.042), rgba(255,255,255,.015));
+            box-shadow: 0 18px 50px rgba(0,0,0,.2);
+        }
+
+        .footer-brand-block {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            padding: 28px;
+            clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%);
+        }
+
+        .footer-brand-logo-wrap {
+            flex: none;
+            position: relative;
+            display: grid;
+            place-items: center;
+            width: 108px;
+            height: 108px;
+            border: 1px solid rgba(255,186,0,.26);
+            background: radial-gradient(circle, rgba(255,186,0,.12), rgba(255,186,0,.025) 58%, transparent 70%);
+            box-shadow: inset 0 0 28px rgba(255,186,0,.06);
+        }
+
+        .footer-brand-logo-wrap::before,
+        .footer-brand-logo-wrap::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-color: #ffba00;
+        }
+
+        .footer-brand-logo-wrap::before { top: -1px; left: -1px; border-top: 2px solid; border-left: 2px solid; }
+        .footer-brand-logo-wrap::after { right: -1px; bottom: -1px; border-right: 2px solid; border-bottom: 2px solid; }
+
+        .footer-brand-logo { width: 82px; height: 82px; object-fit: contain; filter: drop-shadow(0 0 16px rgba(255,186,0,.28)); }
+        .footer-eyebrow { color: #ffcb42; font: 800 10px/1 'Inter', sans-serif; letter-spacing: .22em; text-transform: uppercase; }
+        .footer-title { margin-top: 8px; color: #fff; font: 700 clamp(28px, 3vw, 44px)/1 'Oswald', sans-serif; letter-spacing: .04em; text-transform: uppercase; }
+        .footer-copy { max-width: 690px; margin-top: 11px; color: #8f99aa; font-size: 13px; line-height: 1.65; }
+
+        .footer-status-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+        .footer-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            min-height: 29px;
+            padding: 0 10px;
+            border: 1px solid rgba(255,255,255,.09);
+            background: rgba(255,255,255,.03);
+            color: #b9c1ce;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .footer-chip i { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 10px currentColor; }
+        .footer-chip.gold i { background: #ffba00; }
+        .footer-chip.blue i { background: #60a5fa; }
+
+        .footer-progress-panel {
+            padding: 24px;
+            clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
+        }
+
+        .footer-panel-label { display: flex; align-items: center; justify-content: space-between; gap: 14px; color: #8d98aa; font-size: 9px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+        .footer-panel-label span:last-child { color: #ffca3a; }
+        .footer-progress-value { margin-top: 14px; color: #fff; font: 700 38px/1 'Oswald', sans-serif; letter-spacing: .02em; }
+        .footer-progress-track { height: 8px; margin-top: 16px; overflow: hidden; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.05); }
+        .footer-progress-fill { width: 0; height: 100%; background: linear-gradient(90deg, #ffba00, #ff7a00 58%, #3b82f6); box-shadow: 0 0 18px rgba(255,186,0,.32); transition: width .75s cubic-bezier(.2,.8,.2,1); }
+        .footer-progress-meta { display: flex; justify-content: space-between; gap: 12px; margin-top: 10px; color: #758196; font-size: 10px; }
+
+        .footer-progress-action {
+            width: 100%;
+            margin-top: 18px;
+            min-height: 42px;
+            border: 1px solid rgba(255,186,0,.34);
+            background: rgba(255,186,0,.07);
+            color: #ffcb42;
+            font: 700 11px 'Oswald', sans-serif;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+        .footer-progress-action:hover { color: #111; background: #ffba00; box-shadow: 0 0 22px rgba(255,186,0,.22); }
+
+        .footer-nav-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr .95fr .95fr;
+            gap: 20px;
+            padding: 32px 0 34px;
+            border-top: 1px solid rgba(255,255,255,.075);
+            border-bottom: 1px solid rgba(255,255,255,.075);
+        }
+
+        .footer-column { min-width: 0; }
+        .footer-column-title { margin-bottom: 15px; color: #fff; font: 700 14px 'Oswald', sans-serif; letter-spacing: .09em; text-transform: uppercase; }
+        .footer-column-title::after { content: ''; display: block; width: 34px; height: 2px; margin-top: 8px; background: #ffba00; box-shadow: 0 0 10px rgba(255,186,0,.45); }
+        .footer-links { display: grid; gap: 10px; }
+        .footer-link { display: inline-flex; align-items: center; gap: 8px; width: fit-content; color: #818b9d; font-size: 12px; transition: color .2s ease, transform .2s ease; }
+        .footer-link::before { content: ''; width: 5px; height: 5px; border: 1px solid #ffba00; transform: rotate(45deg); opacity: .55; }
+        .footer-link:hover { color: #ffca3a; transform: translateX(3px); }
+
+        .footer-launch-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 14px;
+            border: 1px solid rgba(255,186,0,.14);
+            background: rgba(255,186,0,.045);
+        }
+        .footer-launch-date { color: #ffca3a; font: 700 24px/1 'Oswald', sans-serif; }
+        .footer-launch-text strong { display: block; color: #e8edf5; font: 700 11px 'Oswald', sans-serif; letter-spacing: .06em; }
+        .footer-launch-text span { display: block; margin-top: 3px; color: #758196; font-size: 9px; }
+
+        .footer-community-buttons { display: grid; gap: 9px; }
+        .footer-community-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            min-height: 42px;
+            padding: 0 13px;
+            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(255,255,255,.025);
+            color: #b8c0cd;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            transition: .2s ease;
+        }
+        .footer-community-btn:hover { border-color: rgba(255,186,0,.35); color: #ffca3a; background: rgba(255,186,0,.05); transform: translateY(-1px); }
+        .footer-community-btn svg { width: 15px; height: 15px; flex: none; }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 24px;
+            color: #657084;
+            font-size: 10px;
+        }
+        .footer-bottom strong { color: #aeb7c5; font-weight: 700; }
+        .footer-legal { display: flex; flex-wrap: wrap; gap: 16px; justify-content: flex-end; }
+        .footer-legal a { transition: color .2s ease; }
+        .footer-legal a:hover { color: #ffca3a; }
+
+        .footer-health-notice {
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 11px 14px;
+            border: 1px solid rgba(251,113,133,.18);
+            background: rgba(251,113,133,.045);
+            color: #fb7185;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+        .footer-health-notice svg { width: 17px; height: 17px; flex: none; }
+
+        html:not(.dark) .game-footer {
+            color: #334155;
+            background:
+                radial-gradient(circle at 12% -20%, rgba(255,186,0,.16), transparent 34%),
+                radial-gradient(circle at 90% 0%, rgba(59,130,246,.10), transparent 28%),
+                linear-gradient(180deg, #f8fafc 0%, #edf1f6 100%);
+            border-top-color: rgba(181,122,0,.27);
+        }
+        html:not(.dark) .game-footer::before {
+            background-image:
+                linear-gradient(rgba(15,23,42,.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(15,23,42,.04) 1px, transparent 1px);
+        }
+        html:not(.dark) .footer-brand-block,
+        html:not(.dark) .footer-progress-panel {
+            border-color: rgba(15,23,42,.09);
+            background: linear-gradient(145deg, rgba(255,255,255,.96), rgba(241,245,249,.82));
+            box-shadow: 0 18px 42px rgba(15,23,42,.08);
+        }
+        html:not(.dark) .footer-brand-logo-wrap { border-color: rgba(174,117,0,.22); background: rgba(255,186,0,.08); }
+        html:not(.dark) .footer-eyebrow,
+        html:not(.dark) .footer-panel-label span:last-child,
+        html:not(.dark) .footer-launch-date { color: #9a6700; }
+        html:not(.dark) .footer-title,
+        html:not(.dark) .footer-progress-value,
+        html:not(.dark) .footer-column-title { color: #111827; }
+        html:not(.dark) .footer-copy,
+        html:not(.dark) .footer-progress-meta,
+        html:not(.dark) .footer-panel-label,
+        html:not(.dark) .footer-link { color: #64748b; }
+        html:not(.dark) .footer-chip { border-color: rgba(15,23,42,.09); background: rgba(255,255,255,.65); color: #526072; }
+        html:not(.dark) .footer-progress-track { background: rgba(15,23,42,.09); border-color: rgba(15,23,42,.05); }
+        html:not(.dark) .footer-progress-action { color: #875b00; border-color: rgba(161,108,0,.28); background: rgba(255,186,0,.11); }
+        html:not(.dark) .footer-progress-action:hover { color: #111; background: #ffba00; }
+        html:not(.dark) .footer-nav-grid { border-color: rgba(15,23,42,.09); }
+        html:not(.dark) .footer-launch-card { border-color: rgba(171,114,0,.16); background: rgba(255,186,0,.08); }
+        html:not(.dark) .footer-launch-text strong { color: #263247; }
+        html:not(.dark) .footer-launch-text span { color: #718096; }
+        html:not(.dark) .footer-community-btn { border-color: rgba(15,23,42,.09); background: rgba(255,255,255,.64); color: #526072; }
+        html:not(.dark) .footer-community-btn:hover { border-color: rgba(171,114,0,.28); color: #8f6000; background: rgba(255,186,0,.10); }
+        html:not(.dark) .footer-bottom { color: #748096; }
+        html:not(.dark) .footer-bottom strong { color: #374151; }
+        html:not(.dark) .footer-health-notice { color: #be123c; border-color: rgba(190,18,60,.16); background: rgba(244,63,94,.055); }
+
+        @media (max-width: 900px) {
+            .footer-command { grid-template-columns: 1fr; }
+            .footer-nav-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 640px) {
+            .footer-inner { width: min(100% - 24px, 1280px); padding-top: 34px; }
+            .footer-brand-block { align-items: flex-start; padding: 20px; gap: 15px; }
+            .footer-brand-logo-wrap { width: 72px; height: 72px; }
+            .footer-brand-logo { width: 54px; height: 54px; }
+            .footer-copy { font-size: 11px; }
+            .footer-status-row { gap: 6px; }
+            .footer-chip { font-size: 8px; min-height: 27px; }
+            .footer-progress-panel { padding: 20px; }
+            .footer-nav-grid { grid-template-columns: 1fr; gap: 24px; padding: 28px 0; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; }
+            .footer-legal { justify-content: flex-start; }
+            .footer-health-notice { align-items: flex-start; justify-content: flex-start; font-size: 9px; line-height: 1.45; }
+        }
+
+
+        /* =====================================
+           EXTERNAL LINK CONFIRMATION — GAMING HUD
+           ===================================== */
+        body.external-link-modal-open {
+            overflow: hidden;
+        }
+
+        #external-link-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 340;
+            display: grid;
+            place-items: center;
+            padding: 18px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity .24s ease, visibility .24s ease;
+        }
+
+        #external-link-modal.is-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .external-link-backdrop {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 18% 12%, rgba(59,130,246,.14), transparent 31%),
+                radial-gradient(circle at 84% 8%, rgba(255,186,0,.15), transparent 28%),
+                rgba(3,5,10,.86);
+            backdrop-filter: blur(13px);
+            -webkit-backdrop-filter: blur(13px);
+        }
+
+        .external-link-shell {
+            --external-gold: #ffba00;
+            --external-blue: #60a5fa;
+            position: relative;
+            width: min(560px, 100%);
+            overflow: hidden;
+            color: #eef2f8;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,.045), transparent 36%),
+                linear-gradient(180deg, #121722 0%, #090c13 100%);
+            border: 1px solid rgba(255,186,0,.38);
+            clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+            box-shadow: 0 32px 90px rgba(0,0,0,.62), 0 0 0 1px rgba(96,165,250,.08) inset;
+            transform: translateY(14px) scale(.98);
+            transition: transform .28s cubic-bezier(.2,.85,.2,1);
+            outline: none;
+        }
+
+        #external-link-modal.is-open .external-link-shell {
+            transform: translateY(0) scale(1);
+        }
+
+        .external-link-shell::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: .22;
+            background-image:
+                linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+            background-size: 28px 28px;
+            mask-image: linear-gradient(to bottom, black 0%, transparent 82%);
+        }
+
+        .external-link-topline {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 68%;
+            height: 3px;
+            background: linear-gradient(90deg, #ffba00, #ff7a00 62%, transparent);
+            box-shadow: 0 0 18px rgba(255,186,0,.45);
+        }
+
+        .external-link-header {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 25px 26px 18px;
+            border-bottom: 1px solid rgba(255,255,255,.075);
+        }
+
+        .external-link-icon {
+            position: relative;
+            flex: none;
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            color: #ffca3a;
+            border: 1px solid rgba(255,186,0,.32);
+            background: rgba(255,186,0,.075);
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            box-shadow: inset 0 0 24px rgba(255,186,0,.07);
+        }
+
+        .external-link-icon svg { width: 23px; height: 23px; }
+        .external-link-heading { min-width: 0; flex: 1; }
+        .external-link-kicker {
+            color: #ffca3a;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+
+        .external-link-title {
+            margin: 6px 0 0;
+            color: #fff;
+            font: 700 25px/1.08 'Oswald', sans-serif;
+            letter-spacing: .035em;
+            text-transform: uppercase;
+        }
+
+        .external-link-close {
+            flex: none;
+            display: grid;
+            place-items: center;
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(255,255,255,.11);
+            background: rgba(255,255,255,.035);
+            color: #9da8b9;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        .external-link-close:hover,
+        .external-link-close:focus-visible {
+            color: #17120a;
+            border-color: #ffba00;
+            background: #ffba00;
+            outline: none;
+        }
+
+        .external-link-body {
+            position: relative;
+            padding: 22px 26px 24px;
+        }
+
+        .external-link-message {
+            margin: 0;
+            color: #aeb7c6;
+            font-size: 13px;
+            line-height: 1.65;
+        }
+
+        .external-link-message strong { color: #eef2f8; font-weight: 700; }
+
+        .external-destination-card {
+            position: relative;
+            margin-top: 17px;
+            padding: 15px 16px;
+            border: 1px solid rgba(96,165,250,.16);
+            background: linear-gradient(135deg, rgba(59,130,246,.075), rgba(255,255,255,.018));
+        }
+
+        .external-destination-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 28px;
+            height: 2px;
+            background: #60a5fa;
+            box-shadow: 0 0 12px rgba(96,165,250,.6);
+        }
+
+        .external-destination-label {
+            color: #7f8b9e;
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        .external-destination-name {
+            margin-top: 6px;
+            color: #e9eef6;
+            font: 700 16px/1.25 'Oswald', sans-serif;
+            letter-spacing: .025em;
+        }
+
+        .external-destination-url {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            min-width: 0;
+            margin-top: 7px;
+            color: #7e8da3;
+            font-size: 10px;
+        }
+
+        .external-destination-url svg { width: 13px; height: 13px; flex: none; color: #60a5fa; }
+        .external-destination-url span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+        .external-security-note {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            color: #738097;
+            font-size: 9px;
+            line-height: 1.45;
+        }
+
+        .external-security-note svg { width: 14px; height: 14px; flex: none; color: #4ade80; }
+
+        .external-link-actions {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .external-action {
+            min-height: 46px;
+            padding: 0 16px;
+            border: 1px solid transparent;
+            font: 700 11px 'Oswald', sans-serif;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+        }
+
+        .external-action:hover { transform: translateY(-1px); }
+        .external-action:focus-visible { outline: 2px solid #ffba00; outline-offset: 2px; }
+
+        .external-action-cancel {
+            color: #a8b2c1;
+            border-color: rgba(255,255,255,.11);
+            background: rgba(255,255,255,.035);
+        }
+
+        .external-action-cancel:hover {
+            color: #fff;
+            border-color: rgba(255,255,255,.22);
+            background: rgba(255,255,255,.075);
+        }
+
+        .external-action-confirm {
+            color: #17120a;
+            border-color: #ffba00;
+            background: linear-gradient(135deg, #ffd65d, #ffba00 58%, #ff9800);
+            box-shadow: 0 8px 25px rgba(255,186,0,.14);
+        }
+
+        .external-action-confirm:hover {
+            background: linear-gradient(135deg, #ffe17d, #ffc329 58%, #ffa51f);
+            box-shadow: 0 10px 30px rgba(255,186,0,.24);
+        }
+
+        html:not(.dark) .external-link-backdrop {
+            background:
+                radial-gradient(circle at 18% 12%, rgba(59,130,246,.09), transparent 31%),
+                radial-gradient(circle at 84% 8%, rgba(255,186,0,.12), transparent 28%),
+                rgba(226,232,240,.76);
+        }
+
+        html:not(.dark) .external-link-shell {
+            color: #1f2937;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,.8), transparent 38%),
+                linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+            border-color: rgba(171,114,0,.34);
+            box-shadow: 0 30px 75px rgba(15,23,42,.20), 0 0 0 1px rgba(59,130,246,.05) inset;
+        }
+
+        html:not(.dark) .external-link-shell::before {
+            background-image:
+                linear-gradient(rgba(15,23,42,.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(15,23,42,.035) 1px, transparent 1px);
+        }
+
+        html:not(.dark) .external-link-header { border-bottom-color: rgba(15,23,42,.08); }
+        html:not(.dark) .external-link-icon { color: #9a6700; border-color: rgba(171,114,0,.24); background: rgba(255,186,0,.10); }
+        html:not(.dark) .external-link-kicker { color: #9a6700; }
+        html:not(.dark) .external-link-title { color: #111827; }
+        html:not(.dark) .external-link-close { color: #64748b; border-color: rgba(15,23,42,.10); background: rgba(15,23,42,.03); }
+        html:not(.dark) .external-link-close:hover,
+        html:not(.dark) .external-link-close:focus-visible { color: #111; border-color: #ffba00; background: #ffba00; }
+        html:not(.dark) .external-link-message { color: #5f6b7c; }
+        html:not(.dark) .external-link-message strong { color: #1f2937; }
+        html:not(.dark) .external-destination-card { border-color: rgba(59,130,246,.14); background: linear-gradient(135deg, rgba(59,130,246,.065), rgba(255,255,255,.82)); }
+        html:not(.dark) .external-destination-label { color: #768399; }
+        html:not(.dark) .external-destination-name { color: #1f2937; }
+        html:not(.dark) .external-destination-url { color: #64748b; }
+        html:not(.dark) .external-security-note { color: #748196; }
+        html:not(.dark) .external-action-cancel { color: #475569; border-color: rgba(15,23,42,.11); background: rgba(255,255,255,.72); }
+        html:not(.dark) .external-action-cancel:hover { color: #111827; border-color: rgba(15,23,42,.2); background: #fff; }
+
+        @media (max-width: 560px) {
+            #external-link-modal { padding: 12px; }
+            .external-link-header { padding: 20px 18px 15px; gap: 12px; }
+            .external-link-icon { width: 42px; height: 42px; }
+            .external-link-title { font-size: 21px; }
+            .external-link-body { padding: 18px; }
+            .external-link-actions { grid-template-columns: 1fr; }
+            .external-action-confirm { order: -1; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            #external-link-modal,
+            .external-link-shell,
+            .external-action { transition: none !important; }
+        }
+
+    </style>
+</head>
+<body class="bg-gaming-light dark:bg-gaming-dark text-gray-800 dark:text-gray-200 transition-colors duration-500 font-sans">
+
+    <!-- Fixed contrasting Header -->
+    <header class="fixed top-0 left-0 w-full z-50 header-glass h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-between items-center h-full">
+                <!-- Logo -->
+                <a href="#main-scroll" class="flex-shrink-0 flex items-center group">
+                    <img src="./img/logo_web.png" onerror="this.src='https://placehold.co/200x80/000/FFBA00?text=MANGA+TOI+THUONG'" alt="Logo" class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_0_10px_rgba(255,186,0,0.5)]">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-8 items-center h-full">
+                    <!-- Nav Item with Dropdown -->
+                    <div class="nav-item group cursor-pointer flex h-full items-center">
+                        <div class="nav-link font-display text-lg tracking-wide font-medium flex items-center gap-1 text-gray-100 hover:text-gaming-gold">
+                            GIỚI THIỆU 
+                            <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-[90%] w-56 bg-gray-900/95 border border-white/10 rounded-xl shadow-2xl p-2 z-50 backdrop-blur-md">
+                            <a href="#" class="block px-4 py-3 rounded-lg text-sm font-semibold text-gray-200 hover:bg-white/10 hover:text-gaming-gold transition-all">Tướng</a>
+                            <a href="#" class="block px-4 py-3 rounded-lg text-sm font-semibold text-gray-200 hover:bg-white/10 hover:text-gaming-gold transition-all">Đội Hình</a>
+                            <a href="#" class="block px-4 py-3 rounded-lg text-sm font-semibold text-gray-200 hover:bg-white/10 hover:text-gaming-gold transition-all">Vượt Ải</a>
+                            <a href="#" class="block px-4 py-3 rounded-lg text-sm font-semibold text-gray-200 hover:bg-white/10 hover:text-gaming-gold transition-all">Thiên Không Chi Tháp</a>
+                        </div>
+                    </div>
+
+                    <a href="#news" class="nav-item nav-link font-display text-lg tracking-wide font-medium text-gray-100 hover:text-gaming-gold">TIN TỨC</a>
+                    
+                    <!-- Nav Item with Dropdown -->
+                    <div class="nav-item group cursor-pointer flex h-full items-center">
+                        <div class="nav-link font-display text-lg tracking-wide font-medium flex items-center gap-1 text-gray-100 hover:text-gaming-gold">
+                            HOẠT ĐỘNG 
+                            <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-[90%] w-56 bg-gray-900/95 border border-white/10 rounded-xl shadow-2xl p-2 z-50 backdrop-blur-md">
+                            <a href="https://www.facebook.com/groups/mangatoithuong" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 rounded-lg text-sm font-semibold text-gray-200 hover:bg-white/10 hover:text-gaming-gold transition-all">Group cộng đồng</a>
+                            <a href="https://www.facebook.com/mangaallstarvietnam" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 rounded-lg text-sm font-semibold text-gray-200 hover:bg-white/10 hover:text-gaming-gold transition-all">Fanpage chính thức</a>
+                            <a href="https://www.facebook.com/share/p/1c4hHW64XP/" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 rounded-lg text-sm font-semibold text-gray-200 hover:bg-white/10 hover:text-gaming-gold transition-all">Góp Ý Tướng SR</a>
+                            <a href="https://www.facebook.com/mangaallstarvietnam" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 rounded-lg text-sm font-semibold text-gray-200 hover:bg-white/10 hover:text-gaming-gold transition-all">Lịch Server Test</a>
+                        </div>
+                    </div>
+
+                    <a href="https://www.facebook.com/mangaallstarvietnam" target="_blank" rel="noopener noreferrer" class="nav-item nav-link font-display text-lg tracking-wide font-medium text-gray-100 hover:text-gaming-gold">HỖ TRỢ</a>
+                </nav>
+
+                <!-- Right Actions: Theme Toggle & Button -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-800 text-gray-300 hover:text-gaming-gold transition-all shadow-inner focus:outline-none ring-2 ring-transparent hover:ring-gaming-gold">
+                        <svg class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg class="w-6 h-6 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    
+                    <button class="btn-futuristic">
+                        <span>CHƠI NGAY</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="p-2 text-white">
+                        <svg class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg class="w-6 h-6 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    <button id="mobile-btn" class="text-white focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="lg:hidden bg-gray-900 border-t border-white/10 absolute top-20 left-0 w-full transform origin-top scale-y-0 opacity-0 transition-all duration-300 max-h-[80vh] overflow-y-auto z-50">
+            <div class="px-4 py-4 space-y-2">
+                <div>
+                    <button class="accordion-trigger w-full flex justify-between items-center py-3 px-2 text-lg font-display text-white font-bold" onclick="toggleAccordion('acc-1')">
+                        GIỚI THIỆU
+                        <svg class="w-5 h-5 accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="acc-1" class="mobile-submenu bg-white/5 rounded-lg">
+                        <a href="#" class="block py-2 px-6 text-gray-300 hover:text-gaming-gold">Tướng</a>
+                        <a href="#" class="block py-2 px-6 text-gray-300 hover:text-gaming-gold">Đội Hình</a>
+                        <a href="#" class="block py-2 px-6 text-gray-300 hover:text-gaming-gold">Vượt Ải</a>
+                        <a href="#" class="block py-2 px-6 text-gray-300 hover:text-gaming-gold">Thiên Không Chi Tháp</a>
+                    </div>
+                </div>
+
+                <a href="#news" class="block py-3 px-2 text-lg font-display text-white font-bold border-t border-white/10">TIN TỨC</a>
+
+                <div class="border-t border-white/10">
+                    <button class="accordion-trigger w-full flex justify-between items-center py-3 px-2 text-lg font-display text-white font-bold" onclick="toggleAccordion('acc-2')">
+                        HOẠT ĐỘNG
+                        <svg class="w-5 h-5 accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="acc-2" class="mobile-submenu bg-white/5 rounded-lg">
+                        <a href="https://www.facebook.com/groups/mangatoithuong" target="_blank" rel="noopener noreferrer" class="block py-2 px-6 text-gray-300 hover:text-gaming-gold">Group cộng đồng</a>
+                        <a href="https://www.facebook.com/mangaallstarvietnam" target="_blank" rel="noopener noreferrer" class="block py-2 px-6 text-gray-300 hover:text-gaming-gold">Fanpage chính thức</a>
+                        <a href="https://www.facebook.com/share/p/1c4hHW64XP/" target="_blank" rel="noopener noreferrer" class="block py-2 px-6 text-gray-300 hover:text-gaming-gold">Góp Ý Tướng SR</a>
+                        <a href="https://www.facebook.com/mangaallstarvietnam" target="_blank" rel="noopener noreferrer" class="block py-2 px-6 text-gray-300 hover:text-gaming-gold">Lịch Server Test</a>
+                    </div>
+                </div>
+
+                <a href="https://www.facebook.com/mangaallstarvietnam" target="_blank" rel="noopener noreferrer" class="block py-3 px-2 text-lg font-display text-white font-bold border-t border-white/10">HỖ TRỢ</a>
+                
+                <div class="pt-4 pb-2">
+                    <button class="btn-futuristic w-full flex justify-center">
+                        <span>CHƠI NGAY</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-scroll">
+        
+        <!-- SECTION 1: HERO -->
+        <section class="snap-section bg-gaming-dark relative overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-x-0 bottom-0 top-20">
+                <!-- Smart Image: Vertical for mobile, Horizontal for desktop -->
+               <!-- Mobile: video dọc -->
+            <!-- Mobile: Video dọc -->
+            <video
+                id="mobile-hero-video"
+                class="absolute inset-0 w-full h-full object-cover object-top min-[769px]:hidden"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+            >
+                <source src="./video/doc.mp4" type="video/mp4">
+            </video>
+
+            <!-- Desktop / Tablet: Giữ ảnh ngang -->
+            <img
+                src="./img/bia_mangatoithuong.png"
+                alt="Manga Tối Thượng"
+                class="absolute inset-0 hidden min-[769px]:block w-full h-full object-cover object-top"
+            >
+
+            <!-- Nút bật / tắt âm thanh - chỉ Mobile -->
+            <button
+                id="mobile-sound-toggle"
+                type="button"
+                aria-label="Bật âm thanh"
+                class="min-[769px]:hidden absolute top-5 right-4 z-30
+                    w-11 h-11 rounded-full
+                    bg-black/55 backdrop-blur-md
+                    border border-white/30
+                    text-white
+                    flex items-center justify-center
+                    shadow-lg
+                    active:scale-95 transition-all"
+            >
+                <svg id="sound-off-icon" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 5 6 9H2v6h4l5 4V5Z"/>
+                    <path d="m22 9-6 6"/>
+                    <path d="m16 9 6 6"/>
+                </svg>
+
+                <svg id="sound-on-icon" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 5 6 9H2v6h4l5 4V5Z"/>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                </svg>
+            </button>
+                <!-- Overlay Shadow specifically for corner text readability -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            </div>
+
+            <!-- Custom Particle Canvas -->
+            <canvas id="hero-particles" class="absolute inset-0 w-full h-full z-0"></canvas>
+
+            <!-- Text & Buttons layout at Bottom Left -->
+           <div class="absolute z-10 left-0 bottom-[110px] sm:bottom-8 lg:bottom-10 w-full pl-3 sm:pl-6 lg:pl-8 text-left">         
+                <div class="max-w-xl">
+                    <h1 class="font-display font-bold text-2xl md:text-4xl lg:text-5xl uppercase tracking-wider animate-neon-pulse mb-6 text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
+                        DỰ KIẾN MỞ SERVER TEST<br>
+                        <span class="text-gaming-gold">12 . 12 . 2026</span>
+                    </h1>
+
+                    <!-- App Badges -->
+                    <div class="flex gap-4 items-center justify-start">
+                        <a href="#" class="w-32 md:w-36 hover:scale-105 transition-transform shadow-lg rounded-xl block">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" class="w-full h-auto">
+                        </a>
+                        <a href="#" class="w-32 md:w-36 hover:scale-105 transition-transform shadow-lg rounded-xl bg-black block border border-gray-700">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="w-full h-auto p-1">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Scroll Indicator Down -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10 flex flex-col items-center opacity-90 drop-shadow-lg">
+                <span class="text-xs font-bold uppercase tracking-widest text-white mb-2 shadow-black drop-shadow-md">Cuộn Khám Phá</span>
+                <svg class="w-6 h-6 text-gaming-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </div>
+        </section>
+
+        <!-- (Các section sau giữ nguyên như cũ) -->
+        <section id="news" class="snap-section bg-gaming-light dark:bg-gaming-dark transition-colors duration-500 relative py-20 min-h-screen">
+            <div class="skew-divider"></div>
+            
+            <div class="w-full max-w-7xl mx-auto px-4 relative z-10">
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                    <div>
+                        <h2 class="font-display text-5xl font-bold uppercase text-gray-900 dark:text-white drop-shadow-sm">
+                            TIN TỨC <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-gaming-gold to-gaming-red">MỚI NHẤT</span>
+                        </h2>
+                        <!-- Custom Underline SVG -->
+                        <svg viewBox="0 0 165 9" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-40 mt-3">
+                            <path d="M129.4 0L121.28 8.12H0V0H129.4Z" fill="#FFBA00"></path>
+                            <path d="M141.16 0L133.04 8.12H128.45L136.57 0H141.16Z" fill="#FFBA00"></path>
+                            <path d="M152.92 0L144.8 8.12H140.2L148.33 0H152.92Z" fill="#FFBA00"></path>
+                            <path d="M164.68 0L156.55 8.12H151.96L160.09 0H164.68Z" fill="#FFBA00"></path>
+                        </svg>
+                    </div>
+                    
+                    <a href="#" class="group hidden md:flex items-center gap-2 font-display text-lg font-bold text-gray-600 dark:text-gray-300 hover:text-gaming-gold dark:hover:text-gaming-gold transition-colors">
+                        XEM TẤT CẢ
+                        <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+
+                <!-- News Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <a href="https://www.facebook.com/mangaallstarvietnam" target="_blank" rel="noopener noreferrer" aria-label="Xem thông tin server test trên Fanpage Manga Tối Thượng" class="card-container cursor-pointer h-full block">
+                        <div class="glass h-full rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_15px_30px_rgba(255,186,0,0.15)] border border-gray-200 dark:border-white/10 hover:border-gaming-gold/50">
+                            <div class="h-56 relative overflow-hidden">
+                                <img src="./img/manga_1.png" alt="News" class="w-full h-full object-cover hover-zoom">
+                                <div class="absolute top-4 left-4 bg-gaming-gold text-black font-display font-bold px-3 py-1 rounded shadow-lg uppercase text-sm tracking-wide">Server Test</div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                    Dự kiến 12/12/2026
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-gray-900 dark:text-white leading-snug group-hover:text-gaming-gold transition-colors">Manga Tối Thượng dự kiến mở server test ngày 12.12.2026</h3>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 2 -->
+                    <a href="https://www.facebook.com/share/p/1c4hHW64XP/" target="_blank" rel="noopener noreferrer" aria-label="Góp ý tướng SR trên Facebook" class="card-container cursor-pointer h-full block">
+                        <div class="glass h-full rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_15px_30px_rgba(255,42,42,0.15)] border border-gray-200 dark:border-white/10 hover:border-gaming-red/50">
+                            <div class="h-56 relative overflow-hidden">
+                                <img src="./img/manga_SR.png" alt="News" class="w-full h-full object-cover hover-zoom">
+                                <div class="absolute top-4 left-4 bg-gaming-red text-white font-display font-bold px-3 py-1 rounded shadow-lg uppercase text-sm tracking-wide">Góp Ý</div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                    Đang lấy ý kiến
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-gray-900 dark:text-white leading-snug group-hover:text-gaming-red transition-colors">Bạn muốn tướng SR nào xuất hiện tại server Việt Nam?</h3>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 3 -->
+                    <div id="progress-card" class="card-container cursor-pointer h-full block" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="game-progress-modal">
+                        <div class="glass h-full rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_15px_30px_rgba(59,130,246,0.15)] border border-gray-200 dark:border-white/10 hover:border-blue-500/50">
+                            <div class="h-56 relative overflow-hidden">
+                                <img src="./img/manga_tiendo.png" alt="News" class="w-full h-full object-cover hover-zoom">
+                                <div class="absolute top-4 left-4 bg-blue-500 text-white font-display font-bold px-3 py-1 rounded shadow-lg uppercase text-sm tracking-wide">Tiến Độ</div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                    Đang phát triển
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-gray-900 dark:text-white leading-snug group-hover:text-blue-500 transition-colors">Cập nhật tiến độ xây dựng bản thử nghiệm Manga Tối Thượng</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 flex justify-center md:hidden">
+                    <button class="btn-futuristic"><span>XEM TẤT CẢ</span></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="snap-section relative bg-white dark:bg-black transition-colors duration-500 overflow-hidden py-20 min-h-screen">
+            <div class="skew-divider"></div>
+            
+            <div class="absolute inset-0 flex pointer-events-none">
+                <div class="w-full lg:w-1/2 bg-gray-50 dark:bg-[#111] transition-colors duration-500 h-full"></div>
+                <div class="hidden lg:block w-1/2 h-full relative clip-path-slant bg-gradient-to-br from-[#182034] via-[#12121c] to-[#08090e]">
+                    <div class="absolute inset-0 opacity-25" style="background-image: radial-gradient(circle at 25% 25%, #ffba00 1px, transparent 1.5px); background-size: 30px 30px;"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-gray-50/20 via-transparent to-transparent dark:from-[#111]/30"></div>
+                </div>
+            </div>
+
+            <div class="w-full max-w-7xl mx-auto px-4 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-14 items-center">
+                <div class="w-full lg:pr-8 flex flex-col justify-center">
+                    
+                    <div class="inline-block p-3 rounded-2xl bg-white dark:bg-black/50 shadow-xl border border-gray-200 dark:border-white/10 mb-8 backdrop-blur-md self-start">
+                        <img src="./img/logo_web.png" onerror="this.src='https://placehold.co/200x80/000/FFBA00?text=MANGA'" alt="Logo" class="h-12 w-auto object-contain">
+                    </div>
+                    
+                    <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold uppercase text-gray-900 dark:text-white mb-6 leading-tight">
+                        Manga Tối Thượng <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-gaming-gold to-gaming-red">Huyền Thoại Trở Lại</span>
+                    </h2>
+                    
+                    <p class="text-gray-600 dark:text-gray-300 text-lg mb-10 leading-relaxed">
+                        Manga Tối Thượng đang được xây dựng lại cho người chơi Việt Nam. Chiêu mộ tướng, sắp xếp đội hình, vượt ải và chinh phục Thiên Không Chi Tháp. Hãy theo dõi tiến độ phát triển và cùng đóng góp ý kiến trước khi server test mở cửa.
+                    </p>
+
+                    <!-- Features List -->
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 text-gray-800 dark:text-gray-200 font-medium">
+                            <div class="w-8 h-8 rounded-full bg-gaming-gold/20 flex items-center justify-center text-gaming-gold">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            Chiêu mộ và phát triển đội hình tướng
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-800 dark:text-gray-200 font-medium">
+                            <div class="w-8 h-8 rounded-full bg-gaming-red/20 flex items-center justify-center text-gaming-red">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            Vượt ải và chinh phục Thiên Không Chi Tháp
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-800 dark:text-gray-200 font-medium">
+                            <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            Server test dự kiến ngày 12.12.2026
+                        </li>
+                    </ul>
+
+                    <div>
+                        <button class="btn-futuristic"><span>KHÁM PHÁ GAMEPLAY</span></button>
+                    </div>
+                </div>
+                <aside class="w-full max-w-xl mx-auto lg:ml-auto rounded-2xl border border-gaming-gold/40 bg-[#10131d] text-white shadow-[0_25px_65px_rgba(0,0,0,0.35)] overflow-hidden" aria-label="Thông tin cộng đồng Manga Tối Thượng">
+                    <div class="h-1.5 bg-gradient-to-r from-gaming-gold via-orange-500 to-gaming-red"></div>
+                    <div class="p-6 sm:p-8">
+                        <div class="flex flex-wrap items-center justify-between gap-3 mb-7">
+                            <span class="text-gaming-gold font-display font-bold tracking-[0.2em] text-sm">KẾT NỐI CỘNG ĐỒNG</span>
+                            <span class="rounded-full border border-gaming-gold/40 bg-gaming-gold/10 text-gaming-gold px-3 py-1 text-xs font-semibold">ĐANG PHÁT TRIỂN</span>
+                        </div>
+                        <h3 class="font-display text-3xl sm:text-4xl font-bold uppercase leading-tight mb-3">Cùng viết tiếp <span class="text-gaming-gold">huyền thoại</span></h3>
+                        <p class="text-gray-300 leading-relaxed mb-7">Theo dõi tiến độ bản thử nghiệm, góp ý tướng SR và gặp lại những người chơi Manga Tối Thượng.</p>
+                        <div class="rounded-xl border border-white/10 bg-white/5 p-4 sm:p-5 mb-6 flex items-center gap-4">
+                            <div class="shrink-0 font-display text-3xl sm:text-4xl font-bold text-gaming-gold">12.12</div>
+                            <div class="border-l border-white/20 pl-4"><p class="font-display text-lg font-bold">SERVER TEST 2026</p><p class="text-sm text-gray-400">Ngày mở dự kiến · cập nhật trên Fanpage</p></div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <a href="https://www.facebook.com/mangaallstarvietnam" target="_blank" rel="noopener noreferrer" class="rounded-lg bg-gaming-gold px-5 py-3 text-center font-display font-bold tracking-wide text-black hover:bg-yellow-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gaming-gold">THEO DÕI FANPAGE ↗</a>
+                            <a href="https://www.facebook.com/groups/mangatoithuong" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-gaming-gold px-5 py-3 text-center font-display font-bold tracking-wide text-gaming-gold hover:bg-gaming-gold/10 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gaming-gold">THAM GIA GROUP ↗</a>
+                        </div>
+                        <a href="https://www.facebook.com/share/p/1c4hHW64XP/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-gray-300 hover:text-gaming-gold transition-colors">Bạn muốn tướng SR nào xuất hiện? <span aria-hidden="true">→</span></a>
+                    </div>
+                </aside>
+            </div>
+            
+            <style>
+                @media (min-width: 1024px) {
+                    .clip-path-slant {
+                        clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+                    }
+                }
+            </style>
+        </section>
+
+        <footer class="game-footer" aria-label="Chân trang Manga Tối Thượng">
+            <div class="footer-orbit" aria-hidden="true"></div>
+            <div class="footer-inner">
+                <div class="footer-command">
+                    <section class="footer-brand-block" aria-label="Manga Tối Thượng">
+                        <a href="#main-scroll" class="footer-brand-logo-wrap" aria-label="Về đầu trang">
+                            <img src="./img/logo_web_vuong.png" onerror="this.src='./img/logo_web.png'" alt="Manga Tối Thượng" class="footer-brand-logo">
+                        </a>
+                        <div class="min-w-0">
+                            <div class="footer-eyebrow">Manga Allstar Vietnam · Project Rebuild</div>
+                            <h2 class="footer-title">Manga Tối Thượng</h2>
+                            <p class="footer-copy">Huyền thoại manga đang được xây dựng trở lại cho cộng đồng Việt Nam với hệ thống gameplay, đội hình và chiến đấu được phục dựng theo source gốc. Theo dõi tiến độ để cập nhật những thay đổi mới nhất trước ngày mở bản thử nghiệm.</p>
+                            <div class="footer-status-row">
+                                <span class="footer-chip"><i></i> Development Active</span>
+                                <span class="footer-chip gold"><i></i> Server Test 12.12.2026</span>
+                                <span class="footer-chip blue"><i></i> Cộng đồng Việt Nam</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <aside class="footer-progress-panel" aria-label="Tiến độ phát triển">
+                        <div class="footer-panel-label"><span>Development Progress</span><span>Live Audit</span></div>
+                        <div id="footer-progress-value" class="footer-progress-value">48.03%</div>
+                        <div class="footer-progress-track" aria-hidden="true"><div id="footer-progress-fill" class="footer-progress-fill"></div></div>
+                        <div class="footer-progress-meta"><span id="footer-progress-count">36 module · 342 hạng mục</span><span>Source-first</span></div>
+                        <button type="button" id="footer-progress-open" class="footer-progress-action">Xem chi tiết tiến độ →</button>
+                    </aside>
+                </div>
+
+                <div class="footer-nav-grid">
+                    <section class="footer-column">
+                        <h3 class="footer-column-title">Server thử nghiệm</h3>
+                        <div class="footer-launch-card">
+                            <div class="footer-launch-date">12.12</div>
+                            <div class="footer-launch-text"><strong>DỰ KIẾN MỞ SERVER TEST 2026</strong><span>Lịch có thể thay đổi · cập nhật chính thức trên Fanpage</span></div>
+                        </div>
+                    </section>
+
+                    <nav class="footer-column" aria-label="Điều hướng">
+                        <h3 class="footer-column-title">Khám phá</h3>
+                        <div class="footer-links">
+                            <a href="#main-scroll" class="footer-link">Trang chủ</a>
+                            <a href="#news" class="footer-link">Tin tức</a>
+                            <a href="#" class="footer-link">Tướng</a>
+                            <a href="#" class="footer-link">Đội hình</a>
+                            <a href="#" class="footer-link">Thiên Không Chi Tháp</a>
+                        </div>
+                    </nav>
+
+                    <section class="footer-column">
+                        <h3 class="footer-column-title">Cộng đồng</h3>
+                        <div class="footer-community-buttons">
+                            <a href="https://www.facebook.com/mangaallstarvietnam" target="_blank" rel="noopener noreferrer" class="footer-community-btn"><span>Fanpage chính thức</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"></path></svg></a>
+                            <a href="https://www.facebook.com/groups/mangatoithuong" target="_blank" rel="noopener noreferrer" class="footer-community-btn"><span>Group cộng đồng</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"></path></svg></a>
+                            <a href="https://www.facebook.com/share/p/1c4hHW64XP/" target="_blank" rel="noopener noreferrer" class="footer-community-btn"><span>Góp ý tướng SR</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"></path></svg></a>
+                        </div>
+                    </section>
+
+                    <nav class="footer-column" aria-label="Hỗ trợ và pháp lý">
+                        <h3 class="footer-column-title">Hỗ trợ</h3>
+                        <div class="footer-links">
+                            <a href="https://www.facebook.com/mangaallstarvietnam" target="_blank" rel="noopener noreferrer" class="footer-link">Liên hệ hỗ trợ</a>
+                            <a href="#" class="footer-link">Chính sách bảo mật</a>
+                            <a href="#" class="footer-link">Điều khoản dịch vụ</a>
+                            <a href="#" class="footer-link">Thông tin phiên bản</a>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="footer-bottom">
+                    <div><strong>MANGA TỐI THƯỢNG · MANGA ALLSTAR</strong><br>© 2026 · Dự án đang trong quá trình phát triển và chuẩn bị cho phiên bản thử nghiệm.</div>
+                    <div class="footer-legal">
+                        <a href="https://www.facebook.com/mangaallstarvietnam" target="_blank" rel="noopener noreferrer">Fanpage</a>
+                        <a href="https://www.facebook.com/groups/mangatoithuong" target="_blank" rel="noopener noreferrer">Group</a>
+                        <a href="#main-scroll">Về đầu trang ↑</a>
+                    </div>
+                </div>
+
+                <div class="footer-health-notice">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01"></path><path d="M10.3 3.7 2.6 17a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 3.7a2 2 0 0 0-3.4 0Z"></path></svg>
+                    <span>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khoẻ</span>
+                </div>
+            </div>
+        </footer>
+
+    </main> <!-- End Main Container -->
+
+
+
+
+    <!-- EXTERNAL LINK CONFIRMATION MODAL -->
+    <div id="external-link-modal" role="dialog" aria-modal="true" aria-labelledby="external-link-title" aria-describedby="external-link-description" aria-hidden="true">
+        <div class="external-link-backdrop" data-external-close aria-hidden="true"></div>
+        <section class="external-link-shell" tabindex="-1">
+            <div class="external-link-topline" aria-hidden="true"></div>
+            <header class="external-link-header">
+                <div class="external-link-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path>
+                    </svg>
+                </div>
+                <div class="external-link-heading">
+                    <div class="external-link-kicker">External Navigation · Security Notice</div>
+                    <h2 id="external-link-title" class="external-link-title">Bạn sắp rời website</h2>
+                </div>
+                <button type="button" id="external-link-close" class="external-link-close" aria-label="Đóng thông báo" data-external-close>
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5 5 19"></path></svg>
+                </button>
+            </header>
+
+            <div class="external-link-body">
+                <p id="external-link-description" class="external-link-message">Liên kết này sẽ mở một trang bên ngoài <strong>Manga Tối Thượng</strong>. Vui lòng kiểm tra điểm đến trước khi tiếp tục.</p>
+
+                <div class="external-destination-card">
+                    <div class="external-destination-label">Điểm đến</div>
+                    <div id="external-destination-name" class="external-destination-name">Trang bên ngoài</div>
+                    <div class="external-destination-url">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l2-2a5 5 0 0 0-7.07-7.07l-1.15 1.15"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-2 2a5 5 0 0 0 7.07 7.07l1.15-1.15"></path></svg>
+                        <span id="external-destination-host">external.example.com</span>
+                    </div>
+                </div>
+
+                <div class="external-security-note">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                    <span id="external-security-text">Liên kết sử dụng HTTPS và sẽ được mở trong tab mới.</span>
+                </div>
+
+                <div class="external-link-actions">
+                    <button type="button" id="external-link-cancel" class="external-action external-action-cancel" data-external-close>Hủy</button>
+                    <button type="button" id="external-link-confirm" class="external-action external-action-confirm">Xác nhận &amp; tiếp tục ↗</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- GAME DEVELOPMENT PROGRESS MODAL -->
+    <div id="game-progress-modal" role="dialog" aria-modal="true" aria-labelledby="progress-modal-title" aria-hidden="true">
+        <div class="progress-modal-backdrop" data-progress-close aria-hidden="true"></div>
+        <section class="progress-modal-shell" tabindex="-1">
+            <div class="progress-modal-topline" aria-hidden="true"></div>
+            <header class="progress-modal-header">
+                <div>
+                    <div class="progress-modal-kicker">Development Status · Source-first Audit</div>
+                    <h2 id="progress-modal-title" class="progress-modal-title">Tiến độ xây dựng <span style="color:#ffba00">Manga Tối Thượng</span></h2>
+                    <p class="progress-modal-subtitle">Theo dõi chi tiết 36 module và 342 hạng mục của bản thử nghiệm. Dữ liệu được tổng hợp từ source gốc, phần research và implementation hiện tại.</p>
+                </div>
+                <button type="button" id="progress-modal-close" class="progress-modal-close" aria-label="Đóng bảng tiến độ" data-progress-close>
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"></path></svg>
+                </button>
+            </header>
+
+            <div class="progress-modal-body">
+                <aside class="progress-overview-panel" aria-label="Tổng quan tiến độ">
+                    <div class="overall-progress-hud">
+                        <div id="overall-progress-ring" class="progress-ring-hud">
+                            <div class="progress-ring-value"><strong id="overall-progress-value">0%</strong><span>Tổng tiến độ</span></div>
+                        </div>
+                        <div class="overall-caption">
+                            <strong>Bản thử nghiệm</strong>
+                            <span>Cập nhật audit · 23.09.2026</span>
+                        </div>
+                    </div>
+                    <div id="progress-stat-grid" class="progress-stat-grid"></div>
+                    <div id="progress-status-legend" class="progress-status-legend"></div>
+                </aside>
+
+                <div class="progress-content-panel">
+                    <div class="progress-toolbar">
+                        <div class="progress-search">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+                            <input id="progress-search-input" type="search" autocomplete="off" placeholder="Tìm module hoặc chức năng..." aria-label="Tìm trong tiến độ phát triển">
+                        </div>
+                        <div id="progress-filter-tabs" class="progress-filter-tabs" role="group" aria-label="Lọc trạng thái"></div>
+                    </div>
+                    <div id="progress-module-list" aria-live="polite"></div>
+                </div>
+            </div>
+
+            <footer class="progress-modal-footer">
+                <span><strong>Quy ước:</strong> 100% chỉ khi có implementation + test/runtime evidence.</span>
+                <span>Overall = trung bình 342 leaf feature · không tính heading/module.</span>
+            </footer>
+        </section>
+    </div>
+    <script type="application/json" id="game-progress-data">{"overallProgress":48.03,"modules":[{"id":"account","name":"Tài khoản & khởi tạo nhân vật","progress":75,"features":[{"name":"Đăng nhập tài khoản/mật khẩu","status":"DONE","progress":100},{"name":"Đăng ký tài khoản","status":"DONE","progress":100},{"name":"Đăng nhập Google","status":"PARTIAL","progress":75},{"name":"Làm mới phiên và tự đăng nhập","status":"DONE","progress":100},{"name":"Đăng xuất","status":"PARTIAL","progress":75},{"name":"Danh sách và chọn máy chủ","status":"DONE","progress":100},{"name":"Tạo nhân vật","status":"PARTIAL","progress":75},{"name":"Đặt tên nhân vật","status":"PARTIAL","progress":50},{"name":"Liên kết số điện thoại","status":"NOT_STARTED","progress":0}]},{"id":"home","name":"Trang chủ","progress":68.75,"features":[{"name":"MainScene và bản đồ parallax","status":"DONE","progress":100},{"name":"MainWidgetLayer và menu chính","status":"PARTIAL","progress":75},{"name":"HUD cấp độ, VIP và chiến lực","status":"DONE","progress":100},{"name":"Thanh vàng, kim cương và thể lực","status":"DONE","progress":100},{"name":"Hiển thị buff đếm giờ","status":"PARTIAL","progress":50},{"name":"Red-dot tổng hợp trên trang chủ","status":"PARTIAL","progress":75},{"name":"Dòng chat xem nhanh","status":"NOT_STARTED","progress":0},{"name":"Nút hoạt động động theo lịch","status":"PARTIAL","progress":50}]},{"id":"guide","name":"Hướng dẫn người chơi mới","progress":58.33,"features":[{"name":"Video mở đầu","status":"PARTIAL","progress":50},{"name":"Chuỗi GuideTask và hội thoại","status":"RESEARCH_ONLY","progress":50},{"name":"Hướng dẫn kỹ năng chiến đấu","status":"RESEARCH_ONLY","progress":50},{"name":"Hướng dẫn xếp đội hình","status":"PARTIAL","progress":75},{"name":"Hướng dẫn ải 1-1","status":"PARTIAL","progress":75},{"name":"Thưởng tutorial và khôi phục bước","status":"PARTIAL","progress":50}]},{"id":"adventure","name":"Phiêu lưu & ải truyện","progress":85,"features":[{"name":"Bản đồ ải thường","status":"DONE","progress":100},{"name":"Bản đồ ải tinh anh","status":"PARTIAL","progress":75},{"name":"Chi tiết và đội hình địch của ải","status":"DONE","progress":100},{"name":"Mở khóa ải kế tiếp","status":"DONE","progress":100},{"name":"Tiêu hao thể lực khi vào ải","status":"DONE","progress":100},{"name":"Quét ải","status":"DONE","progress":100},{"name":"Đánh giá sao","status":"DONE","progress":100},{"name":"Rương tổng sao","status":"DONE","progress":100},{"name":"Popup thưởng checkpoint","status":"PARTIAL","progress":75},{"name":"Ải hoạt động","status":"NOT_STARTED","progress":0}]},{"id":"battle","name":"Chiến đấu","progress":75,"features":[{"name":"Khởi tạo trận và snapshot đội hình","status":"DONE","progress":100},{"name":"Dựng đội ta và đội địch","status":"DONE","progress":100},{"name":"Vòng lượt và ActionManager","status":"PARTIAL","progress":75},{"name":"Kỹ năng chủ động và hiệu ứng","status":"PARTIAL","progress":75},{"name":"Nộ khí và chọn mục tiêu","status":"PARTIAL","progress":50},{"name":"Tự động chiến đấu","status":"PARTIAL","progress":75},{"name":"Tốc độ chiến đấu","status":"PARTIAL","progress":75},{"name":"Tạm dừng và tiếp tục","status":"PARTIAL","progress":75},{"name":"Hội thoại trong trận","status":"PARTIAL","progress":50},{"name":"Luồng tử trận","status":"PARTIAL","progress":75},{"name":"Kết quả thắng/thua và lên cấp","status":"DONE","progress":100},{"name":"Quyết toán thưởng trận","status":"DONE","progress":100},{"name":"Mô phỏng PvP/Boss server-authoritative","status":"BLOCKED","progress":25}]},{"id":"hero","name":"Tướng","progress":83.33,"features":[{"name":"Danh sách tướng","status":"DONE","progress":100},{"name":"Lọc và chuyển tab tướng","status":"PARTIAL","progress":75},{"name":"Chi tiết tướng","status":"DONE","progress":100},{"name":"Kích hoạt tướng từ mảnh","status":"DONE","progress":100},{"name":"Nâng cấp/tiến hóa tướng","status":"DONE","progress":100},{"name":"Nâng cấp một lần","status":"DONE","progress":100},{"name":"Nâng cấp một chạm","status":"PARTIAL","progress":50},{"name":"Tăng sao","status":"DONE","progress":100},{"name":"Mở trang bị ở mốc 6 sao","status":"DONE","progress":100},{"name":"Danh sách và mô tả kỹ năng","status":"PARTIAL","progress":75},{"name":"Đổi kỹ năng nhân vật chính","status":"PARTIAL","progress":75},{"name":"Duyên phận","status":"DONE","progress":100},{"name":"Ấn tượng: tặng quà","status":"PARTIAL","progress":75},{"name":"Ấn tượng: nhận thưởng mốc","status":"PARTIAL","progress":75},{"name":"Pet: nhận nuôi và xuất chiến","status":"PARTIAL","progress":75},{"name":"Pet: nâng cấp và cho ăn nhanh","status":"PARTIAL","progress":75},{"name":"Thức tỉnh","status":"PARTIAL","progress":75},{"name":"Red-dot nâng cấp/sao/pet/thức tỉnh","status":"PARTIAL","progress":50}]},{"id":"formation","name":"Đội hình","progress":100,"features":[{"name":"Màn hình quân doanh","status":"DONE","progress":100},{"name":"Năm đội hình","status":"DONE","progress":100},{"name":"Chọn và thay tướng ra trận","status":"DONE","progress":100},{"name":"Lưu đội hình tức thời","status":"DONE","progress":100},{"name":"Thứ tự chiến đấu","status":"DONE","progress":100},{"name":"Gắn/tháo trang bị","status":"DONE","progress":100},{"name":"Ô Thần khí thứ năm","status":"DONE","progress":100},{"name":"Trợ Uy/Fans","status":"DONE","progress":100},{"name":"Đội Cứu Viện/TiBu","status":"DONE","progress":100},{"name":"Mở khóa ô cứu viện","status":"DONE","progress":100},{"name":"Kích hoạt Duyên Phận","status":"DONE","progress":100},{"name":"Nâng cấp quân doanh","status":"DONE","progress":100},{"name":"Diễn tập quân đội 1x/5x","status":"DONE","progress":100}]},{"id":"equipment","name":"Trang bị","progress":100,"features":[{"name":"Danh tính instance trang bị","status":"DONE","progress":100},{"name":"Cường hóa 1x","status":"DONE","progress":100},{"name":"Cường hóa 5x","status":"DONE","progress":100},{"name":"Tách trang bị","status":"DONE","progress":100},{"name":"Ghép/Tái đúc trang bị","status":"DONE","progress":100},{"name":"VIP tái đúc một chạm","status":"DONE","progress":100},{"name":"Rèn Thần khí EquipType 4","status":"DONE","progress":100},{"name":"Bộ trang bị 2/3/4 món","status":"DONE","progress":100},{"name":"Cập nhật chiến lực và hiệu ứng thành công","status":"DONE","progress":100},{"name":"Red-dot cường hóa/ghép/Thần khí","status":"DONE","progress":100}]},{"id":"armed","name":"Vũ trang","progress":87.5,"features":[{"name":"Màn hình Vũ trang theo tướng","status":"PARTIAL","progress":75},{"name":"Danh sách và trạng thái Vũ trang","status":"DONE","progress":100},{"name":"Mở khóa Vũ trang","status":"DONE","progress":100},{"name":"Trang bị Vũ trang","status":"DONE","progress":100},{"name":"Nâng cấp một lần","status":"DONE","progress":100},{"name":"Nâng cấp nhanh","status":"DONE","progress":100},{"name":"Đột phá","status":"DONE","progress":100},{"name":"Tăng sao và hạ sao","status":"DONE","progress":100},{"name":"Thay kỹ năng Vũ trang trong chiến đấu","status":"PARTIAL","progress":50},{"name":"Bàn xoay/cửa hàng Vũ trang","status":"RESEARCH_ONLY","progress":50}]},{"id":"inventory","name":"Túi đồ","progress":92.86,"features":[{"name":"Tab đạo cụ và bộ lọc","status":"DONE","progress":100},{"name":"Tab trang bị và bộ lọc","status":"DONE","progress":100},{"name":"Chi tiết vật phẩm/trang bị","status":"DONE","progress":100},{"name":"Sắp xếp và trạng thái đang dùng","status":"DONE","progress":100},{"name":"Dùng vật phẩm","status":"DONE","progress":100},{"name":"Mở rương cố định","status":"DONE","progress":100},{"name":"Mở rương ngẫu nhiên","status":"BLOCKED","progress":75},{"name":"Bán toàn bộ chồng vật phẩm","status":"DONE","progress":100},{"name":"Bán trang bị","status":"DONE","progress":100},{"name":"Ghép mảnh trang bị","status":"DONE","progress":100},{"name":"Phân giải vật phẩm Vũ trang","status":"DONE","progress":100},{"name":"Giới hạn sức chứa 200 trang bị","status":"PARTIAL","progress":75},{"name":"Popup nhận vật phẩm","status":"DONE","progress":100},{"name":"Red-dot vật phẩm mới","status":"PARTIAL","progress":50}]},{"id":"academy","name":"Học viện SchoolSoul","progress":68.75,"features":[{"name":"Bốn học viện theo phe","status":"PARTIAL","progress":75},{"name":"Sản xuất tài nguyên theo thời gian","status":"PARTIAL","progress":75},{"name":"Giới hạn tích lũy 24 giờ","status":"PARTIAL","progress":75},{"name":"Thu hoạch tài nguyên","status":"PARTIAL","progress":75},{"name":"Nâng cấp một chạm theo tổng sao","status":"PARTIAL","progress":75},{"name":"Thưởng mốc JiKaCe","status":"RESEARCH_ONLY","progress":50},{"name":"Buff Bá Chủ và chiến lực","status":"PARTIAL","progress":75},{"name":"Red-dot sản xuất/nâng cấp","status":"PARTIAL","progress":50}]},{"id":"medical_academy","name":"Học viện Y / ShouKe","progress":90.62,"features":[{"name":"Màn hình lớp học và 6 vị trí","status":"DONE","progress":100},{"name":"Học bài","status":"DONE","progress":100},{"name":"Bỏ qua bài bằng kim cương","status":"DONE","progress":100},{"name":"Câu hỏi trắc nghiệm","status":"DONE","progress":100},{"name":"Nịnh giảng viên bằng vật phẩm","status":"DONE","progress":100},{"name":"Mốc thân thiện giảng viên","status":"DONE","progress":100},{"name":"Tổng kết học nghiệp","status":"DONE","progress":100},{"name":"Liên kết nhiệm vụ Festival","status":"BLOCKED","progress":25}]},{"id":"sky_tower","name":"Sky Tower","progress":46.15,"features":[{"name":"Trạng thái tầng và mở khóa cấp 24","status":"PARTIAL","progress":50},{"name":"Chọn đội hình leo tháp","status":"PARTIAL","progress":50},{"name":"Thông tin địch từng tầng","status":"PARTIAL","progress":50},{"name":"Bắt đầu trận tầng","status":"PARTIAL","progress":50},{"name":"Mô phỏng AI/sát thương/RNG gốc","status":"BLOCKED","progress":25},{"name":"Quyết toán thắng/thua","status":"RESEARCH_ONLY","progress":50},{"name":"Lật thẻ thưởng","status":"RESEARCH_ONLY","progress":50},{"name":"Rương và thưởng lần đầu","status":"RESEARCH_ONLY","progress":50},{"name":"Reset tháp","status":"PARTIAL","progress":50},{"name":"Quét tháp theo thời gian","status":"RESEARCH_ONLY","progress":50},{"name":"Tiếp tục/HostGoOn","status":"RESEARCH_ONLY","progress":50},{"name":"Bảng xếp hạng tháp","status":"BLOCKED","progress":25},{"name":"Tích hợp nhiệm vụ ngày/ShouKe","status":"RESEARCH_ONLY","progress":50}]},{"id":"shop","name":"Cửa hàng","progress":41.67,"features":[{"name":"Cửa hàng vật phẩm thường","status":"RESEARCH_ONLY","progress":50},{"name":"Cửa hàng trang bị","status":"RESEARCH_ONLY","progress":50},{"name":"Mua vật phẩm và giới hạn lượt","status":"RESEARCH_ONLY","progress":50},{"name":"Cửa hàng bí ẩn và làm mới","status":"RESEARCH_ONLY","progress":50},{"name":"Cửa hàng vinh dự Võ Đạo Hội","status":"RESEARCH_ONLY","progress":25},{"name":"Cửa hàng Anh Hùng Truyện","status":"RESEARCH_ONLY","progress":25},{"name":"Cửa hàng Guild","status":"RESEARCH_ONLY","progress":25},{"name":"Cửa hàng ngày lễ","status":"RESEARCH_ONLY","progress":50},{"name":"Cửa hàng Vũ trang","status":"RESEARCH_ONLY","progress":50}]},{"id":"gacha","name":"Chiêu mộ / Gacha","progress":65.62,"features":[{"name":"Chiêu mộ tướng một lần","status":"PARTIAL","progress":75},{"name":"Chiêu mộ tướng mười lần","status":"PARTIAL","progress":75},{"name":"Chiêu mộ theo phe","status":"RESEARCH_ONLY","progress":50},{"name":"Chiêu mộ bằng điểm bạn bè","status":"RESEARCH_ONLY","progress":50},{"name":"Chiêu mộ trang bị","status":"PARTIAL","progress":75},{"name":"Gacha Chí Tôn/VIP","status":"RESEARCH_ONLY","progress":50},{"name":"Lượt miễn phí và bộ đếm bảo hiểm","status":"PARTIAL","progress":75},{"name":"Preview và popup nhận thưởng","status":"PARTIAL","progress":75}]},{"id":"daily_tasks","name":"Nhiệm vụ & hàng ngày","progress":92.5,"features":[{"name":"Danh sách nhiệm vụ thường","status":"DONE","progress":100},{"name":"Theo dõi tiến độ nhiệm vụ","status":"DONE","progress":100},{"name":"Nhận thưởng một nhiệm vụ","status":"DONE","progress":100},{"name":"Nhận tất cả nhiệm vụ","status":"DONE","progress":100},{"name":"Chuỗi nhiệm vụ tiên quyết","status":"DONE","progress":100},{"name":"Reset nhiệm vụ ngày","status":"DONE","progress":100},{"name":"Điểm danh ngày","status":"DONE","progress":100},{"name":"Thưởng đăng nhập liên tiếp","status":"PARTIAL","progress":75},{"name":"Điểm hoạt lực","status":"PARTIAL","progress":75},{"name":"Rương hoạt lực ngày/tuần","status":"PARTIAL","progress":75}]},{"id":"events","name":"Sự kiện & hoạt động giới hạn","progress":18,"features":[{"name":"Trung tâm OpenService và danh sách sự kiện","status":"DONE","progress":100},{"name":"Chi tiết mốc, countdown và nhận thưởng","status":"DONE","progress":100},{"name":"Red-dot sự kiện","status":"DONE","progress":100},{"name":"Mốc cấp độ","status":"PARTIAL","progress":75},{"name":"Mốc chiến lực","status":"PARTIAL","progress":75},{"name":"Nạp tích lũy","status":"NOT_STARTED","progress":0},{"name":"Tiêu tích lũy","status":"NOT_STARTED","progress":0},{"name":"Nạp liên tục/hàng ngày","status":"NOT_STARTED","progress":0},{"name":"Phúc lợi Welfare","status":"NOT_STARTED","progress":0},{"name":"Vòng quay lớn","status":"NOT_STARTED","progress":0},{"name":"Siêu nạp","status":"NOT_STARTED","progress":0},{"name":"Huấn luyện thứ Hai","status":"NOT_STARTED","progress":0},{"name":"Đổi mảnh/vật phẩm PatchChange","status":"NOT_STARTED","progress":0},{"name":"Hoạt động ngày lễ","status":"NOT_STARTED","progress":0},{"name":"Quốc Khánh đổi quà","status":"NOT_STARTED","progress":0},{"name":"Cây tiền","status":"NOT_STARTED","progress":0},{"name":"Giảm nửa thể lực","status":"NOT_STARTED","progress":0},{"name":"Hoàn nạp","status":"NOT_STARTED","progress":0},{"name":"Xếp hạng phiêu lưu/tháp/cấp","status":"NOT_STARTED","progress":0},{"name":"Thi đua nạp/tiêu","status":"NOT_STARTED","progress":0},{"name":"Double Reward","status":"NOT_STARTED","progress":0},{"name":"Carnival khai server","status":"NOT_STARTED","progress":0},{"name":"Sự kiện Tết/YuanDan","status":"NOT_STARTED","progress":0},{"name":"Mua giới hạn và bảng hạng","status":"NOT_STARTED","progress":0},{"name":"Rút giới hạn LimitedChouka","status":"NOT_STARTED","progress":0}]},{"id":"mail","name":"Thư","progress":100,"features":[{"name":"Danh sách và phân loại thư","status":"DONE","progress":100},{"name":"Chi tiết thư","status":"DONE","progress":100},{"name":"Nhận đính kèm một thư","status":"DONE","progress":100},{"name":"Nhận hàng loạt","status":"DONE","progress":100},{"name":"Push thư realtime","status":"DONE","progress":100},{"name":"Red-dot thư","status":"DONE","progress":100}]},{"id":"friends","name":"Bạn bè","progress":37.5,"features":[{"name":"Danh sách bạn bè","status":"RESEARCH_ONLY","progress":50},{"name":"Tìm và thêm bạn","status":"RESEARCH_ONLY","progress":50},{"name":"Chấp nhận/từ chối lời mời","status":"RESEARCH_ONLY","progress":25},{"name":"Hủy bạn bè","status":"RESEARCH_ONLY","progress":25},{"name":"Xem thông tin bạn","status":"RESEARCH_ONLY","progress":50},{"name":"Tặng/nhận thể lực","status":"RESEARCH_ONLY","progress":50},{"name":"Nhắn tin riêng","status":"RESEARCH_ONLY","progress":25},{"name":"Mời bạn bè","status":"RESEARCH_ONLY","progress":25}]},{"id":"chat","name":"Chat","progress":21.43,"features":[{"name":"Chat thế giới","status":"NOT_STARTED","progress":0},{"name":"Chat cá nhân","status":"NOT_STARTED","progress":0},{"name":"Chat Guild","status":"NOT_STARTED","progress":0},{"name":"Barrage trong chiến đấu","status":"NOT_STARTED","progress":0},{"name":"Chat push protocol","status":"PARTIAL","progress":50},{"name":"Hồ sơ người gửi từ chat","status":"NOT_STARTED","progress":0},{"name":"Hàng đợi thông báo chạy chữ","status":"DONE","progress":100}]},{"id":"ranking","name":"Bảng xếp hạng","progress":4.17,"features":[{"name":"Xếp hạng chiến lực","status":"NOT_STARTED","progress":0},{"name":"Xếp hạng sao tướng","status":"NOT_STARTED","progress":0},{"name":"Xếp hạng Sky Tower","status":"BLOCKED","progress":25},{"name":"Xếp hạng Guild","status":"NOT_STARTED","progress":0},{"name":"Xếp hạng túi phúc","status":"NOT_STARTED","progress":0},{"name":"Xem đội hình người xếp hạng","status":"NOT_STARTED","progress":0}]},{"id":"guild","name":"Guild","progress":0,"features":[{"name":"Danh sách, tìm và xin vào Guild","status":"NOT_STARTED","progress":0},{"name":"Tạo Guild","status":"NOT_STARTED","progress":0},{"name":"Sảnh và thông tin Guild","status":"NOT_STARTED","progress":0},{"name":"Quản lý thành viên/chức vụ","status":"NOT_STARTED","progress":0},{"name":"Danh sách đơn xin","status":"NOT_STARTED","progress":0},{"name":"Chỉnh tên, thông báo, icon và điều kiện","status":"NOT_STARTED","progress":0},{"name":"Sự kiện/nhật ký Guild","status":"NOT_STARTED","progress":0},{"name":"Xếp hạng Guild","status":"NOT_STARTED","progress":0},{"name":"Quyên góp Guild","status":"NOT_STARTED","progress":0},{"name":"Trạm sạc","status":"NOT_STARTED","progress":0},{"name":"Tặng thể lực Guild","status":"NOT_STARTED","progress":0},{"name":"Tặng mảnh","status":"NOT_STARTED","progress":0},{"name":"Phát hồng bao","status":"NOT_STARTED","progress":0},{"name":"Cướp hồng bao","status":"NOT_STARTED","progress":0},{"name":"Cửa hàng Guild","status":"NOT_STARTED","progress":0},{"name":"Guild Boss","status":"NOT_STARTED","progress":0},{"name":"Thưởng Guild Boss","status":"NOT_STARTED","progress":0},{"name":"Gửi thư Guild","status":"NOT_STARTED","progress":0}]},{"id":"arena","name":"Võ Đạo Hội / Arena","progress":2.78,"features":[{"name":"Thông tin và đăng ký Arena","status":"NOT_STARTED","progress":0},{"name":"Danh sách đối thủ","status":"NOT_STARTED","progress":0},{"name":"Chiến đấu xếp hạng","status":"BLOCKED","progress":25},{"name":"Lịch sử chiến báo","status":"NOT_STARTED","progress":0},{"name":"Phần thưởng thứ hạng","status":"NOT_STARTED","progress":0},{"name":"Thưởng hàng ngày","status":"NOT_STARTED","progress":0},{"name":"Điểm vinh dự","status":"NOT_STARTED","progress":0},{"name":"Cửa hàng vinh dự","status":"NOT_STARTED","progress":0},{"name":"Đoán cược Arena","status":"NOT_STARTED","progress":0}]},{"id":"gods","name":"Boss mảnh / Gods","progress":3.57,"features":[{"name":"Danh sách Boss và mảnh","status":"NOT_STARTED","progress":0},{"name":"Ghép mảnh Boss","status":"NOT_STARTED","progress":0},{"name":"Chọn đối thủ cướp mảnh","status":"NOT_STARTED","progress":0},{"name":"Cướp mảnh","status":"BLOCKED","progress":25},{"name":"Miễn chiến","status":"NOT_STARTED","progress":0},{"name":"Ba chọn một","status":"NOT_STARTED","progress":0},{"name":"Chiến báo cướp mảnh","status":"NOT_STARTED","progress":0}]},{"id":"world_boss","name":"World Boss","progress":6.25,"features":[{"name":"Lịch và vào World Boss","status":"BLOCKED","progress":25},{"name":"Thông tin và máu Boss","status":"NOT_STARTED","progress":0},{"name":"Chiến đấu Boss","status":"BLOCKED","progress":25},{"name":"Sát thương cá nhân","status":"NOT_STARTED","progress":0},{"name":"Xếp hạng sát thương","status":"NOT_STARTED","progress":0},{"name":"Bổ đao/Kill God","status":"NOT_STARTED","progress":0},{"name":"Preview và nhận thưởng","status":"NOT_STARTED","progress":0},{"name":"Quyết toán kết thúc Boss","status":"NOT_STARTED","progress":0}]},{"id":"hero_story","name":"Anh Hùng Truyện / Ải quốc gia","progress":4.17,"features":[{"name":"Bản đồ truyện theo quốc gia","status":"NOT_STARTED","progress":0},{"name":"Đội hình riêng HeroStory","status":"NOT_STARTED","progress":0},{"name":"Đội dự bị HeroStory","status":"NOT_STARTED","progress":0},{"name":"Chiến đấu ải quốc gia","status":"BLOCKED","progress":25},{"name":"Tiến độ và red-dot","status":"NOT_STARTED","progress":0},{"name":"Cửa hàng HeroStory","status":"NOT_STARTED","progress":0}]},{"id":"harem","name":"Hậu cung / Hảo cảm","progress":0,"features":[{"name":"Danh sách nhân vật Hậu cung","status":"NOT_STARTED","progress":0},{"name":"Chi tiết hảo cảm","status":"NOT_STARTED","progress":0},{"name":"Tặng quà hảo cảm","status":"NOT_STARTED","progress":0},{"name":"Tiếp đãi/JieDai và buff","status":"NOT_STARTED","progress":0},{"name":"Giải cứu","status":"NOT_STARTED","progress":0},{"name":"Hỏi đáp","status":"NOT_STARTED","progress":0},{"name":"Bảng tin nhắn","status":"NOT_STARTED","progress":0},{"name":"YaoYaoLe/GuaGuaLe","status":"NOT_STARTED","progress":0},{"name":"Nhận thưởng hảo cảm","status":"NOT_STARTED","progress":0}]},{"id":"moe_battle","name":"Moe Battle","progress":8.33,"features":[{"name":"Vào mùa Moe Battle","status":"NOT_STARTED","progress":0},{"name":"Danh sách và vòng thi","status":"NOT_STARTED","progress":0},{"name":"Bỏ phiếu","status":"NOT_STARTED","progress":0},{"name":"Phiếu túi phúc từ bạn bè","status":"NOT_STARTED","progress":0},{"name":"Lịch sử kết quả","status":"NOT_STARTED","progress":0},{"name":"Bảng xếp hạng bình chọn","status":"NOT_STARTED","progress":0},{"name":"Nhận thưởng mùa","status":"NOT_STARTED","progress":0},{"name":"Thư Moe","status":"NOT_STARTED","progress":0},{"name":"Thức tỉnh Moe King","status":"PARTIAL","progress":75}]},{"id":"school_battle","name":"Đại chiến học viện","progress":0,"features":[{"name":"Đăng ký tham gia","status":"NOT_STARTED","progress":0},{"name":"Sơ đồ giải và top 8","status":"NOT_STARTED","progress":0},{"name":"Đoán cược","status":"NOT_STARTED","progress":0},{"name":"Chiến báo cá nhân","status":"NOT_STARTED","progress":0},{"name":"Chiến báo giải đấu","status":"NOT_STARTED","progress":0},{"name":"Nội dung và nhận thưởng","status":"NOT_STARTED","progress":0},{"name":"Thưởng Bá Chủ","status":"NOT_STARTED","progress":0}]},{"id":"cross_server","name":"Đỉnh phong liên server","progress":3.12,"features":[{"name":"Đăng ký liên server","status":"NOT_STARTED","progress":0},{"name":"Vòng bảng","status":"NOT_STARTED","progress":0},{"name":"Top 8","status":"NOT_STARTED","progress":0},{"name":"Nhật ký quán quân","status":"NOT_STARTED","progress":0},{"name":"Đặt cược","status":"NOT_STARTED","progress":0},{"name":"Chiến báo","status":"NOT_STARTED","progress":0},{"name":"Phần thưởng","status":"NOT_STARTED","progress":0},{"name":"Quyết toán chiến đấu liên server","status":"BLOCKED","progress":25}]},{"id":"vip_recharge","name":"VIP & nạp","progress":42.5,"features":[{"name":"Bảng cấp VIP 0-15","status":"RESEARCH_ONLY","progress":50},{"name":"Điểm VIP và lên cấp","status":"RESEARCH_ONLY","progress":25},{"name":"Danh sách đặc quyền","status":"RESEARCH_ONLY","progress":50},{"name":"Quà VIP từng cấp","status":"RESEARCH_ONLY","progress":50},{"name":"Gói nạp kim cương","status":"RESEARCH_ONLY","progress":50},{"name":"Tạo đơn hàng thanh toán","status":"BLOCKED","progress":25},{"name":"Xác minh và cộng nạp","status":"BLOCKED","progress":25},{"name":"Nạp đầu","status":"RESEARCH_ONLY","progress":50},{"name":"Thẻ tháng/Chung Thân Card","status":"RESEARCH_ONLY","progress":50},{"name":"Áp dụng gate VIP vào hệ thống","status":"PARTIAL","progress":50}]},{"id":"profile_settings","name":"Hồ sơ & cài đặt","progress":50,"features":[{"name":"Xem hồ sơ người chơi","status":"PARTIAL","progress":75},{"name":"Đổi avatar từ tướng sở hữu","status":"PARTIAL","progress":75},{"name":"Đổi tên sau tạo nhân vật","status":"RESEARCH_ONLY","progress":50},{"name":"Bật/tắt nhạc","status":"PARTIAL","progress":75},{"name":"Bật/tắt hiệu ứng âm thanh","status":"PARTIAL","progress":75},{"name":"Đổi gift code","status":"RESEARCH_ONLY","progress":50},{"name":"Hướng dẫn/GongLue","status":"NOT_STARTED","progress":0},{"name":"Mời bạn qua cài đặt","status":"NOT_STARTED","progress":0},{"name":"Thông tin phiên bản và cập nhật","status":"PARTIAL","progress":50}]},{"id":"talent","name":"Thiên phú","progress":0,"features":[{"name":"Mở khóa cấp 48","status":"NOT_STARTED","progress":0},{"name":"Danh sách nhánh thiên phú","status":"NOT_STARTED","progress":0},{"name":"Nâng cấp thiên phú","status":"NOT_STARTED","progress":0},{"name":"Thay thiên phú","status":"NOT_STARTED","progress":0},{"name":"Reset thiên phú","status":"NOT_STARTED","progress":0}]},{"id":"devil_challenge","name":"Ma Thần","progress":6.25,"features":[{"name":"Bản đồ Ma Thần","status":"NOT_STARTED","progress":0},{"name":"Chọn checkpoint Ma Thần","status":"NOT_STARTED","progress":0},{"name":"Cửu Vĩ và Boss đặc biệt","status":"NOT_STARTED","progress":0},{"name":"Chiến đấu Ma Thần","status":"BLOCKED","progress":25}]},{"id":"welfare","name":"HuanLeSong & phúc lợi","progress":0,"features":[{"name":"Sảnh HuanLeSong","status":"NOT_STARTED","progress":0},{"name":"Nhận thể lực theo khung giờ","status":"NOT_STARTED","progress":0},{"name":"Nạp nhân phẩm","status":"NOT_STARTED","progress":0},{"name":"Quiz hàng ngày","status":"NOT_STARTED","progress":0},{"name":"Duang mini-game","status":"NOT_STARTED","progress":0},{"name":"Cứu viện/JieJiu","status":"NOT_STARTED","progress":0},{"name":"Red-dot theo cooldown","status":"NOT_STARTED","progress":0}]},{"id":"notifications","name":"Thông báo","progress":100,"features":[{"name":"Marquee ZouMaDeng realtime","status":"DONE","progress":100},{"name":"Hàng đợi FIFO và màu nội dung","status":"DONE","progress":100},{"name":"WebGongGao lúc đăng nhập","status":"DONE","progress":100},{"name":"Popup GongGao chiến dịch","status":"DONE","progress":100},{"name":"Toast FuKuang","status":"DONE","progress":100},{"name":"Modal TiShi/Prompt dùng chung","status":"DONE","progress":100},{"name":"Transport realtime socket/push","status":"DONE","progress":100}]}]}</script>
+
+
+    <div id="coming-soon-toast" role="status" aria-live="polite" aria-atomic="true">
+        <div class="toast-accent" aria-hidden="true"><span class="toast-accent-bar"></span><i class="toast-accent-slash"></i><i class="toast-accent-slash"></i><i class="toast-accent-slash"></i></div>
+        <button type="button" id="coming-soon-close" class="toast-close" aria-label="Đóng thông báo"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg></button>
+        <div class="flex items-start gap-2">
+            <div class="min-w-0"><strong class="toast-title">SẮP RA MẮT</strong><p id="coming-soon-message"></p></div>
+        </div>
+        <span class="toast-timer" aria-hidden="true"></span>
+    </div>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-white dark:bg-gaming-cardDark shadow-2xl flex items-center justify-center transform scale-0 opacity-0 transition-all duration-300 focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-800 group border border-gray-200 dark:border-white/10">
+        <!-- SVG Progress Circle -->
+        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
+            <circle class="text-gray-200 dark:text-gray-700 stroke-current" stroke-width="6" cx="50" cy="50" r="44" fill="transparent"></circle>
+            <circle id="progress-circle" class="text-gaming-gold progress-ring__circle stroke-current" stroke-width="6" stroke-linecap="round" cx="50" cy="50" r="44" fill="transparent" stroke-dasharray="276.46" stroke-dashoffset="276.46"></circle>
+        </svg>
+        <!-- Arrow Icon -->
+        <svg class="w-6 h-6 text-gray-800 dark:text-white group-hover:text-gaming-gold transition-colors z-10 transform -translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
+    </button>
+
+    <script>
+        // --- 1. Dark/Light Mode Logic ---
+        const htmlElement = document.documentElement;
+        const themeToggleDesktop = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+        function initTheme() {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                htmlElement.classList.add('dark');
+            } else {
+                htmlElement.classList.remove('dark');
+            }
+        }
+
+        function toggleTheme() {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            if (typeof updateParticleTheme === 'function') {
+                updateParticleTheme(htmlElement.classList.contains('dark'));
+            }
+        }
+
+        themeToggleDesktop.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+        initTheme();
+
+        // --- 2. Mobile Menu & Accordion ---
+        const mobileMenuBtn = document.getElementById('mobile-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('opacity-0')) {
+                mobileMenu.classList.remove('opacity-0', 'scale-y-0', 'invisible');
+                mobileMenu.classList.add('opacity-100', 'scale-y-100', 'visible');
+            } else {
+                mobileMenu.classList.add('opacity-0', 'scale-y-0', 'invisible');
+                mobileMenu.classList.remove('opacity-100', 'scale-y-100', 'visible');
+            }
+        });
+
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            document.querySelectorAll('.mobile-submenu').forEach(el => {
+                if(el.id !== id) el.classList.remove('open');
+            });
+            content.classList.toggle('open');
+        }
+
+        // --- 3. Scroll Progress & Back to Top ---
+        const backToTopBtn = document.getElementById('back-to-top');
+        const progressCircle = document.getElementById('progress-circle');
+        const radius = progressCircle.r.baseVal.value;
+        const circumference = radius * 2 * Math.PI;
+
+        progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+        progressCircle.style.strokeDashoffset = circumference;
+
+        function setProgress(percent) {
+            const offset = circumference - percent / 100 * circumference;
+            progressCircle.style.strokeDashoffset = offset;
+        }
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            
+            const scrollPercent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+            
+            setProgress(scrollPercent);
+
+            if (scrollTop > window.innerHeight / 2) {
+                backToTopBtn.classList.remove('scale-0', 'opacity-0');
+                backToTopBtn.classList.add('scale-100', 'opacity-100');
+            } else {
+                backToTopBtn.classList.add('scale-0', 'opacity-0');
+                backToTopBtn.classList.remove('scale-100', 'opacity-100');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // --- 4. Feedback for links and buttons without a destination yet ---
+        const soonToast = document.getElementById('coming-soon-toast');
+        const soonMessage = document.getElementById('coming-soon-message');
+        let soonTimer;
+
+        function showComingSoon(message) {
+            soonMessage.textContent = message;
+            soonToast.classList.remove('is-visible');
+            void soonToast.offsetWidth; // Restart the entrance and countdown on repeated clicks.
+            soonToast.classList.add('is-visible');
+            clearTimeout(soonTimer);
+            soonTimer = setTimeout(() => soonToast.classList.remove('is-visible'), 4200);
+        }
+
+        document.getElementById('coming-soon-close').addEventListener('click', () => {
+            clearTimeout(soonTimer);
+            soonToast.classList.remove('is-visible');
+        });
+
+        function unavailableMessage(element) {
+            const label = element.textContent.trim().replace(/\s+/g, ' ');
+            const badge = element.querySelector('img')?.alt;
+            if (label === 'CHƠI NGAY') return 'Server test đang được chuẩn bị. Thời gian và cách tham gia sẽ được thông báo trong thời gian tới.';
+            if (badge === 'App Store' || badge === 'Google Play') return `Đường dẫn tải trên ${badge} sẽ được cập nhật khi phiên bản thử nghiệm sẵn sàng.`;
+            if (label === 'XEM TẤT CẢ') return 'Trang tổng hợp tin tức đang được hoàn thiện. Các cập nhật mới sẽ sớm có tại đây.';
+            if (label === 'KHÁM PHÁ GAMEPLAY') return 'Thông tin gameplay chi tiết sẽ được giới thiệu trong thời gian tới.';
+            if (element.classList.contains('card-container')) return 'Bài viết chi tiết đang được hoàn thiện. Vui lòng quay lại sau.';
+            return `Mục “${label}” đang được hoàn thiện và sẽ sớm ra mắt.`;
+        }
+
+        document.addEventListener('click', (event) => {
+            const inactive = event.target.closest('a[href="#"], button.btn-futuristic, .card-container[role="button"]:not(#progress-card)');
+            if (!inactive) return;
+            event.preventDefault();
+            showComingSoon(unavailableMessage(inactive));
+        });
+
+        document.querySelectorAll('.card-container[role="button"]:not(#progress-card)').forEach(card => {
+            card.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    showComingSoon(unavailableMessage(card));
+                }
+            });
+        });
+
+
+
+        // --- 4B. Detailed Game Development Progress Modal ---
+        const progressCard = document.getElementById('progress-card');
+        const progressModal = document.getElementById('game-progress-modal');
+        const progressModalShell = progressModal?.querySelector('.progress-modal-shell');
+        const progressSearchInput = document.getElementById('progress-search-input');
+        const progressModuleList = document.getElementById('progress-module-list');
+        const progressFilterTabs = document.getElementById('progress-filter-tabs');
+        const overallProgressRing = document.getElementById('overall-progress-ring');
+        const overallProgressValue = document.getElementById('overall-progress-value');
+        const progressStatGrid = document.getElementById('progress-stat-grid');
+        const progressStatusLegend = document.getElementById('progress-status-legend');
+
+        const progressStatusMeta = {
+            ALL: { label: 'Tất cả', color: '#ffba00' },
+            DONE: { label: 'Hoàn thành', color: '#4ade80' },
+            PARTIAL: { label: 'Đang phát triển', color: '#60a5fa' },
+            RESEARCH_ONLY: { label: 'Đang nghiên cứu', color: '#c084fc' },
+            NOT_STARTED: { label: 'Chưa bắt đầu', color: '#94a3b8' },
+            BLOCKED: { label: 'Tạm bị chặn', color: '#fb7185' }
+        };
+
+        let gameProgress = { overallProgress: 0, modules: [] };
+        let activeProgressFilter = 'ALL';
+        let lastProgressFocus = null;
+
+        try {
+            gameProgress = JSON.parse(document.getElementById('game-progress-data')?.textContent || '{}');
+        } catch (error) {
+            console.error('Không thể đọc dữ liệu tiến độ:', error);
+        }
+
+        function getProgressCounts() {
+            const counts = { DONE: 0, PARTIAL: 0, RESEARCH_ONLY: 0, NOT_STARTED: 0, BLOCKED: 0 };
+            let features = 0;
+            gameProgress.modules.forEach(module => {
+                module.features.forEach(feature => {
+                    features += 1;
+                    if (feature.status in counts) counts[feature.status] += 1;
+                });
+            });
+            return { counts, features };
+        }
+
+        function formatProgress(value) {
+            const n = Number(value || 0);
+            return Number.isInteger(n) ? `${n}%` : `${n.toFixed(2).replace(/0+$/, '').replace(/\.$/, '')}%`;
+        }
+
+        function renderProgressOverview() {
+            const { counts, features } = getProgressCounts();
+            const overall = Number(gameProgress.overallProgress || 0);
+            overallProgressRing?.style.setProperty('--progress', overall);
+            if (overallProgressValue) overallProgressValue.textContent = formatProgress(overall);
+
+            if (progressStatGrid) {
+                progressStatGrid.innerHTML = [
+                    ['MODULE', gameProgress.modules.length],
+                    ['HẠNG MỤC', features],
+                    ['HOÀN THÀNH', counts.DONE],
+                    ['ĐANG LÀM', counts.PARTIAL]
+                ].map(([label, value]) => `<div class="progress-stat"><strong>${value}</strong><span>${label}</span></div>`).join('');
+            }
+
+            if (progressStatusLegend) {
+                progressStatusLegend.innerHTML = Object.entries(counts).map(([status, count]) => {
+                    const meta = progressStatusMeta[status];
+                    return `<div class="progress-legend-row"><span class="progress-legend-label"><i class="status-dot" style="color:${meta.color};background:${meta.color}"></i>${meta.label}</span><strong style="color:${meta.color}">${count}</strong></div>`;
+                }).join('');
+            }
+        }
+
+        function renderProgressFilters() {
+            if (!progressFilterTabs) return;
+            progressFilterTabs.innerHTML = Object.entries(progressStatusMeta).map(([status, meta]) =>
+                `<button type="button" class="progress-filter-btn${activeProgressFilter === status ? ' is-active' : ''}" data-progress-filter="${status}">${meta.label}</button>`
+            ).join('');
+        }
+
+        function moduleMatches(module, query, filter) {
+            const normalized = query.trim().toLocaleLowerCase('vi');
+            const moduleTextMatch = !normalized || module.name.toLocaleLowerCase('vi').includes(normalized);
+            const matchingFeatures = module.features.filter(feature => {
+                const textMatch = !normalized || feature.name.toLocaleLowerCase('vi').includes(normalized);
+                const statusMatch = filter === 'ALL' || feature.status === filter;
+                return textMatch && statusMatch;
+            });
+            const filterMatch = filter === 'ALL' || module.features.some(feature => feature.status === filter);
+            return {
+                show: (moduleTextMatch && filterMatch) || matchingFeatures.length > 0,
+                matchingFeatures
+            };
+        }
+
+        function renderProgressModules() {
+            if (!progressModuleList) return;
+            const query = progressSearchInput?.value || '';
+            const cards = [];
+
+            gameProgress.modules.forEach((module, index) => {
+                const result = moduleMatches(module, query, activeProgressFilter);
+                if (!result.show) return;
+
+                const filteredFeatures = (query.trim() || activeProgressFilter !== 'ALL')
+                    ? result.matchingFeatures
+                    : module.features;
+                const doneCount = module.features.filter(f => f.status === 'DONE').length;
+                const searchActive = Boolean(query.trim());
+                const shouldExpand = searchActive || activeProgressFilter !== 'ALL';
+
+                const featureRows = filteredFeatures.map(feature => {
+                    const meta = progressStatusMeta[feature.status] || progressStatusMeta.NOT_STARTED;
+                    return `<div class="progress-feature-row">
+                        <span class="progress-feature-name">${feature.name}</span>
+                        <span class="progress-feature-percent">${formatProgress(feature.progress)}</span>
+                        <span class="progress-status-badge status-${feature.status}" title="${feature.status}">${meta.label}</span>
+                    </div>`;
+                }).join('');
+
+                cards.push(`<article class="progress-module-card${shouldExpand ? ' is-expanded' : ''}" data-module-id="${module.id}">
+                    <button type="button" class="progress-module-trigger" aria-expanded="${shouldExpand ? 'true' : 'false'}">
+                        <span class="progress-module-name">
+                            <span class="module-index">${String(index + 1).padStart(2, '0')}</span>
+                            <span><strong>${module.name}</strong><span class="progress-module-meta">${module.features.length} hạng mục · ${doneCount} hoàn thành</span></span>
+                        </span>
+                        <span class="progress-module-score"><strong>${formatProgress(module.progress)}</strong><svg class="module-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></span>
+                    </button>
+                    <div class="module-progress-track"><div class="module-progress-fill" style="width:${Math.max(0, Math.min(100, Number(module.progress || 0)))}%"></div></div>
+                    <div class="progress-feature-list">${featureRows || '<div class="progress-empty-state">Không có hạng mục phù hợp bộ lọc.</div>'}</div>
+                </article>`);
+            });
+
+            progressModuleList.innerHTML = cards.length
+                ? cards.join('')
+                : '<div class="progress-empty-state">Không tìm thấy module hoặc chức năng phù hợp.</div>';
+        }
+
+        function initializeProgressModal() {
+            renderProgressOverview();
+            renderProgressFilters();
+            renderProgressModules();
+        }
+
+        function openProgressModal() {
+            if (!progressModal) return;
+            lastProgressFocus = document.activeElement;
+            activeProgressFilter = 'ALL';
+            if (progressSearchInput) progressSearchInput.value = '';
+            initializeProgressModal();
+            progressModal.classList.add('is-open');
+            progressModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('progress-modal-open');
+            setTimeout(() => progressModalShell?.focus(), 40);
+        }
+
+        function closeProgressModal() {
+            if (!progressModal) return;
+            progressModal.classList.remove('is-open');
+            progressModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('progress-modal-open');
+            if (lastProgressFocus instanceof HTMLElement) lastProgressFocus.focus();
+        }
+
+        progressCard?.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            openProgressModal();
+        });
+
+        progressCard?.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                event.stopPropagation();
+                openProgressModal();
+            }
+        });
+
+        progressModal?.querySelectorAll('[data-progress-close]').forEach(element => {
+            element.addEventListener('click', closeProgressModal);
+        });
+
+        progressSearchInput?.addEventListener('input', renderProgressModules);
+
+        progressFilterTabs?.addEventListener('click', (event) => {
+            const button = event.target.closest('[data-progress-filter]');
+            if (!button) return;
+            activeProgressFilter = button.dataset.progressFilter;
+            renderProgressFilters();
+            renderProgressModules();
+        });
+
+        progressModuleList?.addEventListener('click', (event) => {
+            const trigger = event.target.closest('.progress-module-trigger');
+            if (!trigger) return;
+            const card = trigger.closest('.progress-module-card');
+            const expanded = card.classList.toggle('is-expanded');
+            trigger.setAttribute('aria-expanded', String(expanded));
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && progressModal?.classList.contains('is-open')) {
+                closeProgressModal();
+            }
+        });
+
+
+        // --- 5. Premium Particle Effect (Hero Section) ---
+        const canvas = document.getElementById('hero-particles');
+        const ctx = canvas.getContext('2d');
+        let particlesArray = [];
+        let isDark = htmlElement.classList.contains('dark');
+
+        function updateParticleTheme(darkStatus) {
+            isDark = darkStatus;
+        }
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 2 - 1;
+                this.speedY = Math.random() * 2 - 1;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.2) this.size -= 0.01; 
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                
+                if (isDark) {
+                    ctx.fillStyle = `rgba(255, 186, 0, ${this.opacity})`;
+                    ctx.shadowColor = '#FFBA00';
+                } else {
+                    ctx.fillStyle = `rgba(255, 42, 42, ${this.opacity})`;
+                    ctx.shadowColor = '#ff2a2a';
+                }
+                
+                ctx.shadowBlur = 10;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            let numParticles = (canvas.width * canvas.height) / 8000;
+            if(numParticles > 150) numParticles = 150;
+            for (let i = 0; i < numParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+                if(particlesArray[i].size <= 0.2) {
+                    particlesArray[i] = new Particle();
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        setTimeout(() => {
+            resizeCanvas();
+            animate();
+        }, 100);
+        // --- Mobile Hero Video Sound ---
+        const mobileHeroVideo = document.getElementById('mobile-hero-video');
+        const mobileSoundToggle = document.getElementById('mobile-sound-toggle');
+        const soundOffIcon = document.getElementById('sound-off-icon');
+        const soundOnIcon = document.getElementById('sound-on-icon');
+
+        if (mobileHeroVideo && mobileSoundToggle) {
+            mobileHeroVideo.muted = true;
+            mobileHeroVideo.volume = 1;
+
+            mobileSoundToggle.addEventListener('click', () => {
+                mobileHeroVideo.muted = !mobileHeroVideo.muted;
+
+                if (mobileHeroVideo.muted) {
+                    soundOffIcon.classList.remove('hidden');
+                    soundOnIcon.classList.add('hidden');
+
+                    mobileSoundToggle.setAttribute('aria-label', 'Bật âm thanh');
+                } else {
+                    soundOffIcon.classList.add('hidden');
+                    soundOnIcon.classList.remove('hidden');
+
+                    mobileSoundToggle.setAttribute('aria-label', 'Tắt âm thanh');
+
+                    mobileHeroVideo.play().catch(() => {});
+                }
+            });
+        }
+    </script>
+
+    <script>
+        // Keep the premium footer in sync with the same progress JSON used by the modal.
+        (() => {
+            try {
+                const source = document.getElementById('game-progress-data');
+                if (!source) return;
+                const data = JSON.parse(source.textContent || '{}');
+                const modules = Array.isArray(data.modules) ? data.modules : [];
+                const featureCount = modules.reduce((sum, module) => sum + (Array.isArray(module.features) ? module.features.length : 0), 0);
+                const overall = Number(data.overallProgress || 0);
+                const value = Number.isInteger(overall) ? `${overall}%` : `${overall.toFixed(2).replace(/0+$/, '').replace(/\.$/, '')}%`;
+                const valueEl = document.getElementById('footer-progress-value');
+                const fillEl = document.getElementById('footer-progress-fill');
+                const countEl = document.getElementById('footer-progress-count');
+                if (valueEl) valueEl.textContent = value;
+                if (fillEl) requestAnimationFrame(() => { fillEl.style.width = `${Math.max(0, Math.min(100, overall))}%`; });
+                if (countEl) countEl.textContent = `${modules.length} module · ${featureCount} hạng mục`;
+                document.getElementById('footer-progress-open')?.addEventListener('click', () => {
+                    if (typeof openProgressModal === 'function') openProgressModal();
+                });
+            } catch (error) {
+                console.warn('Không thể đồng bộ tiến độ ở footer:', error);
+            }
+        })();
+    </script>
+
+
+    <script>
+        // External-link confirmation: intercept normal clicks that leave this website.
+        (() => {
+            const modal = document.getElementById('external-link-modal');
+            const shell = modal?.querySelector('.external-link-shell');
+            const destinationName = document.getElementById('external-destination-name');
+            const destinationHost = document.getElementById('external-destination-host');
+            const securityText = document.getElementById('external-security-text');
+            const confirmButton = document.getElementById('external-link-confirm');
+            let pendingExternalLink = null;
+            let previousFocus = null;
+
+            const knownDestinations = [
+                { test: url => url.hostname.includes('facebook.com') && url.pathname.includes('/groups/mangatoithuong'), label: 'Group cộng đồng Manga Tối Thượng' },
+                { test: url => url.hostname.includes('facebook.com') && url.pathname.includes('/share/p/'), label: 'Bài viết góp ý tướng SR' },
+                { test: url => url.hostname.includes('facebook.com') && url.pathname.includes('/mangaallstarvietnam'), label: 'Fanpage chính thức Manga Tối Thượng' }
+            ];
+
+            function getDestinationLabel(anchor, url) {
+                const known = knownDestinations.find(item => item.test(url));
+                if (known) return known.label;
+                const aria = (anchor.getAttribute('aria-label') || '').trim();
+                if (aria) return aria;
+                const text = (anchor.textContent || '').replace(/\s+/g, ' ').trim();
+                if (text) return text.replace(/[↗→↑]+$/g, '').trim();
+                return url.hostname.replace(/^www\./, '');
+            }
+
+            function isExternalHttpLink(anchor) {
+                const rawHref = anchor.getAttribute('href');
+                if (!rawHref || anchor.dataset.externalConfirm === 'false') return false;
+                let url;
+                try { url = new URL(rawHref, window.location.href); } catch (_) { return false; }
+                if (!/^https?:$/.test(url.protocol)) return false;
+                if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+                    return url.origin !== window.location.origin;
+                }
+                return true;
+            }
+
+            function openExternalLinkModal(anchor) {
+                const url = new URL(anchor.href, window.location.href);
+                previousFocus = document.activeElement;
+                pendingExternalLink = {
+                    url: url.href,
+                    target: anchor.getAttribute('target') || '_self',
+                    label: getDestinationLabel(anchor, url)
+                };
+
+                if (destinationName) destinationName.textContent = pendingExternalLink.label;
+                if (destinationHost) destinationHost.textContent = `${url.hostname.replace(/^www\./, '')}${url.pathname !== '/' ? url.pathname : ''}`;
+                if (securityText) {
+                    const secure = url.protocol === 'https:';
+                    const newTab = pendingExternalLink.target === '_blank';
+                    securityText.textContent = `${secure ? 'Liên kết sử dụng HTTPS' : 'Liên kết không sử dụng HTTPS'} và sẽ được mở ${newTab ? 'trong tab mới' : 'trên trang hiện tại'}.`;
+                }
+                if (confirmButton) confirmButton.textContent = pendingExternalLink.target === '_blank' ? 'Xác nhận & tiếp tục ↗' : 'Xác nhận & tiếp tục';
+
+                modal?.classList.add('is-open');
+                modal?.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('external-link-modal-open');
+                setTimeout(() => document.getElementById('external-link-cancel')?.focus(), 30);
+            }
+
+            function closeExternalLinkModal() {
+                modal?.classList.remove('is-open');
+                modal?.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('external-link-modal-open');
+                pendingExternalLink = null;
+                if (previousFocus instanceof HTMLElement) previousFocus.focus();
+            }
+
+            document.addEventListener('click', event => {
+                if (event.defaultPrevented || event.button !== 0) return;
+                if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+                const anchor = event.target.closest?.('a[href]');
+                if (!anchor || !isExternalHttpLink(anchor)) return;
+                event.preventDefault();
+                openExternalLinkModal(anchor);
+            }, true);
+
+            confirmButton?.addEventListener('click', () => {
+                if (!pendingExternalLink) return;
+                const { url, target } = pendingExternalLink;
+                modal?.classList.remove('is-open');
+                modal?.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('external-link-modal-open');
+                pendingExternalLink = null;
+
+                if (target === '_blank') {
+                    const opened = window.open(url, '_blank', 'noopener,noreferrer');
+                    if (!opened) window.location.href = url;
+                } else {
+                    window.location.href = url;
+                }
+            });
+
+            modal?.querySelectorAll('[data-external-close]').forEach(element => {
+                element.addEventListener('click', closeExternalLinkModal);
+            });
+
+            document.addEventListener('keydown', event => {
+                if (!modal?.classList.contains('is-open')) return;
+                if (event.key === 'Escape') {
+                    event.preventDefault();
+                    closeExternalLinkModal();
+                    return;
+                }
+                if (event.key === 'Tab' && shell) {
+                    const focusables = [...shell.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+                        .filter(el => el.offsetParent !== null);
+                    if (!focusables.length) return;
+                    const first = focusables[0];
+                    const last = focusables[focusables.length - 1];
+                    if (event.shiftKey && document.activeElement === first) {
+                        event.preventDefault();
+                        last.focus();
+                    } else if (!event.shiftKey && document.activeElement === last) {
+                        event.preventDefault();
+                        first.focus();
+                    }
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>

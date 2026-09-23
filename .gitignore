@@ -1,0 +1,25 @@
+# Environment files and local secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.keystore
+credentials*
+*secret*
+*token*
+
+# Dependencies and temporary files
+node_modules/
+tmp/
+temp/
+*.tmp
+*.log
+
+# OS and editor metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
