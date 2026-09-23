@@ -7,6 +7,17 @@
     <link rel="icon" type="image/png" href="./img/logo_web_vuong.png">
     <link rel="shortcut icon" href="./img/logo_web_vuong.png" type="image/png">
     <link rel="apple-touch-icon" href="./img/logo_web_vuong.png">
+    <link rel="preload" as="image" href="./img/bia_mangatoithuong.png" media="(min-width: 769px)" fetchpriority="high">
+    <script>
+        // Apply the saved theme before first paint to prevent dark/light flashing.
+        (() => {
+            try {
+                const saved = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
+                document.documentElement.classList.toggle('dark', saved ? saved === 'dark' : prefersDark);
+            } catch (_) {}
+        })();
+    </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1808,9 +1819,345 @@
             .external-action { transition: none !important; }
         }
 
+
+
+        /* =====================================
+           ZERO-LAYOUT GAMING LOADER + SCROLL FX
+           Overlay/transform only — does not change page layout.
+           ===================================== */
+        body.site-loading { overflow: hidden; }
+
+        #game-boot-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: grid;
+            place-items: center;
+            padding: 22px;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            background:
+                radial-gradient(circle at 50% 38%, rgba(255,186,0,.12), transparent 28%),
+                radial-gradient(circle at 72% 20%, rgba(59,130,246,.08), transparent 30%),
+                #06080d;
+            transition: opacity .5s ease, visibility .5s ease;
+            contain: strict;
+        }
+
+        #game-boot-loader.is-complete {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .boot-grid {
+            position: absolute;
+            inset: 0;
+            opacity: .34;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+            background-size: 40px 40px;
+            -webkit-mask-image: radial-gradient(circle at center, #000 12%, transparent 72%);
+            mask-image: radial-gradient(circle at center, #000 12%, transparent 72%);
+        }
+
+        .boot-scanline {
+            position: absolute;
+            inset: -30% 0 auto;
+            height: 32%;
+            opacity: .32;
+            background: linear-gradient(to bottom, transparent, rgba(255,186,0,.08), transparent);
+            animation: boot-scan 2.6s linear infinite;
+            pointer-events: none;
+            will-change: transform;
+        }
+
+        .boot-shell {
+            --boot-progress: 0;
+            position: relative;
+            width: min(430px, calc(100vw - 34px));
+            padding: 28px 26px 22px;
+            overflow: hidden;
+            text-align: center;
+            color: #eef2f7;
+            border: 1px solid rgba(255,186,0,.30);
+            background:
+                linear-gradient(145deg, rgba(255,255,255,.045), transparent 46%),
+                rgba(10,13,21,.93);
+            clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+            box-shadow: 0 28px 80px rgba(0,0,0,.62), inset 0 0 38px rgba(255,186,0,.025);
+        }
+
+        .boot-shell::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 42%;
+            height: 3px;
+            background: linear-gradient(90deg, #ffba00, #ff7a00, transparent);
+            box-shadow: 0 0 18px rgba(255,186,0,.55);
+        }
+
+        .boot-core {
+            position: relative;
+            width: 126px;
+            height: 126px;
+            margin: 0 auto 20px;
+            display: grid;
+            place-items: center;
+        }
+
+        .boot-ring,
+        .boot-ring::before,
+        .boot-ring::after {
+            position: absolute;
+            inset: 0;
+            content: '';
+            border-radius: 50%;
+            border: 1px solid rgba(255,186,0,.38);
+        }
+
+        .boot-ring {
+            animation: boot-spin 2.3s linear infinite;
+            border-top-color: #ffba00;
+            border-right-color: rgba(59,130,246,.75);
+            filter: drop-shadow(0 0 9px rgba(255,186,0,.25));
+        }
+
+        .boot-ring::before {
+            inset: 10px;
+            border-color: rgba(59,130,246,.24);
+            border-left-color: #60a5fa;
+            animation: boot-spin-reverse 1.65s linear infinite;
+        }
+
+        .boot-ring::after {
+            inset: 20px;
+            border-color: rgba(255,255,255,.08);
+            border-bottom-color: rgba(255,186,0,.85);
+            animation: boot-spin 1.1s linear infinite;
+        }
+
+        .boot-logo-frame {
+            position: relative;
+            z-index: 2;
+            width: 70px;
+            height: 70px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255,186,0,.30);
+            background: radial-gradient(circle, rgba(255,186,0,.12), rgba(8,11,18,.96) 68%);
+            transform: rotate(45deg);
+            box-shadow: inset 0 0 24px rgba(255,186,0,.08), 0 0 24px rgba(255,186,0,.08);
+        }
+
+        .boot-logo-frame img {
+            width: 54px;
+            height: 54px;
+            object-fit: contain;
+            transform: rotate(-45deg);
+            filter: drop-shadow(0 0 10px rgba(255,186,0,.28));
+        }
+
+        .boot-kicker {
+            color: #ffca3a;
+            font: 800 9px/1 'Inter', sans-serif;
+            letter-spacing: .24em;
+            text-transform: uppercase;
+        }
+
+        .boot-title {
+            margin-top: 8px;
+            color: #fff;
+            font: 700 clamp(24px, 5vw, 34px)/1 'Oswald', sans-serif;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+
+        .boot-status {
+            min-height: 20px;
+            margin-top: 10px;
+            color: #8f9aae;
+            font-size: 11px;
+            letter-spacing: .035em;
+        }
+
+        .boot-progress-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .boot-progress-track {
+            position: relative;
+            flex: 1;
+            height: 6px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.07);
+            background: rgba(255,255,255,.055);
+        }
+
+        .boot-progress-fill {
+            position: absolute;
+            inset: 0;
+            transform: scaleX(var(--boot-scale, 0));
+            transform-origin: left center;
+            background: linear-gradient(90deg, #ffba00, #ff7a00 56%, #3b82f6);
+            box-shadow: 0 0 18px rgba(255,186,0,.42);
+            transition: transform .25s ease;
+            will-change: transform;
+        }
+
+        .boot-progress-value {
+            min-width: 42px;
+            text-align: right;
+            color: #fff;
+            font: 700 15px/1 'Oswald', sans-serif;
+        }
+
+        .boot-tip {
+            margin-top: 14px;
+            color: #5f6b7e;
+            font-size: 9px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        #scroll-energy-line {
+            --scroll-progress: 0;
+            position: fixed;
+            z-index: 90;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            pointer-events: none;
+            opacity: .88;
+            transform: scaleX(var(--scroll-scale, 0));
+            transform-origin: left center;
+            background: linear-gradient(90deg, #ffba00, #ff7a00 48%, #3b82f6);
+            box-shadow: 0 0 10px rgba(255,186,0,.58), 0 0 18px rgba(59,130,246,.18);
+            will-change: transform;
+        }
+
+        .gaming-reveal {
+            opacity: 0;
+            filter: blur(7px);
+            transform: translate3d(0, 34px, 0) scale(.986);
+            transition:
+                opacity .72s cubic-bezier(.2,.75,.2,1),
+                transform .82s cubic-bezier(.16,.8,.22,1),
+                filter .66s ease;
+            transition-delay: var(--reveal-delay, 0ms);
+            will-change: opacity, transform, filter;
+        }
+
+        .gaming-reveal[data-reveal-dir="left"] { transform: translate3d(-30px, 16px, 0) scale(.99); }
+        .gaming-reveal[data-reveal-dir="right"] { transform: translate3d(30px, 16px, 0) scale(.99); }
+        .gaming-reveal[data-reveal-dir="zoom"] { transform: translate3d(0, 18px, 0) scale(.955); }
+
+        .gaming-reveal.is-revealed {
+            opacity: 1;
+            filter: blur(0);
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+
+        .gaming-reveal.reveal-finished { will-change: auto; }
+
+        .snap-section.gaming-section-active .skew-divider {
+            box-shadow: 0 -3px 18px rgba(255,186,0,.22);
+        }
+
+        html:not(.dark) #game-boot-loader {
+            background:
+                radial-gradient(circle at 50% 38%, rgba(255,186,0,.14), transparent 30%),
+                radial-gradient(circle at 72% 20%, rgba(59,130,246,.10), transparent 30%),
+                #edf1f6;
+        }
+
+        html:not(.dark) .boot-grid {
+            background-image:
+                linear-gradient(rgba(15,23,42,.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(15,23,42,.035) 1px, transparent 1px);
+        }
+
+        html:not(.dark) .boot-shell {
+            color: #172033;
+            border-color: rgba(169,113,0,.28);
+            background:
+                linear-gradient(145deg, rgba(255,186,0,.10), transparent 46%),
+                rgba(255,255,255,.96);
+            box-shadow: 0 28px 70px rgba(15,23,42,.18), inset 0 0 32px rgba(255,186,0,.04);
+        }
+
+        html:not(.dark) .boot-logo-frame {
+            background: radial-gradient(circle, rgba(255,186,0,.13), #fff 68%);
+        }
+        html:not(.dark) .boot-title { color: #111827; }
+        html:not(.dark) .boot-kicker { color: #9b6800; }
+        html:not(.dark) .boot-status { color: #64748b; }
+        html:not(.dark) .boot-progress-value { color: #111827; }
+        html:not(.dark) .boot-progress-track { background: rgba(15,23,42,.08); border-color: rgba(15,23,42,.06); }
+        html:not(.dark) .boot-tip { color: #8290a3; }
+
+        @keyframes boot-spin { to { transform: rotate(360deg); } }
+        @keyframes boot-spin-reverse { to { transform: rotate(-360deg); } }
+        @keyframes boot-scan { from { transform: translate3d(0,-130%,0); } to { transform: translate3d(0,430%,0); } }
+
+        @media (max-width: 640px) {
+            .boot-shell { padding: 24px 20px 20px; }
+            .boot-core { width: 110px; height: 110px; }
+            .boot-logo-frame { width: 62px; height: 62px; }
+            .boot-logo-frame img { width: 48px; height: 48px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .boot-scanline,
+            .boot-ring,
+            .boot-ring::before,
+            .boot-ring::after { animation: none !important; }
+            .gaming-reveal,
+            .gaming-reveal[data-reveal-dir] {
+                opacity: 1 !important;
+                filter: none !important;
+                transform: none !important;
+                transition: none !important;
+            }
+            #scroll-energy-line { transition: none !important; }
+        }
+
     </style>
 </head>
-<body class="bg-gaming-light dark:bg-gaming-dark text-gray-800 dark:text-gray-200 transition-colors duration-500 font-sans">
+<body class="site-loading bg-gaming-light dark:bg-gaming-dark text-gray-800 dark:text-gray-200 transition-colors duration-500 font-sans">
+
+    <!-- Gaming boot loader: fixed overlay only, does not alter the existing layout. -->
+    <div id="game-boot-loader" role="status" aria-live="polite" aria-label="Đang tải Manga Tối Thượng">
+        <div class="boot-grid" aria-hidden="true"></div>
+        <div class="boot-scanline" aria-hidden="true"></div>
+        <div class="boot-shell" id="boot-shell">
+            <div class="boot-core" aria-hidden="true">
+                <div class="boot-ring"></div>
+                <div class="boot-logo-frame">
+                    <img src="./img/logo_web_vuong.png" alt="" width="54" height="54" decoding="async">
+                </div>
+            </div>
+            <div class="boot-kicker">System Initialization · Manga Allstar Vietnam</div>
+            <div class="boot-title">Manga Tối Thượng</div>
+            <div class="boot-status" id="boot-status">Đang khởi tạo giao diện...</div>
+            <div class="boot-progress-row">
+                <div class="boot-progress-track" aria-hidden="true"><span class="boot-progress-fill"></span></div>
+                <strong class="boot-progress-value" id="boot-progress-value">0%</strong>
+            </div>
+            <div class="boot-tip">Đang đồng bộ tài nguyên · Vui lòng chờ trong giây lát</div>
+        </div>
+    </div>
+    <div id="scroll-energy-line" aria-hidden="true"></div>
+
 
     <!-- Fixed contrasting Header -->
     <header class="fixed top-0 left-0 w-full z-50 header-glass h-20">
@@ -1947,6 +2294,9 @@
             <img
                 src="./img/bia_mangatoithuong.png"
                 alt="Manga Tối Thượng"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
                 class="absolute inset-0 hidden min-[769px]:block w-full h-full object-cover object-top"
             >
 
@@ -2046,7 +2396,7 @@
                     <a href="https://www.facebook.com/mangaallstarvietnam" target="_blank" rel="noopener noreferrer" aria-label="Xem thông tin server test trên Fanpage Manga Tối Thượng" class="card-container cursor-pointer h-full block">
                         <div class="glass h-full rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_15px_30px_rgba(255,186,0,0.15)] border border-gray-200 dark:border-white/10 hover:border-gaming-gold/50">
                             <div class="h-56 relative overflow-hidden">
-                                <img src="./img/manga_1.png" alt="News" class="w-full h-full object-cover hover-zoom">
+                                <img src="./img/manga_1.png" alt="News" loading="lazy" decoding="async" class="w-full h-full object-cover hover-zoom">
                                 <div class="absolute top-4 left-4 bg-gaming-gold text-black font-display font-bold px-3 py-1 rounded shadow-lg uppercase text-sm tracking-wide">Server Test</div>
                             </div>
                             <div class="p-6 flex-1 flex flex-col">
@@ -2063,7 +2413,7 @@
                     <a href="https://www.facebook.com/share/p/1c4hHW64XP/" target="_blank" rel="noopener noreferrer" aria-label="Góp ý tướng SR trên Facebook" class="card-container cursor-pointer h-full block">
                         <div class="glass h-full rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_15px_30px_rgba(255,42,42,0.15)] border border-gray-200 dark:border-white/10 hover:border-gaming-red/50">
                             <div class="h-56 relative overflow-hidden">
-                                <img src="./img/manga_SR.png" alt="News" class="w-full h-full object-cover hover-zoom">
+                                <img src="./img/manga_SR.png" alt="News" loading="lazy" decoding="async" class="w-full h-full object-cover hover-zoom">
                                 <div class="absolute top-4 left-4 bg-gaming-red text-white font-display font-bold px-3 py-1 rounded shadow-lg uppercase text-sm tracking-wide">Góp Ý</div>
                             </div>
                             <div class="p-6 flex-1 flex flex-col">
@@ -2080,7 +2430,7 @@
                     <div id="progress-card" class="card-container cursor-pointer h-full block" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="game-progress-modal">
                         <div class="glass h-full rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_15px_30px_rgba(59,130,246,0.15)] border border-gray-200 dark:border-white/10 hover:border-blue-500/50">
                             <div class="h-56 relative overflow-hidden">
-                                <img src="./img/manga_tiendo.png" alt="News" class="w-full h-full object-cover hover-zoom">
+                                <img src="./img/manga_tiendo.png" alt="News" loading="lazy" decoding="async" class="w-full h-full object-cover hover-zoom">
                                 <div class="absolute top-4 left-4 bg-blue-500 text-white font-display font-bold px-3 py-1 rounded shadow-lg uppercase text-sm tracking-wide">Tiến Độ</div>
                             </div>
                             <div class="p-6 flex-1 flex flex-col">
@@ -2115,7 +2465,7 @@
                 <div class="w-full lg:pr-8 flex flex-col justify-center">
                     
                     <div class="inline-block p-3 rounded-2xl bg-white dark:bg-black/50 shadow-xl border border-gray-200 dark:border-white/10 mb-8 backdrop-blur-md self-start">
-                        <img src="./img/logo_web.png" onerror="this.src='https://placehold.co/200x80/000/FFBA00?text=MANGA'" alt="Logo" class="h-12 w-auto object-contain">
+                        <img src="./img/logo_web.png" onerror="this.src='https://placehold.co/200x80/000/FFBA00?text=MANGA'" alt="Logo" loading="lazy" decoding="async" class="h-12 w-auto object-contain">
                     </div>
                     
                     <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold uppercase text-gray-900 dark:text-white mb-6 leading-tight">
@@ -2189,7 +2539,7 @@
                 <div class="footer-command">
                     <section class="footer-brand-block" aria-label="Manga Tối Thượng">
                         <a href="#main-scroll" class="footer-brand-logo-wrap" aria-label="Về đầu trang">
-                            <img src="./img/logo_web_vuong.png" onerror="this.src='./img/logo_web.png'" alt="Manga Tối Thượng" class="footer-brand-logo">
+                            <img src="./img/logo_web_vuong.png" onerror="this.src='./img/logo_web.png'" alt="Manga Tối Thượng" loading="lazy" decoding="async" class="footer-brand-logo">
                         </a>
                         <div class="min-w-0">
                             <div class="footer-eyebrow">Manga Allstar Vietnam · Project Rebuild</div>
@@ -2457,13 +2807,17 @@
             progressCircle.style.strokeDashoffset = offset;
         }
 
-        window.addEventListener('scroll', () => {
+        let scrollUiFrame = 0;
+        function updateScrollUi() {
+            scrollUiFrame = 0;
             const scrollTop = window.scrollY || document.documentElement.scrollTop;
             const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            
-            const scrollPercent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-            
+            const scrollPercent = scrollHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100)) : 0;
+
             setProgress(scrollPercent);
+            const scrollEnergyLine = document.getElementById('scroll-energy-line');
+            scrollEnergyLine?.style.setProperty('--scroll-progress', scrollPercent.toFixed(3));
+            scrollEnergyLine?.style.setProperty('--scroll-scale', (scrollPercent / 100).toFixed(4));
 
             if (scrollTop > window.innerHeight / 2) {
                 backToTopBtn.classList.remove('scale-0', 'opacity-0');
@@ -2472,7 +2826,12 @@
                 backToTopBtn.classList.add('scale-0', 'opacity-0');
                 backToTopBtn.classList.remove('scale-100', 'opacity-100');
             }
-        });
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!scrollUiFrame) scrollUiFrame = requestAnimationFrame(updateScrollUi);
+        }, { passive: true });
+        updateScrollUi();
 
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({
@@ -2734,43 +3093,59 @@
         });
 
 
-        // --- 5. Premium Particle Effect (Hero Section) ---
+        // --- 5. Premium Particle Effect (Hero Section) — performance aware ---
         const canvas = document.getElementById('hero-particles');
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas?.getContext('2d', { alpha: true });
         let particlesArray = [];
         let isDark = htmlElement.classList.contains('dark');
+        let particleFrame = 0;
+        let particleResizeFrame = 0;
+        let heroParticlesVisible = true;
+        const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+        const saveData = navigator.connection?.saveData === true;
+        const lowMemory = Number(navigator.deviceMemory || 8) <= 4;
+        const compactDevice = window.matchMedia?.('(max-width: 768px)').matches;
+        const particleCap = reduceMotion || saveData ? 0 : (compactDevice || lowMemory ? 54 : 110);
 
         function updateParticleTheme(darkStatus) {
             isDark = darkStatus;
         }
 
         function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            if (!canvas || !ctx) return;
+            const rect = canvas.getBoundingClientRect();
+            canvas.width = Math.max(1, Math.round(rect.width || window.innerWidth));
+            canvas.height = Math.max(1, Math.round(rect.height || window.innerHeight));
             initParticles();
         }
-        window.addEventListener('resize', resizeCanvas);
+
+        window.addEventListener('resize', () => {
+            if (particleResizeFrame) return;
+            particleResizeFrame = requestAnimationFrame(() => {
+                particleResizeFrame = 0;
+                resizeCanvas();
+            });
+        }, { passive: true });
 
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 2 - 1;
-                this.speedY = Math.random() * 2 - 1;
-                this.opacity = Math.random() * 0.5 + 0.2;
+                this.size = Math.random() * 2.4 + .8;
+                this.speedX = Math.random() * 1.35 - .675;
+                this.speedY = Math.random() * 1.35 - .675;
+                this.opacity = Math.random() * .42 + .16;
             }
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
-                if (this.size > 0.2) this.size -= 0.01; 
+                if (this.size > .2) this.size -= .007;
                 if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
                 if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
             }
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                
                 if (isDark) {
                     ctx.fillStyle = `rgba(255, 186, 0, ${this.opacity})`;
                     ctx.shadowColor = '#FFBA00';
@@ -2778,37 +3153,54 @@
                     ctx.fillStyle = `rgba(255, 42, 42, ${this.opacity})`;
                     ctx.shadowColor = '#ff2a2a';
                 }
-                
-                ctx.shadowBlur = 10;
+                ctx.shadowBlur = compactDevice || lowMemory ? 4 : 7;
                 ctx.fill();
             }
         }
 
         function initParticles() {
             particlesArray = [];
-            let numParticles = (canvas.width * canvas.height) / 8000;
-            if(numParticles > 150) numParticles = 150;
-            for (let i = 0; i < numParticles; i++) {
-                particlesArray.push(new Particle());
-            }
+            if (!canvas || !ctx || particleCap <= 0) return;
+            const calculated = Math.ceil((canvas.width * canvas.height) / 12000);
+            const numParticles = Math.max(18, Math.min(particleCap, calculated));
+            for (let i = 0; i < numParticles; i++) particlesArray.push(new Particle());
         }
 
-        function animate() {
+        function animateParticles() {
+            particleFrame = 0;
+            if (!canvas || !ctx || !heroParticlesVisible || document.hidden || particleCap <= 0) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-                if(particlesArray[i].size <= 0.2) {
-                    particlesArray[i] = new Particle();
-                }
+                const particle = particlesArray[i];
+                particle.update();
+                particle.draw();
+                if (particle.size <= .2) particlesArray[i] = new Particle();
             }
-            requestAnimationFrame(animate);
+            particleFrame = requestAnimationFrame(animateParticles);
         }
 
-        setTimeout(() => {
+        function resumeParticles() {
+            if (!particleFrame && heroParticlesVisible && !document.hidden && particleCap > 0) {
+                particleFrame = requestAnimationFrame(animateParticles);
+            }
+        }
+
+        if (canvas && ctx) {
             resizeCanvas();
-            animate();
-        }, 100);
+            const heroSection = canvas.closest('.snap-section');
+            if ('IntersectionObserver' in window && heroSection) {
+                new IntersectionObserver(entries => {
+                    heroParticlesVisible = entries[0]?.isIntersecting ?? true;
+                    if (heroParticlesVisible) resumeParticles();
+                    else if (particleFrame) { cancelAnimationFrame(particleFrame); particleFrame = 0; }
+                }, { rootMargin: '120px 0px', threshold: 0 }).observe(heroSection);
+            }
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden && particleFrame) { cancelAnimationFrame(particleFrame); particleFrame = 0; }
+                else resumeParticles();
+            });
+            resumeParticles();
+        }
         // --- Mobile Hero Video Sound ---
         const mobileHeroVideo = document.getElementById('mobile-hero-video');
         const mobileSoundToggle = document.getElementById('mobile-sound-toggle');
@@ -2992,5 +3384,166 @@
         })();
     </script>
 
+
+    <script>
+        // =====================================
+        // BOOT LOADER + GAMING SCROLL REVEAL + RUNTIME OPTIMIZATION
+        // No existing layout dimensions are changed.
+        // =====================================
+        (() => {
+            const loader = document.getElementById('game-boot-loader');
+            const shell = document.getElementById('boot-shell');
+            const status = document.getElementById('boot-status');
+            const value = document.getElementById('boot-progress-value');
+            const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+            const startedAt = performance.now();
+            let shownProgress = 4;
+            let finished = false;
+
+            const loadingMessages = [
+                [10, 'Đang khởi tạo giao diện...'],
+                [28, 'Đang nạp tài nguyên hình ảnh...'],
+                [48, 'Đang đồng bộ dữ liệu tiến độ...'],
+                [68, 'Đang chuẩn bị hiệu ứng chiến đấu...'],
+                [86, 'Đang tối ưu hiển thị...'],
+                [96, 'Sẵn sàng vào Manga Tối Thượng...']
+            ];
+
+            function updateBootProgress(next) {
+                shownProgress = Math.max(shownProgress, Math.min(100, next));
+                shell?.style.setProperty('--boot-progress', shownProgress.toFixed(2));
+                shell?.style.setProperty('--boot-scale', (shownProgress / 100).toFixed(4));
+                if (value) value.textContent = `${Math.round(shownProgress)}%`;
+                const message = [...loadingMessages].reverse().find(([point]) => shownProgress >= point)?.[1];
+                if (message && status) status.textContent = message;
+            }
+
+            function waitForImage(img) {
+                if (img.complete) return Promise.resolve();
+                return new Promise(resolve => {
+                    img.addEventListener('load', resolve, { once: true });
+                    img.addEventListener('error', resolve, { once: true });
+                });
+            }
+
+            function waitForVideo(video) {
+                if (video.readyState >= 2) return Promise.resolve();
+                return new Promise(resolve => {
+                    video.addEventListener('loadeddata', resolve, { once: true });
+                    video.addEventListener('error', resolve, { once: true });
+                });
+            }
+
+            const criticalImages = [...document.images].filter(img => img.loading !== 'lazy' && !img.closest('#game-boot-loader'));
+            const criticalVideos = [...document.querySelectorAll('video[preload="auto"]')].filter(video => video.offsetParent !== null);
+            const tasks = [
+                ...criticalImages.map(waitForImage),
+                ...criticalVideos.map(waitForVideo)
+            ];
+            if (document.fonts?.ready) tasks.push(document.fonts.ready.catch(() => {}));
+
+            let settled = 0;
+            const taskCount = Math.max(1, tasks.length);
+            tasks.forEach(task => Promise.resolve(task).finally(() => {
+                settled += 1;
+                updateBootProgress(12 + (settled / taskCount) * 76);
+            }));
+
+            const softProgress = setInterval(() => {
+                if (shownProgress < 88) updateBootProgress(shownProgress + Math.max(.6, (88 - shownProgress) * .035));
+            }, 110);
+
+            function closeLoader() {
+                if (finished) return;
+                finished = true;
+                clearInterval(softProgress);
+                updateBootProgress(100);
+                if (status) status.textContent = 'Hoàn tất · Chào mừng trở lại!';
+                const minVisible = reduceMotion ? 120 : 620;
+                const delay = Math.max(120, minVisible - (performance.now() - startedAt));
+                setTimeout(() => {
+                    loader?.classList.add('is-complete');
+                    document.body.classList.remove('site-loading');
+                    setTimeout(() => loader?.remove(), 560);
+                }, delay);
+            }
+
+            // Wait for critical visual data, but never let one slow CDN/media file trap the visitor.
+            Promise.race([
+                Promise.allSettled(tasks),
+                new Promise(resolve => setTimeout(resolve, 6500))
+            ]).then(closeLoader);
+            window.addEventListener('load', () => updateBootProgress(Math.max(shownProgress, 92)), { once: true });
+            setTimeout(closeLoader, 8000); // absolute safety cap
+
+            // Gaming entrance animations: transform/opacity only, powered by IntersectionObserver.
+            const revealSelectors = [
+                'main > .snap-section h1',
+                'main > .snap-section h2',
+                'main > .snap-section h3',
+                '#news .card-container',
+                'main > .snap-section p',
+                'main > .snap-section ul > li',
+                'main > .snap-section aside',
+                '.footer-brand-block',
+                '.footer-progress-panel',
+                '.footer-column',
+                '.footer-health-notice'
+            ];
+            const revealNodes = [...new Set(revealSelectors.flatMap(selector => [...document.querySelectorAll(selector)]))]
+                .filter(node => !node.closest('#game-progress-modal, #external-link-modal, #game-boot-loader'));
+
+            if (!reduceMotion && 'IntersectionObserver' in window) {
+                revealNodes.forEach((node, index) => {
+                    node.classList.add('gaming-reveal');
+                    node.style.setProperty('--reveal-delay', `${Math.min((index % 4) * 55, 165)}ms`);
+                    if (node.matches('aside, .footer-progress-panel')) node.dataset.revealDir = 'right';
+                    else if (node.matches('.footer-brand-block, .footer-column:nth-child(odd)')) node.dataset.revealDir = 'left';
+                    else if (node.matches('.card-container')) node.dataset.revealDir = 'zoom';
+                });
+
+                const revealObserver = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) return;
+                        const node = entry.target;
+                        node.classList.add('is-revealed');
+                        revealObserver.unobserve(node);
+                        node.addEventListener('transitionend', () => node.classList.add('reveal-finished'), { once: true });
+                    });
+                }, { rootMargin: '0px 0px -8% 0px', threshold: .10 });
+                revealNodes.forEach(node => revealObserver.observe(node));
+            } else {
+                revealNodes.forEach(node => node.classList.add('is-revealed', 'reveal-finished'));
+            }
+
+            // Brief section energy state without continuous scroll calculations.
+            if ('IntersectionObserver' in window) {
+                const sectionObserver = new IntersectionObserver(entries => {
+                    entries.forEach(entry => entry.target.classList.toggle('gaming-section-active', entry.isIntersecting));
+                }, { rootMargin: '-18% 0px -42% 0px', threshold: 0 });
+                document.querySelectorAll('.snap-section').forEach(section => sectionObserver.observe(section));
+            }
+
+            // Pause the mobile hero video when it cannot be seen. This saves battery/GPU/network decode time.
+            const heroVideo = document.getElementById('mobile-hero-video');
+            if (heroVideo && 'IntersectionObserver' in window) {
+                const videoObserver = new IntersectionObserver(entries => {
+                    const visible = entries[0]?.isIntersecting;
+                    if (!visible) heroVideo.pause();
+                    else heroVideo.play().catch(() => {});
+                }, { rootMargin: '80px 0px', threshold: .02 });
+                videoObserver.observe(heroVideo);
+            }
+
+            // Resume/stop media correctly when the browser tab becomes visible/hidden.
+            document.addEventListener('visibilitychange', () => {
+                if (!heroVideo) return;
+                if (document.hidden) heroVideo.pause();
+                else if (heroVideo.getBoundingClientRect().bottom > 0 && heroVideo.getBoundingClientRect().top < innerHeight) {
+                    heroVideo.play().catch(() => {});
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
