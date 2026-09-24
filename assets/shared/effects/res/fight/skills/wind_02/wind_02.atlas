@@ -1,0 +1,118 @@
+
+wind_02.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+dian1
+  rotate: false
+  xy: 150, 421
+  size: 144, 80
+  orig: 144, 80
+  offset: 0, 0
+  index: -1
+dian2
+  rotate: false
+  xy: 498, 894
+  size: 220, 120
+  orig: 220, 120
+  offset: 0, 0
+  index: -1
+dian3
+  rotate: true
+  xy: 2, 5
+  size: 211, 170
+  orig: 211, 170
+  offset: 0, 0
+  index: -1
+dian4
+  rotate: false
+  xy: 720, 877
+  size: 203, 137
+  orig: 203, 137
+  offset: 0, 0
+  index: -1
+dian5
+  rotate: false
+  xy: 875, 718
+  size: 139, 146
+  orig: 139, 146
+  offset: 0, 0
+  index: -1
+fong1
+  rotate: true
+  xy: 925, 866
+  size: 148, 88
+  orig: 148, 88
+  offset: 0, 0
+  index: -1
+fong2
+  rotate: false
+  xy: 498, 788
+  size: 187, 104
+  orig: 187, 104
+  offset: 0, 0
+  index: -1
+fong3
+  rotate: true
+  xy: 150, 503
+  size: 216, 116
+  orig: 216, 116
+  offset: 0, 0
+  index: -1
+fong4
+  rotate: true
+  xy: 2, 218
+  size: 232, 144
+  orig: 232, 144
+  offset: 0, 0
+  index: -1
+fong5
+  rotate: false
+  xy: 2, 721
+  size: 266, 150
+  orig: 266, 150
+  offset: 0, 0
+  index: -1
+fong6
+  rotate: true
+  xy: 2, 452
+  size: 267, 146
+  orig: 267, 146
+  offset: 0, 0
+  index: -1
+fong7
+  rotate: false
+  xy: 2, 873
+  size: 281, 141
+  orig: 281, 141
+  offset: 0, 0
+  index: -1
+fong8
+  rotate: false
+  xy: 687, 734
+  size: 186, 141
+  orig: 186, 141
+  offset: 0, 0
+  index: -1
+fong9
+  rotate: false
+  xy: 285, 877
+  size: 211, 137
+  orig: 211, 137
+  offset: 0, 0
+  index: -1
+jian
+  rotate: false
+  xy: 148, 230
+  size: 27, 92
+  orig: 27, 92
+  offset: 0, 0
+  index: -1
+mianpian
+  rotate: false
+  xy: 148, 324
+  size: 99, 95
+  orig: 99, 95
+  offset: 0, 0
+  index: -1

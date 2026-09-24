@@ -1,0 +1,62 @@
+
+missile_06.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+g
+  rotate: false
+  xy: 2, 303
+  size: 207, 207
+  orig: 207, 207
+  offset: 0, 0
+  index: -1
+q
+  rotate: false
+  xy: 393, 308
+  size: 95, 94
+  orig: 95, 94
+  offset: 0, 0
+  index: -1
+sq
+  rotate: false
+  xy: 393, 404
+  size: 110, 106
+  orig: 110, 106
+  offset: 0, 0
+  index: -1
+t1
+  rotate: true
+  xy: 2, 9
+  size: 93, 109
+  orig: 93, 109
+  offset: 0, 0
+  index: -1
+t2
+  rotate: true
+  xy: 194, 2
+  size: 154, 165
+  orig: 154, 165
+  offset: 0, 0
+  index: -1
+t3
+  rotate: false
+  xy: 2, 104
+  size: 190, 197
+  orig: 190, 197
+  offset: 0, 0
+  index: -1
+t4
+  rotate: false
+  xy: 211, 323
+  size: 180, 187
+  orig: 180, 187
+  offset: 0, 0
+  index: -1
+t5
+  rotate: true
+  xy: 211, 158
+  size: 163, 172
+  orig: 163, 172
+  offset: 0, 0
+  index: -1

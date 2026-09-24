@@ -1,0 +1,76 @@
+
+cg_07.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+gh
+  rotate: false
+  xy: 421, 536
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+gq
+  rotate: false
+  xy: 260, 525
+  size: 159, 158
+  orig: 159, 158
+  offset: 0, 0
+  index: -1
+sd1
+  rotate: true
+  xy: 260, 685
+  size: 88, 417
+  orig: 88, 417
+  offset: 0, 0
+  index: -1
+sd2
+  rotate: false
+  xy: 85, 9
+  size: 84, 423
+  orig: 84, 423
+  offset: 0, 0
+  index: -1
+sd3
+  rotate: false
+  xy: 2, 431
+  size: 81, 427
+  orig: 81, 427
+  offset: 0, 0
+  index: -1
+sd4
+  rotate: false
+  xy: 2, 2
+  size: 81, 427
+  orig: 81, 427
+  offset: 0, 0
+  index: -1
+sd5
+  rotate: false
+  xy: 171, 11
+  size: 81, 425
+  orig: 81, 425
+  offset: 0, 0
+  index: -1
+sd6
+  rotate: false
+  xy: 85, 434
+  size: 84, 424
+  orig: 84, 424
+  offset: 0, 0
+  index: -1
+sd7
+  rotate: true
+  xy: 260, 775
+  size: 83, 423
+  orig: 83, 423
+  offset: 0, 0
+  index: -1
+sd8
+  rotate: false
+  xy: 171, 438
+  size: 87, 420
+  orig: 87, 420
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,55 @@
+
+cg_06.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+b
+  rotate: false
+  xy: 376, 351
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+gq
+  rotate: false
+  xy: 359, 363
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+gt
+  rotate: false
+  xy: 188, 139
+  size: 159, 158
+  orig: 159, 158
+  offset: 0, 0
+  index: -1
+hh
+  rotate: false
+  xy: 2, 2
+  size: 176, 176
+  orig: 176, 176
+  offset: 0, 0
+  index: -1
+hx
+  rotate: true
+  xy: 359, 2
+  size: 359, 15
+  orig: 359, 15
+  offset: 0, 0
+  index: -1
+stgq
+  rotate: false
+  xy: 188, 299
+  size: 169, 211
+  orig: 169, 211
+  offset: 0, 0
+  index: -1
+sw
+  rotate: false
+  xy: 2, 180
+  size: 184, 330
+  orig: 184, 330
+  offset: 0, 0
+  index: -1

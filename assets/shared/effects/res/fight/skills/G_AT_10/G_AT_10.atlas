@@ -1,0 +1,76 @@
+
+G_AT_10.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+gong
+  rotate: true
+  xy: 2, 125
+  size: 199, 89
+  orig: 199, 89
+  offset: 0, 0
+  index: -1
+ju1
+  rotate: false
+  xy: 151, 327
+  size: 51, 55
+  orig: 51, 55
+  offset: 0, 0
+  index: -1
+ju2
+  rotate: false
+  xy: 93, 136
+  size: 74, 87
+  orig: 74, 87
+  offset: 0, 0
+  index: -1
+ju3
+  rotate: false
+  xy: 426, 392
+  size: 78, 113
+  orig: 78, 113
+  offset: 0, 0
+  index: -1
+ju4
+  rotate: false
+  xy: 2, 2
+  size: 83, 121
+  orig: 83, 121
+  offset: 0, 0
+  index: -1
+ju5
+  rotate: false
+  xy: 242, 388
+  size: 85, 117
+  orig: 85, 117
+  offset: 0, 0
+  index: -1
+ju6
+  rotate: false
+  xy: 151, 384
+  size: 89, 121
+  orig: 89, 121
+  offset: 0, 0
+  index: -1
+ju7
+  rotate: false
+  xy: 329, 402
+  size: 95, 103
+  orig: 95, 103
+  offset: 0, 0
+  index: -1
+ju8
+  rotate: false
+  xy: 93, 225
+  size: 98, 99
+  orig: 98, 99
+  offset: 0, 0
+  index: -1
+tuan
+  rotate: false
+  xy: 2, 326
+  size: 147, 179
+  orig: 147, 179
+  offset: 0, 0
+  index: -1

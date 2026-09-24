@@ -1,0 +1,48 @@
+
+mixed_17.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+jb
+  rotate: false
+  xy: 1, 67
+  size: 45, 50
+  orig: 45, 50
+  offset: 0, 0
+  index: -1
+jbh
+  rotate: true
+  xy: 180, 151
+  size: 146, 142
+  orig: 146, 142
+  offset: 0, 0
+  index: -1
+jbq
+  rotate: false
+  xy: 344, 308
+  size: 142, 178
+  orig: 142, 178
+  offset: 0, 0
+  index: -1
+jbz
+  rotate: false
+  xy: 190, 309
+  size: 152, 177
+  orig: 152, 177
+  offset: 0, 0
+  index: -1
+jbzh
+  rotate: false
+  xy: 1, 119
+  size: 177, 178
+  orig: 177, 178
+  offset: 0, 0
+  index: -1
+jh
+  rotate: false
+  xy: 1, 299
+  size: 187, 187
+  orig: 187, 187
+  offset: 0, 0
+  index: -1

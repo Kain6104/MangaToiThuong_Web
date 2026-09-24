@@ -1,0 +1,97 @@
+
+wind_01.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+feng1
+  rotate: false
+  xy: 2, 631
+  size: 247, 225
+  orig: 247, 225
+  offset: 0, 0
+  index: -1
+feng10
+  rotate: false
+  xy: 251, 615
+  size: 454, 214
+  orig: 454, 214
+  offset: 0, 0
+  index: -1
+feng2
+  rotate: false
+  xy: 439, 357
+  size: 263, 256
+  orig: 263, 256
+  offset: 0, 0
+  index: -1
+feng3
+  rotate: true
+  xy: 707, 579
+  size: 233, 261
+  orig: 233, 261
+  offset: 0, 0
+  index: -1
+feng4
+  rotate: true
+  xy: 770, 814
+  size: 206, 250
+  orig: 206, 250
+  offset: 0, 0
+  index: -1
+feng5
+  rotate: true
+  xy: 573, 831
+  size: 189, 195
+  orig: 189, 195
+  offset: 0, 0
+  index: -1
+feng6
+  rotate: true
+  xy: 381, 832
+  size: 188, 190
+  orig: 188, 190
+  offset: 0, 0
+  index: -1
+feng7
+  rotate: false
+  xy: 478, 6
+  size: 448, 349
+  orig: 448, 349
+  offset: 0, 0
+  index: -1
+feng8
+  rotate: false
+  xy: 2, 17
+  size: 474, 338
+  orig: 474, 338
+  offset: 0, 0
+  index: -1
+feng9
+  rotate: false
+  xy: 2, 365
+  size: 435, 248
+  orig: 435, 248
+  offset: 0, 0
+  index: -1
+qiu
+  rotate: false
+  xy: 2, 929
+  size: 92, 91
+  orig: 92, 91
+  offset: 0, 0
+  index: -1
+qiu2
+  rotate: false
+  xy: 96, 929
+  size: 91, 91
+  orig: 91, 91
+  offset: 0, 0
+  index: -1
+quan
+  rotate: false
+  xy: 189, 858
+  size: 190, 162
+  orig: 190, 162
+  offset: 0, 0
+  index: -1

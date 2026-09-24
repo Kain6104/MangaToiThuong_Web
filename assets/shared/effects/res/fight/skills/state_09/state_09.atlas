@@ -1,0 +1,13 @@
+
+state_09.png
+size: 128,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+x
+  rotate: false
+  xy: 2, 2
+  size: 72, 73
+  orig: 72, 73
+  offset: 0, 0
+  index: -1

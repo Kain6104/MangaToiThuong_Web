@@ -1,0 +1,377 @@
+{
+  "heroCode": "H141",
+  "heroId": 1261449777,
+  "renderer": "native-windows-offline-spine-2.1.27+cocos-armature",
+  "webStatus": "ANIMATION_WITH_PARTIAL_VFX",
+  "effectParity": "PARTIAL_VFX",
+  "model": {
+    "skeleton": "./assets/heros/H141/model/H141.skel",
+    "atlas": "./assets/heros/H141/model/H141.atlas",
+    "textures": [
+      "./assets/heros/H141/model/H141.png"
+    ],
+    "spineVersion": "2.1.27",
+    "animationList": [
+      "stand",
+      "stand_1",
+      "stand_2",
+      "stand_3"
+    ],
+    "bones": 101,
+    "slots": 42
+  },
+  "animations": {
+    "idle": "stand"
+  },
+  "battleController": {
+    "source": "res/fight/ani/ani.ExportJson",
+    "renderer": "Cocos Armature",
+    "webAssets": [
+      {
+        "path": "./assets/shared/effects/res/fight/ani/ani.ExportJson",
+        "format": "Cocos Armature ExportJson"
+      },
+      {
+        "path": "./assets/shared/effects/res/fight/ani/ani0.plist",
+        "format": "plist"
+      },
+      {
+        "path": "./assets/shared/effects/res/fight/ani/ani0.png",
+        "format": "CCZp→PNG"
+      }
+    ],
+    "webStatus": "WEB_EFFECT_UNSUPPORTED"
+  },
+  "effects": {
+    "skill1": [
+      {
+        "type": "CHARACTER_ANIMATION",
+        "field": "ActionBeforeSkill",
+        "source": "shake",
+        "timing": 0,
+        "renderer": "Cocos Armature ani.ExportJson",
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PARTICLE",
+        "field": "SelfEffect",
+        "source": "res/fight/skills/voice_01/voice_01",
+        "timing": 0,
+        "webAssets": [
+          {
+            "path": "./assets/shared/effects/res/fight/skills/voice_01/voice_01.atlas",
+            "format": "atlas"
+          },
+          {
+            "path": "./assets/shared/effects/res/fight/skills/voice_01/voice_01.png",
+            "format": "CCZp→PNG"
+          },
+          {
+            "path": "./assets/shared/effects/res/fight/skills/voice_01/voice_01.skel",
+            "format": "skel"
+          }
+        ],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PROJECTILE",
+        "field": "ProEffect",
+        "source": "res/effect/s129tsw.xml",
+        "timing": 0,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "HIT_EFFECT",
+        "field": "PostEffect",
+        "source": "res/effect/s129mb.xml",
+        "timing": 521,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "BUFF_EFFECT",
+        "field": "Buff/SkillIDForBuf",
+        "source": 1110520377,
+        "timing": 3000,
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "SOUND",
+        "field": "SelfSoundEffect",
+        "source": "res/sound/skill/Y_H141_01.mp3",
+        "webAssets": [
+          {
+            "path": "./assets/shared/audio/skill/Y_H141_01.mp3",
+            "format": "mp3"
+          }
+        ],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      },
+      {
+        "type": "SOUND",
+        "field": "ProSoundEffect",
+        "source": "res/sound/skill/S129S.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      },
+      {
+        "type": "SOUND",
+        "field": "PostSoundEffect",
+        "source": "res/sound/skill/S129H.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      }
+    ],
+    "skill2": [
+      {
+        "type": "CHARACTER_ANIMATION",
+        "field": "ActionBeforeSkill",
+        "source": "shake",
+        "timing": 0,
+        "renderer": "Cocos Armature ani.ExportJson",
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PARTICLE",
+        "field": "SelfEffect",
+        "source": "res/fight/skills/voice_01/voice_01",
+        "timing": 0,
+        "webAssets": [
+          {
+            "path": "./assets/shared/effects/res/fight/skills/voice_01/voice_01.atlas",
+            "format": "atlas"
+          },
+          {
+            "path": "./assets/shared/effects/res/fight/skills/voice_01/voice_01.png",
+            "format": "CCZp→PNG"
+          },
+          {
+            "path": "./assets/shared/effects/res/fight/skills/voice_01/voice_01.skel",
+            "format": "skel"
+          }
+        ],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PROJECTILE",
+        "field": "ProEffect",
+        "source": "res/effect/s130tsw.xml",
+        "timing": 0,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "HIT_EFFECT",
+        "field": "PostEffect",
+        "source": "res/effect/s130mb.xml",
+        "timing": 522,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "SOUND",
+        "field": "SelfSoundEffect",
+        "source": "res/sound/skill/Y_H141_02.mp3",
+        "webAssets": [
+          {
+            "path": "./assets/shared/audio/skill/Y_H141_02.mp3",
+            "format": "mp3"
+          }
+        ],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      },
+      {
+        "type": "SOUND",
+        "field": "ProSoundEffect",
+        "source": "res/sound/skill/S130S.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      },
+      {
+        "type": "SOUND",
+        "field": "PostSoundEffect",
+        "source": "res/sound/skill/S130H.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      }
+    ],
+    "skill3": [
+      {
+        "type": "CHARACTER_ANIMATION",
+        "field": "ActionBeforeSkill",
+        "source": "shake",
+        "timing": 0,
+        "renderer": "Cocos Armature ani.ExportJson",
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PARTICLE",
+        "field": "SelfEffect",
+        "source": "res/fight/skills/voice_01/voice_01",
+        "timing": 0,
+        "webAssets": [
+          {
+            "path": "./assets/shared/effects/res/fight/skills/voice_01/voice_01.atlas",
+            "format": "atlas"
+          },
+          {
+            "path": "./assets/shared/effects/res/fight/skills/voice_01/voice_01.png",
+            "format": "CCZp→PNG"
+          },
+          {
+            "path": "./assets/shared/effects/res/fight/skills/voice_01/voice_01.skel",
+            "format": "skel"
+          }
+        ],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PROJECTILE",
+        "field": "ProEffect",
+        "source": "res/effect/s131tsw.xml",
+        "timing": 0,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "HIT_EFFECT",
+        "field": "PostEffect",
+        "source": "res/effect/s131mb.xml",
+        "timing": 523,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "SOUND",
+        "field": "SelfSoundEffect",
+        "source": "res/sound/skill/Y_H141_03.mp3",
+        "webAssets": [
+          {
+            "path": "./assets/shared/audio/skill/Y_H141_03.mp3",
+            "format": "mp3"
+          }
+        ],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      },
+      {
+        "type": "SOUND",
+        "field": "ProSoundEffect",
+        "source": "res/sound/skill/S131S.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      },
+      {
+        "type": "SOUND",
+        "field": "PostSoundEffect",
+        "source": "res/sound/skill/S131H.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      }
+    ],
+    "skill4": [
+      {
+        "type": "CHARACTER_ANIMATION",
+        "field": "ActionBeforeSkill",
+        "source": "shake",
+        "timing": 0,
+        "renderer": "Cocos Armature ani.ExportJson",
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PARTICLE",
+        "field": "SelfEffect",
+        "source": "res/fight/skills/voice_01/voice_01",
+        "timing": 0,
+        "webAssets": [
+          {
+            "path": "./assets/shared/effects/res/fight/skills/voice_01/voice_01.atlas",
+            "format": "atlas"
+          },
+          {
+            "path": "./assets/shared/effects/res/fight/skills/voice_01/voice_01.png",
+            "format": "CCZp→PNG"
+          },
+          {
+            "path": "./assets/shared/effects/res/fight/skills/voice_01/voice_01.skel",
+            "format": "skel"
+          }
+        ],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PROJECTILE",
+        "field": "ProEffect",
+        "source": "res/effect/s132tsw.xml",
+        "timing": 0,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "HIT_EFFECT",
+        "field": "PostEffect",
+        "source": "res/effect/s132mb.xml",
+        "timing": 524,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "SOUND",
+        "field": "ProSoundEffect",
+        "source": "res/sound/skill/S132S.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      },
+      {
+        "type": "SOUND",
+        "field": "PostSoundEffect",
+        "source": "res/sound/skill/S132H.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      }
+    ]
+  },
+  "notes": [
+    "Hero skeleton contains stand variants only; combat actions are driven by the shared Cocos Armature controller.",
+    "Original model and referenced effect assets are packaged, but no incompatible web runtime is enabled.",
+    "Exported directly on Windows with the original local Spine 2.1.27 runtime and source Cocos Armature transforms; no APK/emulator used."
+  ],
+  "code": "H141",
+  "staticImage": "./img/heros/H141.png",
+  "visuals": {
+    "idle": {
+      "type": "image",
+      "format": "animated-webp",
+      "src": "./assets/heros/H141/visual/idle.webp",
+      "loop": true,
+      "durationMs": 2700,
+      "fps": 30,
+      "frameCount": 81,
+      "renderer": "native-windows-offline-original-runtime",
+      "source": "res/card/role/H141/H141.skel animation stand; CardModel.lua timeScale=1/2"
+    },
+    "attack": {
+      "type": "image",
+      "format": "animated-webp",
+      "src": "./assets/heros/H141/visual/attack.webp",
+      "loop": false,
+      "durationMs": 433,
+      "fps": 30,
+      "frameCount": 13,
+      "renderer": "native-windows-offline-original-runtime",
+      "source": "CardModel.lua ProSpellEffect + res/fight/ani/ani.ExportJson movement shoot_o_x for bCardF=true; Cocos Armature scale=0.5"
+    },
+    "skill1": {
+      "type": "image",
+      "format": "animated-webp",
+      "src": "./assets/heros/H141/visual/skill1.webp",
+      "loop": false,
+      "durationMs": 2933,
+      "fps": 30,
+      "frameCount": 88,
+      "renderer": "native-windows-offline-original-runtime",
+      "source": "SkillRes X041 SelfEffect + moSkillX041.lua literal animation zs_3",
+      "effectParity": "PARTIAL_VFX"
+    }
+  }
+}

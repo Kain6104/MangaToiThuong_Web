@@ -1,0 +1,261 @@
+{
+  "generatedAt": "2026-09-24T10:05:56+07:00",
+  "imported": [
+    {
+      "onlyId": 1261449521,
+      "code": "H011",
+      "sourceName": "Naz",
+      "name": "Natsu",
+      "rarity": "SR",
+      "leaders": [
+        15,
+        16
+      ],
+      "rows": 98,
+      "skills": [
+        1479620920,
+        1479620921,
+        1479684144,
+        1479684145
+      ],
+      "active": "ACTIVE",
+      "modelTextures": [
+        "./assets/heros/H011/model/H011.png",
+        "./assets/heros/H011/model/H0112.png"
+      ]
+    },
+    {
+      "onlyId": 1261449523,
+      "code": "H013",
+      "sourceName": "Kagula",
+      "name": "Kagura",
+      "rarity": "SR",
+      "leaders": [
+        15,
+        16
+      ],
+      "rows": 98,
+      "skills": [
+        1479684662,
+        1479684663,
+        1479684664,
+        1479684665
+      ],
+      "active": "HIDDEN",
+      "modelTextures": [
+        "./assets/heros/H013/model/H013.png",
+        "./assets/heros/H013/model/H0132.png"
+      ]
+    },
+    {
+      "onlyId": 1261449524,
+      "code": "H014",
+      "sourceName": "Sanji",
+      "name": "Sanji",
+      "rarity": "SR",
+      "leaders": [
+        15,
+        16
+      ],
+      "rows": 98,
+      "skills": [
+        1479684912,
+        1479684913,
+        1479684914,
+        1479684915
+      ],
+      "active": "HIDDEN",
+      "modelTextures": [
+        "./assets/heros/H014/model/H014.png"
+      ]
+    },
+    {
+      "onlyId": 1261450034,
+      "code": "H152",
+      "sourceName": "Sasuke",
+      "name": "Sasuke",
+      "rarity": "SR",
+      "leaders": [
+        15,
+        16
+      ],
+      "rows": 98,
+      "skills": [
+        1479684150,
+        1479684151,
+        1479684152,
+        1479684153
+      ],
+      "active": "ACTIVE",
+      "modelTextures": [
+        "./assets/heros/H152/model/H152.png",
+        "./assets/heros/H152/model/H1522.png"
+      ]
+    },
+    {
+      "onlyId": 1261450035,
+      "code": "H153",
+      "sourceName": "Athena",
+      "name": "Athena",
+      "rarity": "SR",
+      "leaders": [
+        15,
+        16
+      ],
+      "rows": 98,
+      "skills": [
+        1479684400,
+        1479684401,
+        1479684402,
+        1479684403
+      ],
+      "active": "HIDDEN",
+      "modelTextures": [
+        "./assets/heros/H153/model/H153.png",
+        "./assets/heros/H153/model/H1532.png"
+      ]
+    },
+    {
+      "onlyId": 1261450547,
+      "code": "H293",
+      "sourceName": "Batman",
+      "name": "Batman",
+      "rarity": "SR",
+      "leaders": [
+        15,
+        16
+      ],
+      "rows": 98,
+      "skills": [
+        1479684404,
+        1479684405,
+        1479684406,
+        1479684407
+      ],
+      "active": "ACTIVE",
+      "modelTextures": [
+        "./assets/heros/H293/model/H293.png",
+        "./assets/heros/H293/model/H2932.png"
+      ]
+    },
+    {
+      "onlyId": 1261450548,
+      "code": "H294",
+      "sourceName": "Zoro",
+      "name": "Zoro",
+      "rarity": "SR",
+      "leaders": [
+        15,
+        16
+      ],
+      "rows": 98,
+      "skills": [
+        1479684408,
+        1479684409,
+        1479684656,
+        1479684657
+      ],
+      "active": "ACTIVE",
+      "modelTextures": [
+        "./assets/heros/H294/model/H294.png",
+        "./assets/heros/H294/model/H2942.png"
+      ]
+    },
+    {
+      "onlyId": 1261451057,
+      "code": "H431",
+      "sourceName": "Killua",
+      "name": "Killua",
+      "rarity": "SR",
+      "leaders": [
+        15,
+        16
+      ],
+      "rows": 98,
+      "skills": [
+        1479684146,
+        1479684147,
+        1479684148,
+        1479684149
+      ],
+      "active": "ACTIVE",
+      "modelTextures": [
+        "./assets/heros/H431/model/H431.png",
+        "./assets/heros/H431/model/H4312.png"
+      ]
+    },
+    {
+      "onlyId": 1261451061,
+      "code": "H435",
+      "sourceName": "Zhao Yun",
+      "name": "Triệu Vân",
+      "rarity": "SR",
+      "leaders": [
+        15,
+        16
+      ],
+      "rows": 98,
+      "skills": [
+        1479620916,
+        1479620917,
+        1479620918,
+        1479620919
+      ],
+      "active": "ACTIVE",
+      "modelTextures": [
+        "./assets/heros/H435/model/H435.png",
+        "./assets/heros/H435/model/H4352.png"
+      ]
+    },
+    {
+      "onlyId": 1261451062,
+      "code": "H436",
+      "sourceName": "Gaara",
+      "name": "Gaara",
+      "rarity": "SR",
+      "leaders": [
+        15,
+        16
+      ],
+      "rows": 98,
+      "skills": [
+        1479684658,
+        1479684659,
+        1479684660,
+        1479684661
+      ],
+      "active": "ACTIVE",
+      "modelTextures": [
+        "./assets/heros/H436/model/H436.png",
+        "./assets/heros/H436/model/H4362.png"
+      ]
+    },
+    {
+      "onlyId": 1261451063,
+      "code": "H437",
+      "sourceName": "Piccolo",
+      "name": "Piccolo",
+      "rarity": "SR",
+      "leaders": [
+        15,
+        16
+      ],
+      "rows": 98,
+      "skills": [
+        1479684916,
+        1479684917,
+        1479684918,
+        1479684919
+      ],
+      "active": "ACTIVE",
+      "modelTextures": [
+        "./assets/heros/H437/model/H437.png"
+      ]
+    }
+  ],
+  "counts": {
+    "SSR": 0,
+    "SR": 11,
+    "total": 56
+  }
+}

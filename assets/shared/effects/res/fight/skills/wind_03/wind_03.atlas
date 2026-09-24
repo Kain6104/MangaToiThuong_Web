@@ -1,0 +1,111 @@
+
+wind_03.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+hy1
+  rotate: false
+  xy: 437, 43
+  size: 152, 152
+  orig: 152, 152
+  offset: 0, 0
+  index: -1
+hy2
+  rotate: true
+  xy: 826, 407
+  size: 264, 171
+  orig: 264, 171
+  offset: 0, 0
+  index: -1
+hy3
+  rotate: false
+  xy: 739, 673
+  size: 274, 168
+  orig: 274, 168
+  offset: 0, 0
+  index: -1
+hy4
+  rotate: false
+  xy: 739, 843
+  size: 283, 179
+  orig: 283, 179
+  offset: 0, 0
+  index: -1
+hy5
+  rotate: true
+  xy: 661, 342
+  size: 285, 163
+  orig: 285, 163
+  offset: 0, 0
+  index: -1
+hy6
+  rotate: true
+  xy: 494, 341
+  size: 286, 165
+  orig: 286, 165
+  offset: 0, 0
+  index: -1
+hy7
+  rotate: false
+  xy: 494, 197
+  size: 281, 142
+  orig: 281, 142
+  offset: 0, 0
+  index: -1
+r
+  rotate: false
+  xy: 221, 25
+  size: 214, 156
+  orig: 214, 156
+  offset: 0, 0
+  index: -1
+xf01
+  rotate: false
+  xy: 386, 287
+  size: 106, 305
+  orig: 106, 305
+  offset: 0, 0
+  index: -1
+xf02
+  rotate: false
+  xy: 2, 34
+  size: 217, 479
+  orig: 217, 479
+  offset: 0, 0
+  index: -1
+xf03
+  rotate: false
+  xy: 2, 515
+  size: 274, 507
+  orig: 274, 507
+  offset: 0, 0
+  index: -1
+xf04
+  rotate: false
+  xy: 494, 629
+  size: 243, 393
+  orig: 243, 393
+  offset: 0, 0
+  index: -1
+xf05
+  rotate: false
+  xy: 278, 594
+  size: 214, 428
+  orig: 214, 428
+  offset: 0, 0
+  index: -1
+xf06
+  rotate: false
+  xy: 221, 183
+  size: 163, 330
+  orig: 163, 330
+  offset: 0, 0
+  index: -1
+zd
+  rotate: false
+  xy: 591, 47
+  size: 150, 148
+  orig: 150, 148
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,20 @@
+
+cg_09.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+hq
+  rotate: false
+  xy: 2, 2
+  size: 159, 158
+  orig: 159, 158
+  offset: 0, 0
+  index: -1
+lq
+  rotate: false
+  xy: 2, 162
+  size: 278, 278
+  orig: 278, 278
+  offset: 0, 0
+  index: -1

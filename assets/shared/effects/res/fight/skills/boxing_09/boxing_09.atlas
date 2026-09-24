@@ -1,0 +1,20 @@
+
+boxing_09.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+dabang
+  rotate: true
+  xy: 2, 2
+  size: 58, 140
+  orig: 58, 140
+  offset: 0, 0
+  index: -1
+huan
+  rotate: false
+  xy: 2, 62
+  size: 155, 155
+  orig: 155, 155
+  offset: 0, 0
+  index: -1

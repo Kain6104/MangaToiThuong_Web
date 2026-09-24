@@ -1,0 +1,117 @@
+
+boxing.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gz
+  rotate: true
+  xy: 2, 2
+  size: 141, 734
+  orig: 143, 736
+  offset: 1, 1
+  index: -1
+sjk1
+  rotate: false
+  xy: 2, 145
+  size: 427, 395
+  orig: 429, 397
+  offset: 1, 1
+  index: -1
+sjk2
+  rotate: false
+  xy: 435, 645
+  size: 377, 364
+  orig: 379, 366
+  offset: 1, 1
+  index: -1
+sjk3
+  rotate: false
+  xy: 2, 542
+  size: 431, 467
+  orig: 433, 469
+  offset: 1, 1
+  index: -1
+xz1
+  rotate: false
+  xy: 738, 20
+  size: 183, 103
+  orig: 185, 105
+  offset: 1, 1
+  index: -1
+xz2
+  rotate: true
+  xy: 848, 428
+  size: 292, 152
+  orig: 294, 154
+  offset: 1, 1
+  index: -1
+xz3
+  rotate: true
+  xy: 791, 125
+  size: 289, 156
+  orig: 291, 158
+  offset: 1, 1
+  index: -1
+xz5
+  rotate: true
+  xy: 814, 722
+  size: 287, 168
+  orig: 289, 170
+  offset: 1, 1
+  index: -1
+xzf2
+  rotate: false
+  xy: 431, 145
+  size: 358, 269
+  orig: 360, 271
+  offset: 1, 1
+  index: -1
+xzf3
+  rotate: false
+  xy: 435, 416
+  size: 411, 227
+  orig: 413, 229
+  offset: 1, 1
+  index: -1
+
+boxing2.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+sg
+  rotate: false
+  xy: 413, 287
+  size: 235, 221
+  orig: 237, 223
+  offset: 1, 1
+  index: -1
+xz4
+  rotate: false
+  xy: 650, 344
+  size: 288, 164
+  orig: 290, 166
+  offset: 1, 1
+  index: -1
+xzf1
+  rotate: true
+  xy: 650, 186
+  size: 156, 289
+  orig: 158, 291
+  offset: 1, 1
+  index: -1
+xzf4
+  rotate: false
+  xy: 2, 251
+  size: 409, 257
+  orig: 411, 259
+  offset: 1, 1
+  index: -1
+xzf5
+  rotate: false
+  xy: 2, 2
+  size: 406, 247
+  orig: 408, 249
+  offset: 1, 1
+  index: -1

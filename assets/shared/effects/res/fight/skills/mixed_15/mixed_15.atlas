@@ -1,0 +1,48 @@
+
+mixed_15.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+a01
+  rotate: false
+  xy: 199, 102
+  size: 81, 106
+  orig: 81, 106
+  offset: 0, 0
+  index: -1
+b01
+  rotate: false
+  xy: 298, 306
+  size: 21, 20
+  orig: 21, 20
+  offset: 0, 0
+  index: -1
+c01
+  rotate: false
+  xy: 2, 210
+  size: 294, 295
+  orig: 294, 295
+  offset: 0, 0
+  index: -1
+d01
+  rotate: false
+  xy: 2, 13
+  size: 195, 195
+  orig: 195, 195
+  offset: 0, 0
+  index: -1
+e01
+  rotate: false
+  xy: 298, 328
+  size: 51, 177
+  orig: 51, 177
+  offset: 0, 0
+  index: -1
+sd
+  rotate: false
+  xy: 2, 2
+  size: 111, 9
+  orig: 111, 9
+  offset: 0, 0
+  index: -1

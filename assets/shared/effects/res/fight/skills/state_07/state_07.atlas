@@ -1,0 +1,20 @@
+
+state_07.png
+size: 128,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+d
+  rotate: false
+  xy: 2, 70
+  size: 34, 35
+  orig: 34, 35
+  offset: 0, 0
+  index: -1
+x
+  rotate: false
+  xy: 2, 107
+  size: 116, 11
+  orig: 116, 11
+  offset: 0, 0
+  index: -1

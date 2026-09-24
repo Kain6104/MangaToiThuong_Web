@@ -1,0 +1,55 @@
+
+state_06.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+huo1
+  rotate: false
+  xy: 50, 110
+  size: 45, 130
+  orig: 45, 130
+  offset: 0, 0
+  index: -1
+huo2
+  rotate: false
+  xy: 2, 107
+  size: 46, 133
+  orig: 46, 133
+  offset: 0, 0
+  index: -1
+huo3
+  rotate: false
+  xy: 146, 115
+  size: 46, 125
+  orig: 46, 125
+  offset: 0, 0
+  index: -1
+huo4
+  rotate: false
+  xy: 97, 115
+  size: 47, 125
+  orig: 47, 125
+  offset: 0, 0
+  index: -1
+huo5
+  rotate: true
+  xy: 97, 67
+  size: 46, 120
+  orig: 46, 120
+  offset: 0, 0
+  index: -1
+huo6
+  rotate: false
+  xy: 194, 117
+  size: 46, 123
+  orig: 46, 123
+  offset: 0, 0
+  index: -1
+huo7
+  rotate: true
+  xy: 2, 21
+  size: 44, 127
+  orig: 44, 127
+  offset: 0, 0
+  index: -1

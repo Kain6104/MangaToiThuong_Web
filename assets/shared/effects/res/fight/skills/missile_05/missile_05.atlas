@@ -1,0 +1,62 @@
+
+missile_05.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+byl
+  rotate: false
+  xy: 186, 142
+  size: 138, 54
+  orig: 138, 54
+  offset: 0, 0
+  index: -1
+dg
+  rotate: false
+  xy: 477, 660
+  size: 80, 346
+  orig: 80, 346
+  offset: 0, 0
+  index: -1
+dgs
+  rotate: false
+  xy: 2, 565
+  size: 473, 441
+  orig: 473, 441
+  offset: 0, 0
+  index: -1
+gs
+  rotate: false
+  xy: 368, 385
+  size: 48, 178
+  orig: 48, 178
+  offset: 0, 0
+  index: -1
+tk
+  rotate: false
+  xy: 559, 963
+  size: 150, 43
+  orig: 150, 43
+  offset: 0, 0
+  index: -1
+xx
+  rotate: false
+  xy: 559, 876
+  size: 86, 85
+  orig: 86, 85
+  offset: 0, 0
+  index: -1
+yg
+  rotate: false
+  xy: 2, 198
+  size: 364, 365
+  orig: 364, 365
+  offset: 0, 0
+  index: -1
+yl
+  rotate: false
+  xy: 2, 2
+  size: 182, 194
+  orig: 182, 194
+  offset: 0, 0
+  index: -1

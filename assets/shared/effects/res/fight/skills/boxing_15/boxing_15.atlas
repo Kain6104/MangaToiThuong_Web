@@ -1,0 +1,104 @@
+
+boxing_15.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+a1
+  rotate: false
+  xy: 2, 220
+  size: 241, 797
+  orig: 241, 797
+  offset: 0, 0
+  index: -1
+a2
+  rotate: false
+  xy: 717, 318
+  size: 110, 699
+  orig: 110, 699
+  offset: 0, 0
+  index: -1
+a3
+  rotate: false
+  xy: 829, 183
+  size: 68, 834
+  orig: 68, 834
+  offset: 0, 0
+  index: -1
+a4
+  rotate: false
+  xy: 899, 437
+  size: 56, 580
+  orig: 56, 580
+  offset: 0, 0
+  index: -1
+b1
+  rotate: true
+  xy: 957, 792
+  size: 225, 59
+  orig: 225, 59
+  offset: 0, 0
+  index: -1
+b2
+  rotate: false
+  xy: 245, 290
+  size: 252, 80
+  orig: 252, 80
+  offset: 0, 0
+  index: -1
+b3
+  rotate: false
+  xy: 245, 372
+  size: 244, 103
+  orig: 244, 103
+  offset: 0, 0
+  index: -1
+b4
+  rotate: false
+  xy: 245, 372
+  size: 244, 103
+  orig: 244, 103
+  offset: 0, 0
+  index: -1
+b5
+  rotate: false
+  xy: 2, 111
+  size: 200, 107
+  orig: 200, 107
+  offset: 0, 0
+  index: -1
+b6
+  rotate: false
+  xy: 2, 2
+  size: 200, 107
+  orig: 200, 107
+  offset: 0, 0
+  index: -1
+b7
+  rotate: false
+  xy: 491, 379
+  size: 151, 96
+  orig: 151, 96
+  offset: 0, 0
+  index: -1
+b8
+  rotate: false
+  xy: 499, 281
+  size: 151, 96
+  orig: 151, 96
+  offset: 0, 0
+  index: -1
+c
+  rotate: false
+  xy: 899, 405
+  size: 29, 30
+  orig: 29, 30
+  offset: 0, 0
+  index: -1
+d
+  rotate: false
+  xy: 245, 477
+  size: 470, 540
+  orig: 470, 540
+  offset: 0, 0
+  index: -1

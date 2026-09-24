@@ -1,0 +1,20 @@
+
+state_10.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+a1
+  rotate: false
+  xy: 2, 103
+  size: 172, 71
+  orig: 172, 71
+  offset: 0, 0
+  index: -1
+a2
+  rotate: false
+  xy: 2, 30
+  size: 172, 71
+  orig: 172, 71
+  offset: 0, 0
+  index: -1

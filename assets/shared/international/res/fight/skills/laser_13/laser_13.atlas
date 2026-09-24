@@ -1,0 +1,97 @@
+
+laser_13.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+dian1
+  rotate: false
+  xy: 2, 238
+  size: 179, 775
+  orig: 179, 775
+  offset: 0, 0
+  index: -1
+dian2
+  rotate: true
+  xy: 183, 852
+  size: 161, 793
+  orig: 161, 793
+  offset: 0, 0
+  index: -1
+dian3
+  rotate: true
+  xy: 183, 578
+  size: 136, 785
+  orig: 136, 785
+  offset: 0, 0
+  index: -1
+jiguang
+  rotate: true
+  xy: 183, 716
+  size: 134, 793
+  orig: 134, 793
+  offset: 0, 0
+  index: -1
+qiu
+  rotate: false
+  xy: 550, 24
+  size: 132, 131
+  orig: 132, 131
+  offset: 0, 0
+  index: -1
+z1
+  rotate: true
+  xy: 711, 143
+  size: 61, 146
+  orig: 61, 146
+  offset: 0, 0
+  index: -1
+z2
+  rotate: false
+  xy: 951, 120
+  size: 62, 359
+  orig: 62, 359
+  offset: 0, 0
+  index: -1
+z3
+  rotate: true
+  xy: 2, 157
+  size: 47, 707
+  orig: 47, 707
+  offset: 0, 0
+  index: -1
+z4
+  rotate: true
+  xy: 183, 206
+  size: 79, 736
+  orig: 79, 736
+  offset: 0, 0
+  index: -1
+z5
+  rotate: true
+  xy: 183, 287
+  size: 87, 731
+  orig: 87, 731
+  offset: 0, 0
+  index: -1
+z6
+  rotate: true
+  xy: 183, 481
+  size: 95, 793
+  orig: 95, 793
+  offset: 0, 0
+  index: -1
+z7
+  rotate: true
+  xy: 183, 376
+  size: 103, 766
+  orig: 103, 766
+  offset: 0, 0
+  index: -1
+z8
+  rotate: true
+  xy: 2, 55
+  size: 100, 546
+  orig: 100, 546
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,13 @@
+
+missile_03.png
+size: 128,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+qin
+  rotate: false
+  xy: 2, 2
+  size: 60, 90
+  orig: 60, 90
+  offset: 0, 0
+  index: -1

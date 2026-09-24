@@ -1,0 +1,55 @@
+
+voice_07.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+bfy
+  rotate: false
+  xy: 1, 1
+  size: 263, 162
+  orig: 263, 162
+  offset: 0, 0
+  index: -1
+hm1
+  rotate: false
+  xy: 266, 38
+  size: 174, 125
+  orig: 174, 125
+  offset: 0, 0
+  index: -1
+hm2
+  rotate: false
+  xy: 506, 400
+  size: 255, 242
+  orig: 255, 242
+  offset: 0, 0
+  index: -1
+hm3
+  rotate: false
+  xy: 506, 644
+  size: 399, 375
+  orig: 399, 375
+  offset: 0, 0
+  index: -1
+hm4
+  rotate: false
+  xy: 1, 165
+  size: 465, 425
+  orig: 465, 425
+  offset: 0, 0
+  index: -1
+hm5
+  rotate: false
+  xy: 1, 592
+  size: 503, 427
+  orig: 503, 427
+  offset: 0, 0
+  index: -1
+y
+  rotate: true
+  xy: 907, 827
+  size: 192, 46
+  orig: 192, 46
+  offset: 0, 0
+  index: -1

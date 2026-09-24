@@ -1,0 +1,97 @@
+
+G_AT_12.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+ci1
+  rotate: true
+  xy: 349, 95
+  size: 45, 91
+  orig: 45, 91
+  offset: 0, 0
+  index: -1
+ci2
+  rotate: false
+  xy: 445, 323
+  size: 41, 169
+  orig: 41, 169
+  offset: 0, 0
+  index: -1
+ci3
+  rotate: true
+  xy: 122, 52
+  size: 25, 111
+  orig: 25, 111
+  offset: 0, 0
+  index: -1
+ci4
+  rotate: false
+  xy: 445, 267
+  size: 23, 54
+  orig: 23, 54
+  offset: 0, 0
+  index: -1
+huahen1
+  rotate: false
+  xy: 2, 2
+  size: 84, 68
+  orig: 84, 68
+  offset: 0, 0
+  index: -1
+huahen2
+  rotate: false
+  xy: 349, 142
+  size: 96, 118
+  orig: 96, 118
+  offset: 0, 0
+  index: -1
+huahen3
+  rotate: false
+  xy: 239, 84
+  size: 108, 176
+  orig: 108, 176
+  offset: 0, 0
+  index: -1
+huahen4
+  rotate: false
+  xy: 2, 72
+  size: 118, 204
+  orig: 118, 204
+  offset: 0, 0
+  index: -1
+huahen5
+  rotate: false
+  xy: 2, 278
+  size: 120, 214
+  orig: 120, 214
+  offset: 0, 0
+  index: -1
+huahen6
+  rotate: false
+  xy: 124, 297
+  size: 120, 195
+  orig: 120, 195
+  offset: 0, 0
+  index: -1
+huahen7
+  rotate: true
+  xy: 246, 262
+  size: 113, 197
+  orig: 113, 197
+  offset: 0, 0
+  index: -1
+huahen8
+  rotate: true
+  xy: 246, 377
+  size: 115, 197
+  orig: 115, 197
+  offset: 0, 0
+  index: -1
+huahen9
+  rotate: false
+  xy: 122, 79
+  size: 115, 197
+  orig: 115, 197
+  offset: 0, 0
+  index: -1

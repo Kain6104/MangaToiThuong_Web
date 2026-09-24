@@ -1,0 +1,230 @@
+{
+  "H152": {
+    "static": {
+      "animation": "stand",
+      "duration": 2.6666667461395264,
+      "bounds": [
+        -185.59400939941406,
+        -45.41678237915039,
+        195.28561401367188,
+        291.7328796386719
+      ],
+      "margins": {
+        "left": 131,
+        "right": 100,
+        "top": 280,
+        "bottom": 273
+      },
+      "bytes": 644528
+    },
+    "idle": {
+      "animation": "stand",
+      "movement": null,
+      "durationMs": 2700,
+      "fps": 30,
+      "frameCount": 81,
+      "bounds": [
+        -185.59400939941406,
+        -45.41678237915039,
+        195.28561401367188,
+        291.7328796386719
+      ],
+      "renderWidth": 1080,
+      "renderHeight": 1080,
+      "encoding": "webp-q96-alpha",
+      "alphaMode": "straight-alpha",
+      "bytes": 16466128,
+      "shaDistinctFrames": 80
+    },
+    "attack": {
+      "animation": "stand",
+      "movement": "shoot_o_x",
+      "durationMs": 433,
+      "fps": 30,
+      "frameCount": 13,
+      "bounds": [
+        -167.64492797851562,
+        -103.9343490600586,
+        191.373291015625,
+        288.6651306152344
+      ],
+      "renderWidth": 1080,
+      "renderHeight": 1080,
+      "encoding": "webp-q96-alpha",
+      "alphaMode": "straight-alpha",
+      "bytes": 2536704,
+      "shaDistinctFrames": 13
+    }
+  },
+  "H153": {
+    "static": {
+      "animation": "stand",
+      "duration": 8.0,
+      "bounds": [
+        -177.91082763671875,
+        -25.815765380859375,
+        180.13409423828125,
+        305.956787109375
+      ],
+      "margins": {
+        "left": 112,
+        "right": 109,
+        "top": 288,
+        "bottom": 262
+      },
+      "bytes": 693481
+    },
+    "idle": {
+      "animation": "stand",
+      "movement": null,
+      "durationMs": 8000,
+      "fps": 30,
+      "frameCount": 240,
+      "bounds": [
+        -177.98294067382812,
+        -35.17497253417969,
+        180.2010498046875,
+        305.956787109375
+      ],
+      "renderWidth": 1080,
+      "renderHeight": 1080,
+      "encoding": "webp-q96-alpha",
+      "alphaMode": "straight-alpha",
+      "bytes": 50808584,
+      "shaDistinctFrames": 240
+    },
+    "attack": {
+      "animation": "stand",
+      "movement": "shoot_o_x",
+      "durationMs": 433,
+      "fps": 30,
+      "frameCount": 13,
+      "bounds": [
+        -171.95053100585938,
+        -72.95106506347656,
+        174.59954833984375,
+        305.956787109375
+      ],
+      "renderWidth": 1080,
+      "renderHeight": 1080,
+      "encoding": "webp-q96-alpha",
+      "alphaMode": "straight-alpha",
+      "bytes": 2493196,
+      "shaDistinctFrames": 13
+    }
+  },
+  "H293": {
+    "static": {
+      "animation": "stand",
+      "duration": 4.0,
+      "bounds": [
+        -188.9139404296875,
+        -3.0054092407226562,
+        201.0174102783203,
+        277.98944091796875
+      ],
+      "margins": {
+        "left": 114,
+        "right": 138,
+        "top": 378,
+        "bottom": 337
+      },
+      "bytes": 519501
+    },
+    "idle": {
+      "animation": "stand",
+      "movement": null,
+      "durationMs": 4000,
+      "fps": 30,
+      "frameCount": 120,
+      "bounds": [
+        -188.9139404296875,
+        -3.0054092407226562,
+        201.0174102783203,
+        277.98944091796875
+      ],
+      "renderWidth": 1080,
+      "renderHeight": 1080,
+      "encoding": "webp-q96-alpha",
+      "alphaMode": "straight-alpha",
+      "bytes": 21339870,
+      "shaDistinctFrames": 120
+    },
+    "attack": {
+      "animation": "stand",
+      "movement": "shoot_o_x",
+      "durationMs": 433,
+      "fps": 30,
+      "frameCount": 13,
+      "bounds": [
+        -185.68801879882812,
+        -63.005409240722656,
+        200.9746856689453,
+        259.1904296875
+      ],
+      "renderWidth": 1080,
+      "renderHeight": 1080,
+      "encoding": "webp-q96-alpha",
+      "alphaMode": "straight-alpha",
+      "bytes": 2275108,
+      "shaDistinctFrames": 13
+    }
+  },
+  "H294": {
+    "static": {
+      "animation": "stand",
+      "duration": 2.6666667461395264,
+      "bounds": [
+        -189.6183319091797,
+        -58.3406982421875,
+        186.69171142578125,
+        280.00714111328125
+      ],
+      "margins": {
+        "left": 172,
+        "right": 172,
+        "top": 284,
+        "bottom": 311
+      },
+      "bytes": 596386
+    },
+    "idle": {
+      "animation": "stand",
+      "movement": null,
+      "durationMs": 2700,
+      "fps": 30,
+      "frameCount": 81,
+      "bounds": [
+        -189.6183319091797,
+        -58.3406982421875,
+        186.69171142578125,
+        280.00714111328125
+      ],
+      "renderWidth": 1080,
+      "renderHeight": 1080,
+      "encoding": "webp-q96-alpha",
+      "alphaMode": "straight-alpha",
+      "bytes": 17686446,
+      "shaDistinctFrames": 80
+    },
+    "attack": {
+      "animation": "stand",
+      "movement": "shoot_o_x",
+      "durationMs": 433,
+      "fps": 30,
+      "frameCount": 13,
+      "bounds": [
+        -183.3236846923828,
+        -118.3406982421875,
+        179.76759338378906,
+        270.1489562988281
+      ],
+      "renderWidth": 1080,
+      "renderHeight": 1080,
+      "encoding": "webp-q96-alpha",
+      "alphaMode": "straight-alpha",
+      "bytes": 2706606,
+      "shaDistinctFrames": 13
+    }
+  }
+}

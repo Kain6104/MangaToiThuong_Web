@@ -1,0 +1,76 @@
+
+missile_01.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+daodan_shang
+  rotate: true
+  xy: 313, 309
+  size: 112, 136
+  orig: 112, 136
+  offset: 0, 0
+  index: -1
+daodan_xia
+  rotate: false
+  xy: 2, 190
+  size: 128, 159
+  orig: 128, 159
+  offset: 0, 0
+  index: -1
+daodan_zhong
+  rotate: false
+  xy: 313, 423
+  size: 187, 87
+  orig: 187, 87
+  offset: 0, 0
+  index: -1
+huo
+  rotate: false
+  xy: 451, 311
+  size: 44, 110
+  orig: 44, 110
+  offset: 0, 0
+  index: -1
+weiqi1
+  rotate: true
+  xy: 2, 2
+  size: 54, 55
+  orig: 54, 55
+  offset: 0, 0
+  index: -1
+weiqi2
+  rotate: true
+  xy: 260, 202
+  size: 105, 109
+  orig: 105, 109
+  offset: 0, 0
+  index: -1
+weiqi3
+  rotate: true
+  xy: 2, 58
+  size: 130, 125
+  orig: 130, 125
+  offset: 0, 0
+  index: -1
+weiqi4
+  rotate: false
+  xy: 132, 220
+  size: 126, 129
+  orig: 126, 129
+  offset: 0, 0
+  index: -1
+weiqi5
+  rotate: false
+  xy: 167, 375
+  size: 144, 135
+  orig: 144, 135
+  offset: 0, 0
+  index: -1
+weiqi6
+  rotate: false
+  xy: 2, 351
+  size: 163, 159
+  orig: 163, 159
+  offset: 0, 0
+  index: -1

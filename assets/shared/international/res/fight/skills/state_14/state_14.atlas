@@ -1,0 +1,27 @@
+
+state_14.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+guang
+  rotate: true
+  xy: 227, 327
+  size: 132, 232
+  orig: 132, 232
+  offset: 0, 0
+  index: -1
+y1
+  rotate: false
+  xy: 2, 139
+  size: 213, 156
+  orig: 213, 156
+  offset: 0, 0
+  index: -1
+y2
+  rotate: false
+  xy: 2, 297
+  size: 223, 162
+  orig: 223, 162
+  offset: 0, 0
+  index: -1

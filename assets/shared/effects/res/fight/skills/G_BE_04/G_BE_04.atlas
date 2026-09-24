@@ -1,0 +1,125 @@
+
+G_BE_04.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ht
+  rotate: false
+  xy: 2, 204
+  size: 122, 305
+  orig: 122, 305
+  offset: 0, 0
+  index: -1
+q1
+  rotate: false
+  xy: 759, 291
+  size: 39, 21
+  orig: 39, 21
+  offset: 0, 0
+  index: -1
+q2
+  rotate: false
+  xy: 402, 154
+  size: 74, 66
+  orig: 74, 66
+  offset: 0, 0
+  index: -1
+q3
+  rotate: false
+  xy: 860, 400
+  size: 143, 109
+  orig: 143, 109
+  offset: 0, 0
+  index: -1
+q4
+  rotate: false
+  xy: 387, 400
+  size: 247, 109
+  orig: 247, 109
+  offset: 0, 0
+  index: -1
+q5
+  rotate: false
+  xy: 126, 283
+  size: 259, 109
+  orig: 259, 109
+  offset: 0, 0
+  index: -1
+q6
+  rotate: false
+  xy: 126, 394
+  size: 259, 115
+  orig: 259, 115
+  offset: 0, 0
+  index: -1
+shutiao
+  rotate: true
+  xy: 633, 288
+  size: 24, 124
+  orig: 24, 124
+  offset: 0, 0
+  index: -1
+youling1
+  rotate: false
+  xy: 509, 234
+  size: 108, 68
+  orig: 108, 68
+  offset: 0, 0
+  index: -1
+youling2
+  rotate: false
+  xy: 293, 178
+  size: 107, 103
+  orig: 107, 103
+  offset: 0, 0
+  index: -1
+youling3
+  rotate: true
+  xy: 864, 294
+  size: 104, 139
+  orig: 104, 139
+  offset: 0, 0
+  index: -1
+youling4
+  rotate: false
+  xy: 2, 2
+  size: 114, 200
+  orig: 114, 200
+  offset: 0, 0
+  index: -1
+youling5
+  rotate: true
+  xy: 636, 400
+  size: 109, 222
+  orig: 109, 222
+  offset: 0, 0
+  index: -1
+youling6
+  rotate: true
+  xy: 387, 304
+  size: 94, 244
+  orig: 94, 244
+  offset: 0, 0
+  index: -1
+youling7
+  rotate: true
+  xy: 633, 314
+  size: 84, 229
+  orig: 84, 229
+  offset: 0, 0
+  index: -1
+youling8
+  rotate: true
+  xy: 126, 207
+  size: 74, 165
+  orig: 74, 165
+  offset: 0, 0
+  index: -1
+zi
+  rotate: false
+  xy: 402, 222
+  size: 105, 80
+  orig: 105, 80
+  offset: 0, 0
+  index: -1

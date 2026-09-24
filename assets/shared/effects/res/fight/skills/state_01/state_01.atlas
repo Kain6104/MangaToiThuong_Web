@@ -1,0 +1,76 @@
+
+state_01.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+hu1
+  rotate: false
+  xy: 582, 749
+  size: 250, 262
+  orig: 250, 262
+  offset: 0, 0
+  index: -1
+hu2
+  rotate: false
+  xy: 582, 494
+  size: 259, 253
+  orig: 259, 253
+  offset: 0, 0
+  index: -1
+hu3
+  rotate: false
+  xy: 297, 486
+  size: 270, 235
+  orig: 270, 235
+  offset: 0, 0
+  index: -1
+lizi1
+  rotate: false
+  xy: 2, 2
+  size: 126, 134
+  orig: 126, 134
+  offset: 0, 0
+  index: -1
+lizi2
+  rotate: false
+  xy: 2, 138
+  size: 274, 274
+  orig: 274, 274
+  offset: 0, 0
+  index: -1
+lizi3
+  rotate: false
+  xy: 297, 723
+  size: 283, 288
+  orig: 283, 288
+  offset: 0, 0
+  index: -1
+lizi4
+  rotate: false
+  xy: 2, 414
+  size: 291, 296
+  orig: 291, 296
+  offset: 0, 0
+  index: -1
+lizi5
+  rotate: false
+  xy: 2, 712
+  size: 293, 299
+  orig: 293, 299
+  offset: 0, 0
+  index: -1
+lizi6
+  rotate: false
+  xy: 278, 135
+  size: 206, 277
+  orig: 206, 277
+  offset: 0, 0
+  index: -1
+qiu
+  rotate: false
+  xy: 834, 930
+  size: 80, 81
+  orig: 80, 81
+  offset: 0, 0
+  index: -1

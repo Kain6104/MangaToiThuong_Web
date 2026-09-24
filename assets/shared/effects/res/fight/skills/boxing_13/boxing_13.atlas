@@ -1,0 +1,55 @@
+
+boxing_13.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+zs01
+  rotate: false
+  xy: 508, 860
+  size: 148, 148
+  orig: 148, 148
+  offset: 0, 0
+  index: -1
+zs201
+  rotate: false
+  xy: 386, 501
+  size: 88, 124
+  orig: 88, 124
+  offset: 0, 0
+  index: -1
+zs202
+  rotate: false
+  xy: 386, 627
+  size: 120, 381
+  orig: 120, 381
+  offset: 0, 0
+  index: -1
+zs203
+  rotate: false
+  xy: 239, 117
+  size: 106, 891
+  orig: 106, 891
+  offset: 0, 0
+  index: -1
+zs204
+  rotate: false
+  xy: 2, 2
+  size: 119, 1006
+  orig: 119, 1006
+  offset: 0, 0
+  index: -1
+zs205
+  rotate: false
+  xy: 123, 10
+  size: 114, 998
+  orig: 114, 998
+  offset: 0, 0
+  index: -1
+zs206
+  rotate: false
+  xy: 347, 166
+  size: 37, 842
+  orig: 37, 842
+  offset: 0, 0
+  index: -1

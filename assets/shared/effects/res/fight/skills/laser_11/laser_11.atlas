@@ -1,0 +1,20 @@
+
+laser_11.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+gq
+  rotate: false
+  xy: 100, 101
+  size: 143, 142
+  orig: 143, 142
+  offset: 0, 0
+  index: -1
+gz
+  rotate: false
+  xy: 2, 32
+  size: 96, 211
+  orig: 96, 211
+  offset: 0, 0
+  index: -1

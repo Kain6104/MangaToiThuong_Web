@@ -1,0 +1,83 @@
+
+state_03.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+fang1
+  rotate: true
+  xy: 416, 167
+  size: 154, 65
+  orig: 154, 65
+  offset: 0, 0
+  index: -1
+fang2
+  rotate: true
+  xy: 420, 323
+  size: 185, 88
+  orig: 185, 88
+  offset: 0, 0
+  index: -1
+fang3
+  rotate: false
+  xy: 209, 130
+  size: 203, 107
+  orig: 203, 107
+  offset: 0, 0
+  index: -1
+fang4
+  rotate: false
+  xy: 2, 19
+  size: 205, 118
+  orig: 205, 118
+  offset: 0, 0
+  index: -1
+fang5
+  rotate: false
+  xy: 210, 239
+  size: 204, 100
+  orig: 204, 100
+  offset: 0, 0
+  index: -1
+fang6
+  rotate: false
+  xy: 209, 64
+  size: 200, 64
+  orig: 200, 64
+  offset: 0, 0
+  index: -1
+fangyuhou
+  rotate: false
+  xy: 210, 341
+  size: 208, 167
+  orig: 208, 167
+  offset: 0, 0
+  index: -1
+fangyuqian
+  rotate: false
+  xy: 2, 323
+  size: 206, 185
+  orig: 206, 185
+  offset: 0, 0
+  index: -1
+jiguang
+  rotate: true
+  xy: 209, 31
+  size: 31, 118
+  orig: 31, 118
+  offset: 0, 0
+  index: -1
+qiu
+  rotate: true
+  xy: 414, 117
+  size: 48, 50
+  orig: 48, 50
+  offset: 0, 0
+  index: -1
+xian
+  rotate: false
+  xy: 2, 139
+  size: 205, 182
+  orig: 205, 182
+  offset: 0, 0
+  index: -1

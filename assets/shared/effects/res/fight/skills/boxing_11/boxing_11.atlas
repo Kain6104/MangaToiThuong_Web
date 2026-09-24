@@ -1,0 +1,55 @@
+
+boxing_11.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+gd01
+  rotate: true
+  xy: 248, 353
+  size: 140, 155
+  orig: 140, 155
+  offset: 0, 0
+  index: -1
+gd02
+  rotate: false
+  xy: 2, 173
+  size: 180, 175
+  orig: 180, 175
+  offset: 0, 0
+  index: -1
+gd03
+  rotate: false
+  xy: 2, 350
+  size: 244, 143
+  orig: 244, 143
+  offset: 0, 0
+  index: -1
+gd04
+  rotate: false
+  xy: 2, 18
+  size: 126, 153
+  orig: 126, 153
+  offset: 0, 0
+  index: -1
+gd05
+  rotate: false
+  xy: 184, 221
+  size: 54, 127
+  orig: 54, 127
+  offset: 0, 0
+  index: -1
+gd06
+  rotate: false
+  xy: 405, 421
+  size: 13, 72
+  orig: 13, 72
+  offset: 0, 0
+  index: -1
+gd07
+  rotate: true
+  xy: 2, 2
+  size: 14, 70
+  orig: 14, 70
+  offset: 0, 0
+  index: -1

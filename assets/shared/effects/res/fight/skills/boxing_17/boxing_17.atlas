@@ -1,0 +1,160 @@
+
+boxing_17.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+lq
+  rotate: true
+  xy: 40, 126
+  size: 75, 74
+  orig: 75, 74
+  offset: 0, 0
+  index: -1
+pl1
+  rotate: false
+  xy: 2, 203
+  size: 68, 507
+  orig: 68, 507
+  offset: 0, 0
+  index: -1
+pl2
+  rotate: false
+  xy: 354, 227
+  size: 197, 266
+  orig: 197, 266
+  offset: 0, 0
+  index: -1
+pl3
+  rotate: false
+  xy: 330, 762
+  size: 387, 59
+  orig: 387, 59
+  offset: 0, 0
+  index: -1
+pl4
+  rotate: false
+  xy: 330, 941
+  size: 447, 67
+  orig: 447, 67
+  offset: 0, 0
+  index: -1
+pl5
+  rotate: false
+  xy: 330, 874
+  size: 417, 65
+  orig: 417, 65
+  offset: 0, 0
+  index: -1
+sg1
+  rotate: true
+  xy: 2, 2
+  size: 199, 36
+  orig: 199, 36
+  offset: 0, 0
+  index: -1
+sg2
+  rotate: false
+  xy: 330, 823
+  size: 401, 49
+  orig: 401, 49
+  offset: 0, 0
+  index: -1
+sg3
+  rotate: false
+  xy: 330, 721
+  size: 363, 39
+  orig: 363, 39
+  offset: 0, 0
+  index: -1
+sg4
+  rotate: false
+  xy: 330, 692
+  size: 313, 27
+  orig: 313, 27
+  offset: 0, 0
+  index: -1
+sg5
+  rotate: true
+  xy: 553, 209
+  size: 284, 26
+  orig: 284, 26
+  offset: 0, 0
+  index: -1
+sg6
+  rotate: false
+  xy: 72, 206
+  size: 271, 28
+  orig: 271, 28
+  offset: 0, 0
+  index: -1
+sg7
+  rotate: true
+  xy: 581, 278
+  size: 215, 23
+  orig: 215, 23
+  offset: 0, 0
+  index: -1
+sz1
+  rotate: false
+  xy: 606, 235
+  size: 104, 91
+  orig: 104, 91
+  offset: 0, 0
+  index: -1
+sz2
+  rotate: true
+  xy: 606, 328
+  size: 116, 106
+  orig: 116, 106
+  offset: 0, 0
+  index: -1
+sz3
+  rotate: false
+  xy: 606, 446
+  size: 106, 118
+  orig: 106, 118
+  offset: 0, 0
+  index: -1
+sz4
+  rotate: false
+  xy: 599, 566
+  size: 120, 124
+  orig: 120, 124
+  offset: 0, 0
+  index: -1
+sz5
+  rotate: false
+  xy: 779, 837
+  size: 228, 171
+  orig: 228, 171
+  offset: 0, 0
+  index: -1
+sz6
+  rotate: false
+  xy: 2, 712
+  size: 326, 296
+  orig: 326, 296
+  offset: 0, 0
+  index: -1
+sz7
+  rotate: true
+  xy: 72, 440
+  size: 270, 240
+  orig: 270, 240
+  offset: 0, 0
+  index: -1
+sz8
+  rotate: false
+  xy: 72, 236
+  size: 280, 202
+  orig: 280, 202
+  offset: 0, 0
+  index: -1
+sz9
+  rotate: false
+  xy: 314, 495
+  size: 283, 195
+  orig: 283, 195
+  offset: 0, 0
+  index: -1

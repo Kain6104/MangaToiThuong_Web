@@ -1,0 +1,188 @@
+
+fire_01.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+f01
+  rotate: false
+  xy: 817, 70
+  size: 147, 86
+  orig: 147, 86
+  offset: 0, 0
+  index: -1
+f02
+  rotate: false
+  xy: 854, 580
+  size: 151, 115
+  orig: 151, 115
+  offset: 0, 0
+  index: -1
+f03
+  rotate: false
+  xy: 855, 697
+  size: 154, 121
+  orig: 154, 121
+  offset: 0, 0
+  index: -1
+f04
+  rotate: false
+  xy: 621, 4
+  size: 185, 132
+  orig: 185, 132
+  offset: 0, 0
+  index: -1
+f05
+  rotate: false
+  xy: 629, 319
+  size: 220, 185
+  orig: 220, 185
+  offset: 0, 0
+  index: -1
+f06
+  rotate: false
+  xy: 395, 80
+  size: 224, 188
+  orig: 224, 188
+  offset: 0, 0
+  index: -1
+f07
+  rotate: true
+  xy: 630, 506
+  size: 208, 222
+  orig: 208, 222
+  offset: 0, 0
+  index: -1
+f08
+  rotate: true
+  xy: 135, 84
+  size: 184, 258
+  orig: 184, 258
+  offset: 0, 0
+  index: -1
+f09
+  rotate: true
+  xy: 637, 857
+  size: 165, 254
+  orig: 165, 254
+  offset: 0, 0
+  index: -1
+f10
+  rotate: true
+  xy: 629, 716
+  size: 139, 224
+  orig: 139, 224
+  offset: 0, 0
+  index: -1
+f11
+  rotate: false
+  xy: 893, 820
+  size: 129, 202
+  orig: 129, 202
+  offset: 0, 0
+  index: -1
+f12
+  rotate: true
+  xy: 854, 512
+  size: 66, 152
+  orig: 66, 152
+  offset: 0, 0
+  index: -1
+lj01
+  rotate: false
+  xy: 2, 530
+  size: 132, 492
+  orig: 132, 492
+  offset: 0, 0
+  index: -1
+lj02
+  rotate: false
+  xy: 2, 39
+  size: 131, 489
+  orig: 131, 489
+  offset: 0, 0
+  index: -1
+lj03
+  rotate: true
+  xy: 136, 643
+  size: 127, 489
+  orig: 127, 489
+  offset: 0, 0
+  index: -1
+lj04
+  rotate: true
+  xy: 136, 519
+  size: 122, 492
+  orig: 122, 492
+  offset: 0, 0
+  index: -1
+lj05
+  rotate: true
+  xy: 136, 902
+  size: 120, 499
+  orig: 120, 499
+  offset: 0, 0
+  index: -1
+lj06
+  rotate: true
+  xy: 135, 394
+  size: 123, 492
+  orig: 123, 492
+  offset: 0, 0
+  index: -1
+lj07
+  rotate: true
+  xy: 135, 270
+  size: 122, 491
+  orig: 122, 491
+  offset: 0, 0
+  index: -1
+lj08
+  rotate: true
+  xy: 136, 772
+  size: 128, 491
+  orig: 128, 491
+  offset: 0, 0
+  index: -1
+r01
+  rotate: false
+  xy: 808, 2
+  size: 94, 66
+  orig: 94, 66
+  offset: 0, 0
+  index: -1
+r02
+  rotate: false
+  xy: 851, 365
+  size: 171, 139
+  orig: 171, 139
+  offset: 0, 0
+  index: -1
+r03
+  rotate: true
+  xy: 628, 138
+  size: 179, 187
+  orig: 179, 187
+  offset: 0, 0
+  index: -1
+r04
+  rotate: false
+  xy: 817, 158
+  size: 145, 116
+  orig: 145, 116
+  offset: 0, 0
+  index: -1
+r05
+  rotate: false
+  xy: 851, 276
+  size: 158, 87
+  orig: 158, 87
+  offset: 0, 0
+  index: -1
+r06
+  rotate: false
+  xy: 135, 17
+  size: 125, 65
+  orig: 125, 65
+  offset: 0, 0
+  index: -1

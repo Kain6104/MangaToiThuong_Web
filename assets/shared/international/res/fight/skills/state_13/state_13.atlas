@@ -1,0 +1,83 @@
+
+state_13.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+d01
+  rotate: false
+  xy: 596, 712
+  size: 28, 209
+  orig: 28, 209
+  offset: 0, 0
+  index: -1
+d02
+  rotate: true
+  xy: 96, 379
+  size: 32, 214
+  orig: 32, 214
+  offset: 0, 0
+  index: -1
+d03
+  rotate: false
+  xy: 519, 701
+  size: 38, 220
+  orig: 38, 220
+  offset: 0, 0
+  index: -1
+d04
+  rotate: false
+  xy: 472, 698
+  size: 45, 223
+  orig: 45, 223
+  offset: 0, 0
+  index: -1
+d05
+  rotate: false
+  xy: 47, 237
+  size: 47, 215
+  orig: 47, 215
+  offset: 0, 0
+  index: -1
+d06
+  rotate: false
+  xy: 2, 2
+  size: 42, 222
+  orig: 42, 222
+  offset: 0, 0
+  index: -1
+d07
+  rotate: false
+  xy: 559, 704
+  size: 35, 217
+  orig: 35, 217
+  offset: 0, 0
+  index: -1
+d08
+  rotate: false
+  xy: 2, 226
+  size: 43, 226
+  orig: 43, 226
+  offset: 0, 0
+  index: -1
+d09
+  rotate: true
+  xy: 96, 413
+  size: 39, 218
+  orig: 39, 218
+  offset: 0, 0
+  index: -1
+d10
+  rotate: false
+  xy: 472, 476
+  size: 41, 220
+  orig: 41, 220
+  offset: 0, 0
+  index: -1
+q
+  rotate: false
+  xy: 2, 454
+  size: 468, 467
+  orig: 468, 467
+  offset: 0, 0
+  index: -1

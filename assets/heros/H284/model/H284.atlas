@@ -1,0 +1,181 @@
+
+H284.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+biaoqin1
+  rotate: false
+  xy: 2, 46
+  size: 94, 85
+  orig: 94, 85
+  offset: 0, 0
+  index: -1
+biaoqin2
+  rotate: false
+  xy: 204, 253
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+houqun
+  rotate: false
+  xy: 406, 474
+  size: 72, 61
+  orig: 72, 61
+  offset: 0, 0
+  index: -1
+quan1_1
+  rotate: false
+  xy: 2, 739
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+quan1_2
+  rotate: false
+  xy: 2, 537
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+quan1_3
+  rotate: false
+  xy: 204, 739
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+quan2_1
+  rotate: false
+  xy: 2, 335
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+quan2_2
+  rotate: false
+  xy: 204, 537
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+quan2_3
+  rotate: false
+  xy: 406, 739
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+quan3_1
+  rotate: false
+  xy: 2, 133
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+quan3_2
+  rotate: false
+  xy: 204, 335
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+quan3_3
+  rotate: false
+  xy: 406, 537
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 704, 875
+  size: 42, 64
+  orig: 42, 64
+  offset: 0, 0
+  index: -1
+shuangshou
+  rotate: true
+  xy: 608, 710
+  size: 61, 30
+  orig: 61, 30
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 608, 839
+  size: 94, 100
+  orig: 94, 100
+  offset: 0, 0
+  index: -1
+weibo
+  rotate: false
+  xy: 300, 305
+  size: 74, 28
+  orig: 74, 28
+  offset: 0, 0
+  index: -1
+youerhuan
+  rotate: false
+  xy: 704, 858
+  size: 10, 15
+  orig: 10, 15
+  offset: 0, 0
+  index: -1
+youjiao
+  rotate: false
+  xy: 406, 407
+  size: 36, 65
+  orig: 36, 65
+  offset: 0, 0
+  index: -1
+youqunbian
+  rotate: false
+  xy: 608, 773
+  size: 60, 64
+  orig: 60, 64
+  offset: 0, 0
+  index: -1
+zhayan1
+  rotate: false
+  xy: 2, 2
+  size: 62, 42
+  orig: 62, 42
+  offset: 0, 0
+  index: -1
+zhayan2
+  rotate: false
+  xy: 98, 89
+  size: 62, 42
+  orig: 62, 42
+  offset: 0, 0
+  index: -1
+zhayan3
+  rotate: false
+  xy: 204, 209
+  size: 61, 42
+  orig: 61, 42
+  offset: 0, 0
+  index: -1
+zuoerhuan
+  rotate: false
+  xy: 748, 923
+  size: 9, 16
+  orig: 9, 16
+  offset: 0, 0
+  index: -1
+zuojiao
+  rotate: true
+  xy: 480, 506
+  size: 29, 68
+  orig: 29, 68
+  offset: 0, 0
+  index: -1
+zuoqunbian
+  rotate: false
+  xy: 670, 782
+  size: 29, 55
+  orig: 29, 55
+  offset: 0, 0
+  index: -1

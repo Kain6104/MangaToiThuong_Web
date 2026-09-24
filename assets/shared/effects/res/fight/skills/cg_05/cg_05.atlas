@@ -1,0 +1,83 @@
+
+cg_05.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+bg
+  rotate: true
+  xy: 270, 244
+  size: 266, 180
+  orig: 266, 180
+  offset: 0, 0
+  index: -1
+bh
+  rotate: true
+  xy: 452, 322
+  size: 188, 39
+  orig: 188, 39
+  offset: 0, 0
+  index: -1
+bh2
+  rotate: false
+  xy: 154, 30
+  size: 84, 55
+  orig: 84, 55
+  offset: 0, 0
+  index: -1
+bm
+  rotate: false
+  xy: 452, 318
+  size: 2, 2
+  orig: 2, 2
+  offset: 0, 0
+  index: -1
+d
+  rotate: false
+  xy: 2, 87
+  size: 266, 423
+  orig: 266, 423
+  offset: 0, 0
+  index: -1
+hh
+  rotate: false
+  xy: 405, 29
+  size: 105, 105
+  orig: 105, 105
+  offset: 0, 0
+  index: -1
+hq
+  rotate: false
+  xy: 2, 10
+  size: 74, 75
+  orig: 74, 75
+  offset: 0, 0
+  index: -1
+hq2
+  rotate: false
+  xy: 78, 10
+  size: 74, 75
+  orig: 74, 75
+  offset: 0, 0
+  index: -1
+hx
+  rotate: false
+  xy: 270, 39
+  size: 69, 69
+  orig: 69, 69
+  offset: 0, 0
+  index: -1
+hy
+  rotate: true
+  xy: 405, 136
+  size: 106, 105
+  orig: 106, 105
+  offset: 0, 0
+  index: -1
+lq
+  rotate: false
+  xy: 270, 110
+  size: 133, 132
+  orig: 133, 132
+  offset: 0, 0
+  index: -1

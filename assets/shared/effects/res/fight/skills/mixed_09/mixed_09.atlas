@@ -1,0 +1,34 @@
+
+mixed_09.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+d
+  rotate: false
+  xy: 84, 9
+  size: 71, 72
+  orig: 71, 72
+  offset: 0, 0
+  index: -1
+q1
+  rotate: false
+  xy: 117, 116
+  size: 76, 80
+  orig: 76, 80
+  offset: 0, 0
+  index: -1
+q2
+  rotate: false
+  xy: 2, 2
+  size: 80, 79
+  orig: 80, 79
+  offset: 0, 0
+  index: -1
+q3
+  rotate: false
+  xy: 2, 83
+  size: 113, 113
+  orig: 113, 113
+  offset: 0, 0
+  index: -1

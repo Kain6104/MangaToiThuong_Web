@@ -1,0 +1,55 @@
+
+cg_08.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+sg1
+  rotate: false
+  xy: 2, 547
+  size: 267, 463
+  orig: 267, 463
+  offset: 0, 0
+  index: -1
+sg2
+  rotate: false
+  xy: 2, 82
+  size: 267, 463
+  orig: 267, 463
+  offset: 0, 0
+  index: -1
+z1
+  rotate: false
+  xy: 469, 840
+  size: 176, 170
+  orig: 176, 170
+  offset: 0, 0
+  index: -1
+z2
+  rotate: false
+  xy: 271, 496
+  size: 176, 170
+  orig: 176, 170
+  offset: 0, 0
+  index: -1
+z3
+  rotate: false
+  xy: 271, 840
+  size: 196, 170
+  orig: 196, 170
+  offset: 0, 0
+  index: -1
+z4
+  rotate: true
+  xy: 2, 2
+  size: 78, 170
+  orig: 78, 170
+  offset: 0, 0
+  index: -1
+z5
+  rotate: false
+  xy: 271, 668
+  size: 196, 170
+  orig: 196, 170
+  offset: 0, 0
+  index: -1

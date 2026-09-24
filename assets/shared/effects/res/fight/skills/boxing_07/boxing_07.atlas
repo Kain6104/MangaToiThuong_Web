@@ -1,0 +1,202 @@
+
+boxing_07.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+H001
+  rotate: false
+  xy: 517, 122
+  size: 94, 96
+  orig: 94, 96
+  offset: 0, 0
+  index: -1
+bg
+  rotate: false
+  xy: 2, 634
+  size: 288, 361
+  orig: 288, 361
+  offset: 0, 0
+  index: -1
+bg01
+  rotate: true
+  xy: 667, 429
+  size: 125, 121
+  orig: 125, 121
+  offset: 0, 0
+  index: -1
+bg02
+  rotate: false
+  xy: 886, 569
+  size: 102, 90
+  orig: 102, 90
+  offset: 0, 0
+  index: -1
+bg03
+  rotate: true
+  xy: 409, 479
+  size: 158, 119
+  orig: 158, 119
+  offset: 0, 0
+  index: -1
+bg04
+  rotate: true
+  xy: 791, 577
+  size: 113, 93
+  orig: 113, 93
+  offset: 0, 0
+  index: -1
+bg05
+  rotate: false
+  xy: 905, 661
+  size: 90, 150
+  orig: 90, 150
+  offset: 0, 0
+  index: -1
+bg06
+  rotate: true
+  xy: 259, 321
+  size: 149, 148
+  orig: 149, 148
+  offset: 0, 0
+  index: -1
+bg07
+  rotate: true
+  xy: 409, 220
+  size: 103, 136
+  orig: 103, 136
+  offset: 0, 0
+  index: -1
+bg08
+  rotate: false
+  xy: 223, 83
+  size: 145, 147
+  orig: 145, 147
+  offset: 0, 0
+  index: -1
+bg09
+  rotate: true
+  xy: 798, 813
+  size: 182, 189
+  orig: 182, 189
+  offset: 0, 0
+  index: -1
+bg10
+  rotate: false
+  xy: 370, 84
+  size: 145, 134
+  orig: 145, 134
+  offset: 0, 0
+  index: -1
+bg11
+  rotate: true
+  xy: 538, 402
+  size: 135, 127
+  orig: 135, 127
+  offset: 0, 0
+  index: -1
+bg12
+  rotate: true
+  xy: 734, 692
+  size: 119, 169
+  orig: 119, 169
+  offset: 0, 0
+  index: -1
+bg13
+  rotate: false
+  xy: 654, 556
+  size: 135, 134
+  orig: 135, 134
+  offset: 0, 0
+  index: -1
+bg14
+  rotate: true
+  xy: 259, 472
+  size: 160, 148
+  orig: 160, 148
+  offset: 0, 0
+  index: -1
+bg15
+  rotate: false
+  xy: 259, 232
+  size: 148, 87
+  orig: 148, 87
+  offset: 0, 0
+  index: -1
+bg16
+  rotate: false
+  xy: 548, 692
+  size: 184, 132
+  orig: 184, 132
+  offset: 0, 0
+  index: -1
+daguang
+  rotate: false
+  xy: 251, 235
+  size: 6, 397
+  orig: 6, 397
+  offset: 0, 0
+  index: -1
+diheng
+  rotate: true
+  xy: 218, 392
+  size: 240, 31
+  orig: 240, 31
+  offset: 0, 0
+  index: -1
+guang
+  rotate: false
+  xy: 292, 789
+  size: 254, 206
+  orig: 254, 206
+  offset: 0, 0
+  index: -1
+x1
+  rotate: true
+  xy: 2, 297
+  size: 335, 214
+  orig: 335, 214
+  offset: 0, 0
+  index: -1
+x2
+  rotate: true
+  xy: 2, 56
+  size: 239, 219
+  orig: 239, 219
+  offset: 0, 0
+  index: -1
+x3
+  rotate: false
+  xy: 548, 826
+  size: 248, 169
+  orig: 248, 169
+  offset: 0, 0
+  index: -1
+x4
+  rotate: false
+  xy: 292, 639
+  size: 198, 148
+  orig: 198, 148
+  offset: 0, 0
+  index: -1
+x5
+  rotate: false
+  xy: 530, 539
+  size: 122, 151
+  orig: 122, 151
+  offset: 0, 0
+  index: -1
+x6
+  rotate: false
+  xy: 409, 325
+  size: 127, 152
+  orig: 127, 152
+  offset: 0, 0
+  index: -1
+x7
+  rotate: false
+  xy: 2, 17
+  size: 36, 37
+  orig: 36, 37
+  offset: 0, 0
+  index: -1

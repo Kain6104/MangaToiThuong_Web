@@ -1,0 +1,41 @@
+
+laser_01.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+jiguang
+  rotate: true
+  xy: 2, 2
+  size: 50, 191
+  orig: 50, 191
+  offset: 0, 0
+  index: -1
+pan1
+  rotate: false
+  xy: 2, 273
+  size: 215, 227
+  orig: 215, 227
+  offset: 0, 0
+  index: -1
+pan2
+  rotate: true
+  xy: 2, 54
+  size: 217, 212
+  orig: 217, 212
+  offset: 0, 0
+  index: -1
+pan3
+  rotate: false
+  xy: 219, 333
+  size: 167, 167
+  orig: 167, 167
+  offset: 0, 0
+  index: -1
+qiu
+  rotate: false
+  xy: 388, 420
+  size: 78, 80
+  orig: 78, 80
+  offset: 0, 0
+  index: -1

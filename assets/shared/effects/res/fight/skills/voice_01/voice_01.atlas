@@ -1,0 +1,62 @@
+
+voice_01.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+d
+  rotate: false
+  xy: 449, 728
+  size: 36, 39
+  orig: 36, 39
+  offset: 0, 0
+  index: -1
+guangci
+  rotate: false
+  xy: 179, 132
+  size: 64, 413
+  orig: 64, 413
+  offset: 0, 0
+  index: -1
+guangmu
+  rotate: false
+  xy: 2, 547
+  size: 330, 450
+  orig: 330, 450
+  offset: 0, 0
+  index: -1
+liefeng
+  rotate: false
+  xy: 334, 570
+  size: 113, 427
+  orig: 113, 427
+  offset: 0, 0
+  index: -1
+quan
+  rotate: false
+  xy: 741, 742
+  size: 256, 255
+  orig: 256, 255
+  offset: 0, 0
+  index: -1
+tm
+  rotate: false
+  xy: 2, 98
+  size: 175, 447
+  orig: 175, 447
+  offset: 0, 0
+  index: -1
+yinbo
+  rotate: false
+  xy: 449, 769
+  size: 290, 228
+  orig: 290, 228
+  offset: 0, 0
+  index: -1
+yinfu
+  rotate: false
+  xy: 2, 7
+  size: 82, 89
+  orig: 82, 89
+  offset: 0, 0
+  index: -1

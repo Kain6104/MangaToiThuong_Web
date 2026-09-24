@@ -1,0 +1,62 @@
+
+laser_12.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+c1
+  rotate: false
+  xy: 2, 180
+  size: 132, 187
+  orig: 132, 187
+  offset: 0, 0
+  index: -1
+c2
+  rotate: true
+  xy: 375, 340
+  size: 153, 507
+  orig: 153, 507
+  offset: 0, 0
+  index: -1
+c3
+  rotate: false
+  xy: 187, 394
+  size: 186, 619
+  orig: 186, 619
+  offset: 0, 0
+  index: -1
+c4
+  rotate: false
+  xy: 2, 369
+  size: 183, 644
+  orig: 183, 644
+  offset: 0, 0
+  index: -1
+c5
+  rotate: true
+  xy: 375, 863
+  size: 150, 638
+  orig: 150, 638
+  offset: 0, 0
+  index: -1
+c6
+  rotate: true
+  xy: 375, 680
+  size: 181, 564
+  orig: 181, 564
+  offset: 0, 0
+  index: -1
+c7
+  rotate: true
+  xy: 375, 495
+  size: 183, 543
+  orig: 183, 543
+  offset: 0, 0
+  index: -1
+q
+  rotate: true
+  xy: 2, 44
+  size: 134, 133
+  orig: 134, 133
+  offset: 0, 0
+  index: -1

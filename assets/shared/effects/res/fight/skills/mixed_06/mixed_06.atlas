@@ -1,0 +1,41 @@
+
+mixed_06.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+ai1
+  rotate: false
+  xy: 2, 2
+  size: 134, 118
+  orig: 134, 118
+  offset: 0, 0
+  index: -1
+ai2
+  rotate: false
+  xy: 2, 122
+  size: 150, 132
+  orig: 150, 132
+  offset: 0, 0
+  index: -1
+js
+  rotate: false
+  xy: 154, 5
+  size: 60, 122
+  orig: 60, 122
+  offset: 0, 0
+  index: -1
+jx
+  rotate: false
+  xy: 154, 129
+  size: 66, 125
+  orig: 66, 125
+  offset: 0, 0
+  index: -1
+shutiao
+  rotate: false
+  xy: 222, 130
+  size: 24, 124
+  orig: 24, 124
+  offset: 0, 0
+  index: -1

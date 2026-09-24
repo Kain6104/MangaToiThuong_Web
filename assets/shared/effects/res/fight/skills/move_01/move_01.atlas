@@ -1,0 +1,41 @@
+
+move_01.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+canying
+  rotate: false
+  xy: 2, 63
+  size: 91, 71
+  orig: 91, 71
+  offset: 0, 0
+  index: -1
+wei1
+  rotate: false
+  xy: 294, 382
+  size: 139, 51
+  orig: 139, 51
+  offset: 0, 0
+  index: -1
+wei2
+  rotate: false
+  xy: 2, 136
+  size: 250, 89
+  orig: 250, 89
+  offset: 0, 0
+  index: -1
+wei3
+  rotate: false
+  xy: 2, 227
+  size: 270, 98
+  orig: 270, 98
+  offset: 0, 0
+  index: -1
+wei4
+  rotate: false
+  xy: 2, 327
+  size: 290, 106
+  orig: 290, 106
+  offset: 0, 0
+  index: -1

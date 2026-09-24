@@ -1,0 +1,41 @@
+
+boxing_04.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+bo
+  rotate: false
+  xy: 2, 339
+  size: 261, 165
+  orig: 261, 165
+  offset: 0, 0
+  index: -1
+gmao
+  rotate: false
+  xy: 2, 61
+  size: 96, 276
+  orig: 96, 276
+  offset: 0, 0
+  index: -1
+guang
+  rotate: false
+  xy: 100, 136
+  size: 72, 201
+  orig: 72, 201
+  offset: 0, 0
+  index: -1
+lang
+  rotate: false
+  xy: 265, 353
+  size: 150, 91
+  orig: 150, 91
+  offset: 0, 0
+  index: -1
+mao
+  rotate: true
+  xy: 265, 446
+  size: 58, 239
+  orig: 58, 239
+  offset: 0, 0
+  index: -1

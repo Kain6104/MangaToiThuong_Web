@@ -1,0 +1,195 @@
+
+missile_04.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+mb101
+  rotate: false
+  xy: 2, 451
+  size: 235, 233
+  orig: 235, 233
+  offset: 0, 0
+  index: -1
+mb106
+  rotate: false
+  xy: 2, 451
+  size: 235, 233
+  orig: 235, 233
+  offset: 0, 0
+  index: -1
+mb102
+  rotate: true
+  xy: 2, 2
+  size: 212, 215
+  orig: 212, 215
+  offset: 0, 0
+  index: -1
+mb103
+  rotate: true
+  xy: 239, 196
+  size: 221, 195
+  orig: 221, 195
+  offset: 0, 0
+  index: -1
+mb104
+  rotate: false
+  xy: 556, 474
+  size: 229, 177
+  orig: 229, 177
+  offset: 0, 0
+  index: -1
+mb105
+  rotate: false
+  xy: 2, 216
+  size: 235, 233
+  orig: 235, 233
+  offset: 0, 0
+  index: -1
+zs01
+  rotate: true
+  xy: 378, 439
+  size: 245, 176
+  orig: 245, 176
+  offset: 0, 0
+  index: -1
+zs02
+  rotate: false
+  xy: 2, 885
+  size: 347, 137
+  orig: 347, 137
+  offset: 0, 0
+  index: -1
+zs04
+  rotate: true
+  xy: 787, 461
+  size: 190, 138
+  orig: 190, 138
+  offset: 0, 0
+  index: -1
+zs301
+  rotate: true
+  xy: 878, 706
+  size: 117, 98
+  orig: 117, 98
+  offset: 0, 0
+  index: -1
+zs302
+  rotate: true
+  xy: 529, 768
+  size: 117, 104
+  orig: 117, 104
+  offset: 0, 0
+  index: -1
+zs303
+  rotate: false
+  xy: 692, 45
+  size: 121, 103
+  orig: 121, 103
+  offset: 0, 0
+  index: -1
+zs401
+  rotate: true
+  xy: 529, 690
+  size: 76, 95
+  orig: 76, 95
+  offset: 0, 0
+  index: -1
+zs402
+  rotate: false
+  xy: 764, 150
+  size: 152, 137
+  orig: 152, 137
+  offset: 0, 0
+  index: -1
+zs403
+  rotate: true
+  xy: 616, 245
+  size: 227, 146
+  orig: 227, 146
+  offset: 0, 0
+  index: -1
+zs404
+  rotate: true
+  xy: 239, 419
+  size: 265, 137
+  orig: 265, 137
+  offset: 0, 0
+  index: -1
+zs405
+  rotate: false
+  xy: 351, 887
+  size: 282, 135
+  orig: 282, 135
+  offset: 0, 0
+  index: -1
+zs406
+  rotate: true
+  xy: 906, 840
+  size: 182, 115
+  orig: 182, 115
+  offset: 0, 0
+  index: -1
+zs501
+  rotate: false
+  xy: 815, 41
+  size: 103, 107
+  orig: 103, 107
+  offset: 0, 0
+  index: -1
+zs502
+  rotate: true
+  xy: 764, 289
+  size: 170, 159
+  orig: 170, 159
+  offset: 0, 0
+  index: -1
+zs503
+  rotate: false
+  xy: 463, 7
+  size: 227, 187
+  orig: 227, 187
+  offset: 0, 0
+  index: -1
+zs504
+  rotate: false
+  xy: 635, 825
+  size: 269, 197
+  orig: 269, 197
+  offset: 0, 0
+  index: -1
+zs505
+  rotate: false
+  xy: 2, 686
+  size: 281, 197
+  orig: 281, 197
+  offset: 0, 0
+  index: -1
+zs506
+  rotate: false
+  xy: 285, 686
+  size: 242, 197
+  orig: 242, 197
+  offset: 0, 0
+  index: -1
+zs507
+  rotate: false
+  xy: 219, 6
+  size: 242, 188
+  orig: 242, 188
+  offset: 0, 0
+  index: -1
+zs508
+  rotate: true
+  xy: 436, 196
+  size: 241, 178
+  orig: 241, 178
+  offset: 0, 0
+  index: -1
+zs509
+  rotate: false
+  xy: 635, 653
+  size: 241, 170
+  orig: 241, 170
+  offset: 0, 0
+  index: -1

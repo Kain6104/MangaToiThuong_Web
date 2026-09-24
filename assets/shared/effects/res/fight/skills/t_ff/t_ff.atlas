@@ -1,0 +1,13 @@
+
+t_ff.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+f
+  rotate: false
+  xy: 2, 64
+  size: 204, 142
+  orig: 204, 142
+  offset: 0, 0
+  index: -1

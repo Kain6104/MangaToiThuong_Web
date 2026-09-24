@@ -1,0 +1,48 @@
+
+G_AT_05.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+huo1
+  rotate: false
+  xy: 228, 523
+  size: 221, 492
+  orig: 221, 492
+  offset: 0, 0
+  index: -1
+huo2
+  rotate: false
+  xy: 2, 2
+  size: 220, 504
+  orig: 220, 504
+  offset: 0, 0
+  index: -1
+huo3
+  rotate: false
+  xy: 2, 508
+  size: 224, 507
+  orig: 224, 507
+  offset: 0, 0
+  index: -1
+huo4
+  rotate: false
+  xy: 451, 530
+  size: 220, 485
+  orig: 220, 485
+  offset: 0, 0
+  index: -1
+qi
+  rotate: false
+  xy: 673, 841
+  size: 220, 174
+  orig: 220, 174
+  offset: 0, 0
+  index: -1
+qiu
+  rotate: false
+  xy: 673, 745
+  size: 95, 94
+  orig: 95, 94
+  offset: 0, 0
+  index: -1

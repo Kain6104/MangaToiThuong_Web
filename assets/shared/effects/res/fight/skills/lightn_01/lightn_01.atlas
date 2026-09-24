@@ -1,0 +1,83 @@
+
+lightn_01.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+dian1
+  rotate: true
+  xy: 130, 153
+  size: 35, 122
+  orig: 35, 122
+  offset: 0, 0
+  index: -1
+dian2
+  rotate: true
+  xy: 130, 190
+  size: 62, 122
+  orig: 62, 122
+  offset: 0, 0
+  index: -1
+dian3
+  rotate: false
+  xy: 2, 118
+  size: 61, 134
+  orig: 61, 134
+  offset: 0, 0
+  index: -1
+dian4
+  rotate: true
+  xy: 130, 103
+  size: 48, 121
+  orig: 48, 121
+  offset: 0, 0
+  index: -1
+dian5
+  rotate: false
+  xy: 50, 26
+  size: 78, 90
+  orig: 78, 90
+  offset: 0, 0
+  index: -1
+dian6
+  rotate: true
+  xy: 130, 15
+  size: 86, 71
+  orig: 86, 71
+  offset: 0, 0
+  index: -1
+dian7
+  rotate: true
+  xy: 2, 24
+  size: 92, 46
+  orig: 92, 46
+  offset: 0, 0
+  index: -1
+qiu1
+  rotate: false
+  xy: 203, 57
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+qiu2
+  rotate: false
+  xy: 65, 142
+  size: 53, 53
+  orig: 53, 53
+  offset: 0, 0
+  index: -1
+qiu3
+  rotate: false
+  xy: 65, 197
+  size: 55, 55
+  orig: 55, 55
+  offset: 0, 0
+  index: -1
+qiu4
+  rotate: false
+  xy: 203, 11
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1

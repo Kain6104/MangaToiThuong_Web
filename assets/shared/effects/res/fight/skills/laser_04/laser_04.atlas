@@ -1,0 +1,27 @@
+
+laser_04.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+jiguang
+  rotate: false
+  xy: 2, 2
+  size: 31, 173
+  orig: 31, 173
+  offset: 0, 0
+  index: -1
+quan
+  rotate: false
+  xy: 219, 336
+  size: 57, 56
+  orig: 57, 56
+  offset: 0, 0
+  index: -1
+san
+  rotate: false
+  xy: 2, 177
+  size: 215, 215
+  orig: 215, 215
+  offset: 0, 0
+  index: -1

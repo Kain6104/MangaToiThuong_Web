@@ -1,0 +1,104 @@
+
+t_cure.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+bei
+  rotate: false
+  xy: 2, 249
+  size: 185, 253
+  orig: 185, 253
+  offset: 0, 0
+  index: -1
+dian
+  rotate: false
+  xy: 455, 483
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+hh01
+  rotate: false
+  xy: 168, 171
+  size: 56, 56
+  orig: 56, 56
+  offset: 0, 0
+  index: -1
+hh02
+  rotate: false
+  xy: 102, 168
+  size: 64, 59
+  orig: 64, 59
+  offset: 0, 0
+  index: -1
+hh03
+  rotate: true
+  xy: 2, 2
+  size: 77, 63
+  orig: 77, 63
+  offset: 0, 0
+  index: -1
+hh04
+  rotate: false
+  xy: 189, 249
+  size: 88, 65
+  orig: 88, 65
+  offset: 0, 0
+  index: -1
+hh05
+  rotate: false
+  xy: 189, 316
+  size: 93, 62
+  orig: 93, 62
+  offset: 0, 0
+  index: -1
+hh06
+  rotate: false
+  xy: 189, 380
+  size: 96, 60
+  orig: 96, 60
+  offset: 0, 0
+  index: -1
+hh07
+  rotate: false
+  xy: 2, 183
+  size: 98, 64
+  orig: 98, 64
+  offset: 0, 0
+  index: -1
+hh08
+  rotate: false
+  xy: 189, 442
+  size: 99, 60
+  orig: 99, 60
+  offset: 0, 0
+  index: -1
+hh09
+  rotate: true
+  xy: 2, 81
+  size: 100, 59
+  orig: 100, 59
+  offset: 0, 0
+  index: -1
+hh10
+  rotate: false
+  xy: 290, 455
+  size: 93, 47
+  orig: 93, 47
+  offset: 0, 0
+  index: -1
+jiguang
+  rotate: true
+  xy: 102, 229
+  size: 18, 134
+  orig: 18, 134
+  offset: 0, 0
+  index: -1
+zhentou
+  rotate: true
+  xy: 385, 435
+  size: 67, 68
+  orig: 67, 68
+  offset: 0, 0
+  index: -1

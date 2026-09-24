@@ -1,0 +1,346 @@
+{
+  "heroCode": "H144",
+  "heroId": 1261449780,
+  "renderer": "native-windows-offline-spine-2.1.27+cocos-armature",
+  "webStatus": "ANIMATION_WITH_PARTIAL_VFX",
+  "effectParity": "PARTIAL_VFX",
+  "model": {
+    "skeleton": "./assets/heros/H144/model/H144.skel",
+    "atlas": "./assets/heros/H144/model/H144.atlas",
+    "textures": [
+      "./assets/heros/H144/model/H144.png"
+    ],
+    "spineVersion": "2.1.27",
+    "animationList": [
+      "stand",
+      "stand_1",
+      "stand_2",
+      "stand_3"
+    ],
+    "bones": 116,
+    "slots": 48
+  },
+  "animations": {
+    "idle": "stand"
+  },
+  "battleController": {
+    "source": "res/fight/ani/ani.ExportJson",
+    "renderer": "Cocos Armature",
+    "webAssets": [
+      {
+        "path": "./assets/shared/effects/res/fight/ani/ani.ExportJson",
+        "format": "Cocos Armature ExportJson"
+      },
+      {
+        "path": "./assets/shared/effects/res/fight/ani/ani0.plist",
+        "format": "plist"
+      },
+      {
+        "path": "./assets/shared/effects/res/fight/ani/ani0.png",
+        "format": "CCZp→PNG"
+      }
+    ],
+    "webStatus": "WEB_EFFECT_UNSUPPORTED"
+  },
+  "effects": {
+    "skill1": [
+      {
+        "type": "CHARACTER_ANIMATION",
+        "field": "ActionBeforeSkill",
+        "source": "shake",
+        "timing": 0,
+        "renderer": "Cocos Armature ani.ExportJson",
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PARTICLE",
+        "field": "SelfEffect",
+        "source": "res/fight/skills/G_BE_04/G_BE_04",
+        "timing": 0,
+        "webAssets": [
+          {
+            "path": "./assets/shared/effects/res/fight/skills/G_BE_04/G_BE_04.atlas",
+            "format": "atlas"
+          },
+          {
+            "path": "./assets/shared/effects/res/fight/skills/G_BE_04/G_BE_04.png",
+            "format": "CCZp→PNG"
+          },
+          {
+            "path": "./assets/shared/effects/res/fight/skills/G_BE_04/G_BE_04.skel",
+            "format": "skel"
+          }
+        ],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PROJECTILE",
+        "field": "ProEffect",
+        "source": "res/effect/s154tsw.xml",
+        "timing": 0,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "HIT_EFFECT",
+        "field": "PostEffect",
+        "source": "res/effect/s154mb.xml",
+        "timing": 0,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "BUFF_EFFECT",
+        "field": "Buff/SkillIDForBuf",
+        "source": 1110521140,
+        "timing": 2003,
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "SOUND",
+        "field": "SelfSoundEffect",
+        "source": "res/sound/skill/Y_H144_01.mp3",
+        "webAssets": [
+          {
+            "path": "./assets/shared/audio/skill/Y_H144_01.mp3",
+            "format": "mp3"
+          }
+        ],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      },
+      {
+        "type": "SOUND",
+        "field": "ProSoundEffect",
+        "source": "res/sound/skill/S154S.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      },
+      {
+        "type": "SOUND",
+        "field": "PostSoundEffect",
+        "source": "res/sound/skill/S154H.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      }
+    ],
+    "skill2": [
+      {
+        "type": "CHARACTER_ANIMATION",
+        "field": "ActionBeforeSkill",
+        "source": "shake",
+        "timing": 0,
+        "renderer": "Cocos Armature ani.ExportJson",
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PARTICLE",
+        "field": "SelfEffect",
+        "source": "res/fight/skills/missile_01/missile_01",
+        "timing": 0,
+        "webAssets": [
+          {
+            "path": "./assets/shared/effects/res/fight/skills/missile_01/missile_01.atlas",
+            "format": "atlas"
+          },
+          {
+            "path": "./assets/shared/effects/res/fight/skills/missile_01/missile_01.png",
+            "format": "CCZp→PNG"
+          },
+          {
+            "path": "./assets/shared/effects/res/fight/skills/missile_01/missile_01.skel",
+            "format": "skel"
+          }
+        ],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PROJECTILE",
+        "field": "ProEffect",
+        "source": "res/effect/s156tsw.xml",
+        "timing": 0,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "HIT_EFFECT",
+        "field": "PostEffect",
+        "source": "res/effect/s156mb.xml",
+        "timing": 0,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "SOUND",
+        "field": "SelfSoundEffect",
+        "source": "res/sound/skill/Y_H144_02.mp3",
+        "webAssets": [
+          {
+            "path": "./assets/shared/audio/skill/Y_H144_02.mp3",
+            "format": "mp3"
+          }
+        ],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      },
+      {
+        "type": "SOUND",
+        "field": "ProSoundEffect",
+        "source": "res/sound/skill/S156S.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      },
+      {
+        "type": "SOUND",
+        "field": "PostSoundEffect",
+        "source": "res/sound/skill/S156H.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      }
+    ],
+    "skill3": [
+      {
+        "type": "CHARACTER_ANIMATION",
+        "field": "ActionBeforeSkill",
+        "source": "shake",
+        "timing": 0,
+        "renderer": "Cocos Armature ani.ExportJson",
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PARTICLE",
+        "field": "SelfEffect",
+        "source": "res/skills/s155/s155.ExportJson",
+        "timing": 0,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PROJECTILE",
+        "field": "ProEffect",
+        "source": "res/effect/s155tsw.xml",
+        "timing": 0,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "HIT_EFFECT",
+        "field": "PostEffect",
+        "source": "res/effect/s155mb.xml",
+        "timing": 0,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "BUFF_EFFECT",
+        "field": "Buff/SkillIDForBuf",
+        "source": 1110521141,
+        "timing": 0,
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "SOUND",
+        "field": "ProSoundEffect",
+        "source": "res/sound/skill/S155S.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      },
+      {
+        "type": "SOUND",
+        "field": "PostSoundEffect",
+        "source": "res/sound/skill/S155H.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      }
+    ],
+    "skill4": [
+      {
+        "type": "CHARACTER_ANIMATION",
+        "field": "ActionBeforeSkill",
+        "source": "shake",
+        "timing": 0,
+        "renderer": "Cocos Armature ani.ExportJson",
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PARTICLE",
+        "field": "SelfEffect",
+        "source": "res/skills/s279/s279.ExportJson",
+        "timing": 0,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "PROJECTILE",
+        "field": "ProEffect",
+        "source": "res/effect/s279tsw.xml",
+        "timing": 0,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "HIT_EFFECT",
+        "field": "PostEffect",
+        "source": "res/effect/s279mb.xml",
+        "timing": 671,
+        "webAssets": [],
+        "webStatus": "WEB_EFFECT_UNSUPPORTED"
+      },
+      {
+        "type": "SOUND",
+        "field": "ProSoundEffect",
+        "source": "res/sound/skill/S279S.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      },
+      {
+        "type": "SOUND",
+        "field": "PostSoundEffect",
+        "source": "res/sound/skill/S279H.ogg",
+        "webAssets": [],
+        "webStatus": "PACKAGED_NOT_PLAYED"
+      }
+    ]
+  },
+  "notes": [
+    "Hero skeleton contains stand variants only; combat actions are driven by the shared Cocos Armature controller.",
+    "Original model and referenced effect assets are packaged, but no incompatible web runtime is enabled.",
+    "Exported directly on Windows with the original local Spine 2.1.27 runtime and source Cocos Armature transforms; no APK/emulator used."
+  ],
+  "code": "H144",
+  "staticImage": "./img/heros/H144.png",
+  "visuals": {
+    "idle": {
+      "type": "image",
+      "format": "animated-webp",
+      "src": "./assets/heros/H144/visual/idle.webp",
+      "loop": true,
+      "durationMs": 2700,
+      "fps": 30,
+      "frameCount": 81,
+      "renderer": "native-windows-offline-original-runtime",
+      "source": "res/card/role/H144/H144.skel animation stand; CardModel.lua timeScale=1/2"
+    },
+    "attack": {
+      "type": "image",
+      "format": "animated-webp",
+      "src": "./assets/heros/H144/visual/attack.webp",
+      "loop": false,
+      "durationMs": 433,
+      "fps": 30,
+      "frameCount": 13,
+      "renderer": "native-windows-offline-original-runtime",
+      "source": "CardModel.lua ProSpellEffect + res/fight/ani/ani.ExportJson movement shoot_o_x for bCardF=true; Cocos Armature scale=0.5"
+    },
+    "skill1": {
+      "type": "image",
+      "format": "animated-webp",
+      "src": "./assets/heros/H144/visual/skill1.webp",
+      "loop": false,
+      "durationMs": 1367,
+      "fps": 30,
+      "frameCount": 41,
+      "renderer": "native-windows-offline-original-runtime",
+      "source": "SkillRes X053 SelfEffect + moSkillX053.lua literal animation zs_sk",
+      "effectParity": "PARTIAL_VFX"
+    }
+  }
+}

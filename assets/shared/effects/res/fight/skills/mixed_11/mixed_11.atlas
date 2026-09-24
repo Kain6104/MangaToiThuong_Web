@@ -1,0 +1,83 @@
+
+mixed_11.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+mb101
+  rotate: false
+  xy: 245, 15
+  size: 67, 86
+  orig: 67, 86
+  offset: 0, 0
+  index: -1
+mb201
+  rotate: false
+  xy: 314, 12
+  size: 58, 89
+  orig: 58, 89
+  offset: 0, 0
+  index: -1
+xin
+  rotate: false
+  xy: 367, 167
+  size: 53, 53
+  orig: 53, 53
+  offset: 0, 0
+  index: -1
+zs01
+  rotate: true
+  xy: 387, 376
+  size: 134, 116
+  orig: 134, 116
+  offset: 0, 0
+  index: -1
+zs04
+  rotate: false
+  xy: 2, 117
+  size: 233, 393
+  orig: 233, 393
+  offset: 0, 0
+  index: -1
+zs301
+  rotate: false
+  xy: 237, 358
+  size: 148, 152
+  orig: 148, 152
+  offset: 0, 0
+  index: -1
+zs302
+  rotate: true
+  xy: 133, 2
+  size: 99, 110
+  orig: 99, 110
+  offset: 0, 0
+  index: -1
+zs303
+  rotate: false
+  xy: 2, 10
+  size: 129, 105
+  orig: 129, 105
+  offset: 0, 0
+  index: -1
+zs304
+  rotate: true
+  xy: 237, 103
+  size: 117, 128
+  orig: 117, 128
+  offset: 0, 0
+  index: -1
+zs305
+  rotate: true
+  xy: 384, 229
+  size: 127, 125
+  orig: 127, 125
+  offset: 0, 0
+  index: -1
+zs306
+  rotate: false
+  xy: 237, 222
+  size: 145, 134
+  orig: 145, 134
+  offset: 0, 0
+  index: -1

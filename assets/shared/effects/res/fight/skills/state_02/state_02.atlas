@@ -1,0 +1,76 @@
+
+state_02.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+baofa1
+  rotate: false
+  xy: 442, 717
+  size: 221, 294
+  orig: 221, 294
+  offset: 0, 0
+  index: -1
+baofa2
+  rotate: false
+  xy: 2, 373
+  size: 214, 315
+  orig: 214, 315
+  offset: 0, 0
+  index: -1
+baofa3
+  rotate: false
+  xy: 2, 690
+  size: 215, 321
+  orig: 215, 321
+  offset: 0, 0
+  index: -1
+baofa4
+  rotate: false
+  xy: 219, 712
+  size: 221, 299
+  orig: 221, 299
+  offset: 0, 0
+  index: -1
+dian1
+  rotate: false
+  xy: 49, 145
+  size: 119, 226
+  orig: 119, 226
+  offset: 0, 0
+  index: -1
+dian2
+  rotate: false
+  xy: 665, 797
+  size: 142, 214
+  orig: 142, 214
+  offset: 0, 0
+  index: -1
+dian3
+  rotate: false
+  xy: 170, 145
+  size: 100, 226
+  orig: 100, 226
+  offset: 0, 0
+  index: -1
+guangqiu
+  rotate: false
+  xy: 49, 2
+  size: 141, 141
+  orig: 141, 141
+  offset: 0, 0
+  index: -1
+shutiao
+  rotate: false
+  xy: 2, 10
+  size: 45, 361
+  orig: 45, 361
+  offset: 0, 0
+  index: -1
+zhaozi
+  rotate: false
+  xy: 809, 853
+  size: 171, 158
+  orig: 171, 158
+  offset: 0, 0
+  index: -1
